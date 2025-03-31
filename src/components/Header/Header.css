@@ -33,4 +33,12 @@
 }
 
 .header__description {
+  font-family: "Roboto";
+  width: 608px;
+  height: 24px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: rgba(255, 255, 255, 1);
 }
