@@ -1,0 +1,38 @@
+.about {
+  height: 624px;
+  /* border: solid red; */
+}
+
+.about__wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.author__image-avatar {
+  height: 464px;
+  width: 464px;
+  border-radius: 1000px;
+  margin-left: 104px;
+  margin-top: 80px;
+  margin-right: 56px;
+}
+
+.author {
+  margin-top: 131px;
+}
+
+.author_title {
+  font-family: "Roboto Slab";
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 46px;
+  margin-bottom: 24px;
+}
+.author__description {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  width: 600px;
+  height: 120px;
+}
