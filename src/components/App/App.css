@@ -7,7 +7,7 @@
   height: auto;
   /* max-width: 1440px; */
   /* min-height: 100vh; */
-  margin: 0 auto;
+  /* margin: 0 auto; */
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -15,9 +15,29 @@
   /* border: solid red; */
 }
 
+.page__style {
+  background: url(../../assets/header-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  max-height: 580px;
+}
+
+@media (max-width: 1440px) {
+  .page__style {
+    background-size: cover;
+  }
+}
+
+@media (max-width: 760px) {
+  .page__style {
+    background-size: cover;
+  }
+}
+
 html,
 body {
-  margin: 0;
-  padding: 0;
+  /* margin: 0; */
+  /* padding: 0; */
   box-sizing: border-box;
 }
