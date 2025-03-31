@@ -10,7 +10,7 @@ function App() {
         <div className="page__style">
           <Header />
         </div>
-        <h1>Main</h1>
+        <h1>About</h1>
       </div>
     </div>
   );
