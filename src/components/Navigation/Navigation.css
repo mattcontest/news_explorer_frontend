@@ -1,0 +1,32 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* border: solid red; */
+  height: 80px;
+  border: solid rgba(255, 255, 255, 0.2);
+}
+
+.logo {
+  margin-right: auto;
+  margin-left: 104px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0;
+  width: 200px;
+}
+
+.signin_btn {
+  margin-left: 42px;
+  margin-right: 104px;
+}
+
+.home_btn {
+  height: 80px;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  background-color: transparent;
+  border-bottom: 2px solid;
+}
