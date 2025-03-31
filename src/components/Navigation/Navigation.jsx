@@ -6,7 +6,7 @@ function Navigation() {
       <div className="navbar">
         <p className="logo">NewsExplorer</p>
         <button className="home_btn">Home</button>
-        <button className="signin_btn">Signin</button>
+        <button className="signin_btn">Sign in</button>
       </div>
     </div>
   );

@@ -1,0 +1,12 @@
+.header {
+  /* margin: 20px auto; */
+  position: relative;
+  /* width: 1440px; */
+  width: auto;
+  height: 576px;
+  /* border: solid red; */
+  background: url(../../assets/header-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

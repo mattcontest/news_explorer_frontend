@@ -17,6 +17,7 @@
   letter-spacing: 0;
   width: 200px;
   font-family: "Roboto Slab";
+  color: rgba(255, 255, 255, 1);
 }
 
 .signin_btn {
@@ -25,7 +26,9 @@
   width: 176px;
   height: 48px;
   /* top: 19px; */
-  border: 1px rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(255, 255, 255, 1);
+  background-color: transparent;
   border-radius: 100px;
   font-family: "Roboto";
   font-weight: 500;
@@ -38,6 +41,7 @@
   border-top: none;
   font-family: "Roboto";
   font-weight: 500;
+  color: rgba(255, 255, 255, 1);
   background-color: transparent;
-  border-bottom: 2px solid;
+  border-bottom: 2px solid rgba(255, 255, 255, 1);
 }
