@@ -5,6 +5,7 @@
   /* border: solid red; */
   height: 80px;
   border: solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(196, 196, 196, 0.01);
 }
 
 .logo {
@@ -15,11 +16,17 @@
   line-height: 24px;
   letter-spacing: 0;
   width: 200px;
+  font-family: "Roboto Slab";
 }
 
 .signin_btn {
   margin-left: 42px;
   margin-right: 104px;
+  width: 176px;
+  height: 48px;
+  /* top: 19px; */
+  border: 1px rgba(255, 255, 255, 1);
+  border-radius: 100px;
 }
 
 .home_btn {
