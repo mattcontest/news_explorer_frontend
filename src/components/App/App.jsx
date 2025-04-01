@@ -2,6 +2,7 @@ import "./App.css";
 import Header from "../Header/Header.jsx";
 import About from "../About/About.jsx";
 import Footer from "../Footer/Footer.jsx";
+import LoginModal from "../LoginModal/LoginModal.jsx";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -15,6 +16,7 @@ function App() {
           <Footer />
         </div>
       </div>
+      <LoginModal />
     </div>
   );
 }
