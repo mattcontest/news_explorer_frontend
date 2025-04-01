@@ -1,23 +1,26 @@
 .page {
   background-color: #f3f3f3;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .page__content {
   width: 100%;
+  /* flex-grow: 1; */
   height: auto;
   display: flex;
   flex-direction: column;
+  flex: 1;
   box-sizing: border-box;
+  margin-bottom: auto;
 }
 
 .page__style {
-  background: url(../../assets/header-bg.jpg);
-  background-color: rgba(0, 0, 0, 0.5);
-  background-blend-mode: overlay;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  max-height: 580px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 @media (max-width: 1440px) {
@@ -34,7 +37,8 @@
 
 html,
 body {
-  /* margin: 0; */
-  /* padding: 0; */
+  margin: 0;
+  padding: 0;
+  height: 100%;
   box-sizing: border-box;
 }

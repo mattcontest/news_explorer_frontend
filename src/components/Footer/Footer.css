@@ -1,0 +1,29 @@
+.footer {
+  margin-top: auto;
+  height: 80px;
+  /* border: solid red; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* margin-left: 104px; */
+  padding-left: 104px;
+  padding-right: 104px;
+  text-decoration: none;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  text-decoration: none;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 24px;
+}
+
+.footer__link {
+  text-decoration: none;
+}

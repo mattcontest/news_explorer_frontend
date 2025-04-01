@@ -1,5 +1,14 @@
 .about {
-  height: 624px;
+  /* height: 624px; */
+  /* border: solid red; */
+  display: flex;
+  flex-direction: column;
+  /* min-height: 0 auto; */
+  /* flex-grow: 1; */
+  /* margin-bottom: 80px; */
+  /* margin-bottom: 0 auto; */
+  /* margin-top: 20px; */
+  /* margin-top: auto; */
   /* border: solid red; */
 }
 
@@ -11,7 +20,7 @@
 .author__image-avatar {
   height: 464px;
   width: 464px;
-  border-radius: 1000px;
+  border-radius: 50%;
   margin-left: 104px;
   margin-top: 80px;
   margin-right: 56px;
@@ -19,6 +28,8 @@
 
 .author {
   margin-top: 131px;
+  max-width: 600px;
+  /* border: solid red; */
 }
 
 .author_title {
@@ -33,6 +44,8 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
-  width: 600px;
-  height: 120px;
+  width: auto;
+  height: auto;
+  max-width: 600px;
+  max-height: 120px;
 }

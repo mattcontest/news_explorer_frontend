@@ -1,6 +1,7 @@
 import "./App.css";
 import Header from "../Header/Header.jsx";
 import About from "../About/About.jsx";
+import Footer from "../Footer/Footer.jsx";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -11,8 +12,8 @@ function App() {
         <div className="page__style">
           <Header />
           <About />
+          <Footer />
         </div>
-        {/* <h1>About</h1> */}
       </div>
     </div>
   );

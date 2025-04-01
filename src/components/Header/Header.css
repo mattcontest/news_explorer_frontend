@@ -5,10 +5,14 @@
   width: auto;
   height: 576px;
   /* border: solid red; */
-  /* background: url(../../assets/header-bg.jpg);
+  background: url(../../assets/header-bg.jpg);
+  background-color: rgba(0, 0, 0, 0.5);
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; */
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position: center;
 }
 
 .header__content {
