@@ -1,0 +1,26 @@
+.btn__container {
+  display: flex;
+  flex-direction: column;
+  /* border: solid red; */
+  width: 100%;
+}
+
+.modal__login_btn {
+  /* margin-bottom: 20px; */
+  /* margin-top: 39px; */
+}
+
+.modal__signup_btn {
+  border: solid black;
+}
+
+.modal__label_login {
+  height: 47px;
+  /* border: solid purple; */
+  /* width: 358px; */
+  margin-bottom: 31px;
+}
+
+.modal__label_login:nth-child(2) {
+  margin-bottom: 39px;
+}

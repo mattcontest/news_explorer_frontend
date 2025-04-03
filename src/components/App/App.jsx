@@ -16,7 +16,7 @@ function App() {
           <Footer />
         </div>
       </div>
-      <LoginModal />
+      <LoginModal title={"Sign In"} buttonText={"Sign in"} />
     </div>
   );
 }
