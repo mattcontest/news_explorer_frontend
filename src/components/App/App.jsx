@@ -14,6 +14,11 @@ function App() {
     setActiveModal("login");
   };
 
+  const handleSignupClick = (e) => {
+    e.preventDefault();
+    setActiveModal("signup");
+  };
+
   const closeActiveModal = () => {
     setActiveModal("");
   };
@@ -33,6 +38,7 @@ function App() {
         activeModal={activeModal}
         isOpen={activeModal === "login"}
         handleCloseModal={closeActiveModal}
+        handleSignupClick={handleSignupClick}
       />
       <RegisterModal
         title={"Sign Up"}
@@ -40,6 +46,7 @@ function App() {
         activeModal={activeModal}
         isOpen={activeModal === "signup"}
         handleCloseModal={closeActiveModal}
+        handleLoginClick={handleLoginClick}
       />
     </div>
   );

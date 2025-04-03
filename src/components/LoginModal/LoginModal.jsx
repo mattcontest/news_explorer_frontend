@@ -7,6 +7,7 @@ function LoginModal({
   activeModal,
   isOpen,
   handleCloseModal,
+  handleSignupClick,
 }) {
   return (
     <ModalWithForm
@@ -39,7 +40,7 @@ function LoginModal({
       <div className="btn__container">
         <button className="modal__login_btn">{buttonText}</button>
 
-        <button className="modal__signup_btn ">
+        <button className="modal__signup_btn " onClick={handleSignupClick}>
           or <a className="modal__signup_txt">Sign Up</a>
         </button>
       </div>
