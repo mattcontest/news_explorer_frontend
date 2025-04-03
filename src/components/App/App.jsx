@@ -4,6 +4,7 @@ import Header from "../Header/Header.jsx";
 import About from "../About/About.jsx";
 import Footer from "../Footer/Footer.jsx";
 import LoginModal from "../LoginModal/LoginModal.jsx";
+import RegisterModal from "../RegisterModal/RegisterModal.jsx";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -31,6 +32,13 @@ function App() {
         buttonText={"Sign in"}
         activeModal={activeModal}
         isOpen={activeModal === "login"}
+        handleCloseModal={closeActiveModal}
+      />
+      <RegisterModal
+        title={"Sign Up"}
+        buttonText={"Sign Up"}
+        activeModal={activeModal}
+        isOpen={activeModal === "signup"}
         handleCloseModal={closeActiveModal}
       />
     </div>
