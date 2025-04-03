@@ -1,4 +1,5 @@
 import "./ModalWithForm.css";
+import close_btn from "../../assets/close.svg";
 
 function ModalWithForm({
   children,
@@ -11,7 +12,9 @@ function ModalWithForm({
     <div className="modal modal_open">
       <div className="modal__content">
         <h2 className="modal__title">{title}</h2>
-        <button className="modal__close"></button>
+        <button className="modal__close">
+          <img src={close_btn} alt="Close" className="button__close" />
+        </button>
         <form className="modal__form">{children}</form>
       </div>
     </div>
