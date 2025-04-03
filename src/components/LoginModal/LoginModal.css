@@ -6,21 +6,67 @@
 }
 
 .modal__login_btn {
-  /* margin-bottom: 20px; */
-  /* margin-top: 39px; */
+  border-radius: 100px;
+  height: 64px;
+  border: none;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0;
+  margin-bottom: 16px;
+  width: 100%;
+  /* border: solid red; */
+  margin-bottom: 16px;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0;
+  cursor: pointer;
 }
 
 .modal__signup_btn {
-  border: solid black;
+  /* border: solid black; */
+  border: none;
+  background-color: transparent;
+  width: 226px;
+  align-self: center;
+  height: 20px;
 }
 
 .modal__label_login {
-  height: 47px;
-  /* border: solid purple; */
-  /* width: 358px; */
   margin-bottom: 31px;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  color: rgba(47, 113, 229, 1);
 }
 
 .modal__label_login:nth-child(2) {
   margin-bottom: 39px;
+}
+
+.modal__input {
+  margin-top: 9px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 14px;
+  /* border: 0; */
+  padding-left: 0;
+  padding-bottom: 5px;
+}
+
+.modal__input::placeholder {
+  /* color: rgba(0, 0, 0, 1); */
+}
+
+.modal__signup_txt {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(47, 113, 229, 1);
+  cursor: pointer;
 }

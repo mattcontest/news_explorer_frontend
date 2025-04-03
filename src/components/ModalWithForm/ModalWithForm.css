@@ -18,8 +18,9 @@
 .modal__content {
   background-color: rgba(255, 255, 255, 1);
   position: relative;
-  height: 380px;
-  width: 430px;
+  height: 348px;
+  max-width: 430px;
+  width: 100%;
   border-radius: 16px;
   border: 1px solid;
   padding-top: 34px;
