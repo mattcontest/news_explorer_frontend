@@ -1,9 +1,20 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./LoginModal.css";
 
-function LoginModal({ title, buttonText }) {
+function LoginModal({
+  title,
+  buttonText,
+  activeModal,
+  isOpen,
+  handleCloseModal,
+}) {
   return (
-    <ModalWithForm title={title}>
+    <ModalWithForm
+      title={title}
+      activeModal={activeModal}
+      isOpen={isOpen}
+      handleCloseModal={handleCloseModal}
+    >
       <label htmlFor="login__email" className="modal__label modal__label_login">
         Email{""}
         <input
