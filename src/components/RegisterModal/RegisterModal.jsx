@@ -17,7 +17,10 @@ function RegisterModal({
       isOpen={isOpen}
       handleCloseModal={handleCloseModal}
     >
-      <label htmlFor="signin__email" className="signin__email">
+      <label
+        htmlFor="signin__email"
+        className="signin__email modal__label_signup"
+      >
         Email{""}
         <input
           type="email"
@@ -26,7 +29,10 @@ function RegisterModal({
           placeholder="Enter email"
         />
       </label>
-      <label htmlFor="signin__password" className="signin__password">
+      <label
+        htmlFor="signin__password"
+        className="signin__password modal__label_signup"
+      >
         Password{""}
         <input
           type="password"
@@ -35,7 +41,10 @@ function RegisterModal({
           placeholder="Enter password"
         />
       </label>
-      <label htmlFor="signin__username" className="signin__username">
+      <label
+        htmlFor="signin__username"
+        className="signin__username modal__label_signup"
+      >
         Username{""}
         <input
           type="text"
@@ -45,10 +54,13 @@ function RegisterModal({
         />
       </label>
       <div className="btn__container">
-        <button className="modal__signup_btn">{buttonText}</button>
+        <button className="modal__register_btn">{buttonText}</button>
 
-        <button className="modal__signin_btn " onClick={handleLoginClick}>
-          or <a className="modal__signin_txt">Sign In</a>
+        <button
+          className="modal__login_instead_btn "
+          onClick={handleLoginClick}
+        >
+          or <a className="modal__register_txt">Sign In</a>
         </button>
       </div>
     </ModalWithForm>
