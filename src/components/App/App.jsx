@@ -5,12 +5,14 @@ import About from "../About/About.jsx";
 import Footer from "../Footer/Footer.jsx";
 import LoginModal from "../LoginModal/LoginModal.jsx";
 import RegisterModal from "../RegisterModal/RegisterModal.jsx";
+import ConfirmationModal from "../ConfirmationModal/ConfirmationModal.jsx";
 
 function App() {
   // const [count, setCount] = useState(0);
-  const [activeModal, setActiveModal] = useState("login");
+  const [activeModal, setActiveModal] = useState("confirm");
 
-  const handleLoginClick = () => {
+  const handleLoginClick = (e) => {
+    e.preventDefault();
     setActiveModal("login");
   };
 
@@ -47,6 +49,12 @@ function App() {
         isOpen={activeModal === "signup"}
         handleCloseModal={closeActiveModal}
         handleLoginClick={handleLoginClick}
+      />
+      <ConfirmationModal
+        title={"title"}
+        activeModal={activeModal}
+        handleCloseModal={closeActiveModal}
+        textContext="Confirmation text"
       />
     </div>
   );
