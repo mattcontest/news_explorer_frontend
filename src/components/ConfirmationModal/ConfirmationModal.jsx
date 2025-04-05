@@ -5,6 +5,7 @@ function ConfirmationModal({
   activeModal,
   handleCloseModal,
   buttonContent,
+  handleSignupClick,
 }) {
   return (
     <ModalTemplate
@@ -12,6 +13,7 @@ function ConfirmationModal({
       activeModal={activeModal}
       handleCloseModal={handleCloseModal}
       buttonContent={buttonContent}
+      handleSignupClick={handleSignupClick}
     />
   );
 }

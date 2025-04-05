@@ -6,6 +6,7 @@ function ModalTemplate({
   handleCloseModal,
   activeModal,
   buttonContent,
+  handleSignupClick,
 }) {
   return (
     <div
@@ -18,7 +19,9 @@ function ModalTemplate({
         <button className="modal__close" onClick={handleCloseModal}>
           <img src={close_btn} alt="Close" className="button__close" />
         </button>
-        <button className="modal__template_btn">{buttonContent}</button>
+        <button className="modal__template_btn" onClick={handleSignupClick}>
+          {buttonContent}
+        </button>
       </div>
     </div>
   );

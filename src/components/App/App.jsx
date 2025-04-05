@@ -9,7 +9,7 @@ import ConfirmationModal from "../ConfirmationModal/ConfirmationModal.jsx";
 
 function App() {
   // const [count, setCount] = useState(0);
-  const [activeModal, setActiveModal] = useState("confirm");
+  const [activeModal, setActiveModal] = useState("");
 
   const handleLoginClick = (e) => {
     e.preventDefault();
@@ -54,7 +54,8 @@ function App() {
         title={"Registation succesfully completed! "}
         activeModal={activeModal}
         handleCloseModal={closeActiveModal}
-        buttonContent="Sign in"
+        buttonContent={"Sign in"}
+        handleSignupClick={handleSignupClick}
       />
     </div>
   );
