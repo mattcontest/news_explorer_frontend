@@ -4,14 +4,14 @@ function ConfirmationModal({
   title,
   activeModal,
   handleCloseModal,
-  textContext,
+  buttonContent,
 }) {
   return (
     <ModalTemplate
       title={title}
       activeModal={activeModal}
       handleCloseModal={handleCloseModal}
-      textContent={textContext}
+      buttonContent={buttonContent}
     />
   );
 }

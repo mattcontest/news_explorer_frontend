@@ -51,10 +51,10 @@ function App() {
         handleLoginClick={handleLoginClick}
       />
       <ConfirmationModal
-        title={"title"}
+        title={"Registation succesfully completed! "}
         activeModal={activeModal}
         handleCloseModal={closeActiveModal}
-        textContext="Confirmation text"
+        buttonContent="Sign in"
       />
     </div>
   );
