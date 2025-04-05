@@ -6,6 +6,7 @@ import Footer from "../Footer/Footer.jsx";
 import LoginModal from "../LoginModal/LoginModal.jsx";
 import RegisterModal from "../RegisterModal/RegisterModal.jsx";
 import ConfirmationModal from "../ConfirmationModal/ConfirmationModal.jsx";
+import Main from "../Main/Main.jsx";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -30,6 +31,7 @@ function App() {
       <div className="page__content">
         <div className="page__style">
           <Header handleLoginClick={handleLoginClick} />
+          <Main isLoading={true} />
           <About />
           <Footer />
         </div>
