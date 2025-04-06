@@ -31,7 +31,8 @@ function App() {
       <div className="page__content">
         <div className="page__style">
           <Header handleLoginClick={handleLoginClick} />
-          <Main isLoading={true} />
+          <Main isLoading={false} />
+          {/* <Main isLoading={true} /> */}
           <About />
           <Footer />
         </div>
