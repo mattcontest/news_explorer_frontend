@@ -15,13 +15,13 @@ function Main({ isLoading }) {
         <p className="main__preloader_text">Searching for news...</p>
       </div>
     );
-  } else if (1 > 2) {
+  } else if (1 > 4) {
     content = (
       <div className="main__no-result">
         <NoResult />
       </div>
     );
-  } else if (2 > 1) {
+  } else if (2 > 0) {
     content = (
       <div className="main__content">
         <NewsCardsMap />

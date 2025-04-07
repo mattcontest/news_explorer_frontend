@@ -9,6 +9,7 @@ function NewsCardsMap() {
         <NewsCard />
         <NewsCard />
         <NewsCard />
+        <button className="show__more_btn">Show More</button>
       </ul>
     </div>
   );

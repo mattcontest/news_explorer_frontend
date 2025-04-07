@@ -1,12 +1,13 @@
 .newscards__map {
   display: grid;
-  border: solid black;
+  /* border: solid black; */
   margin: 0;
+  justify-content: center;
   /* height: 700px; */
 }
 
 .news__cards_list {
-  border: solid rgb(223, 255, 245);
+  /* border: solid rgb(223, 255, 245); */
   display: flex;
   flex-wrap: wrap;
   max-height: 1440px;
@@ -16,4 +17,18 @@
   gap: 16px;
   margin: 0;
   padding: 0;
+}
+
+.show__more_btn {
+  width: 288px;
+  height: 64px;
+  border-radius: 80px;
+  margin-top: 56px;
+  margin-bottom: 80px;
+  border: none;
+}
+
+.show__more_btn:hover {
+  opacity: 50%;
+  cursor: pointer;
 }
