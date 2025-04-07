@@ -1,5 +1,5 @@
 .news__card_wrapper {
-  border: solid black;
+  /* border: solid black; */
   list-style: none;
   width: 400px;
   height: 576px;
@@ -9,6 +9,8 @@
 .card__image {
   width: 400px;
   height: 272px;
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
 }
 
 .save__btn {
@@ -21,4 +23,19 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-radius: 10px;
+}
+
+.card__info {
+  background: white;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+
+  border-bottom-right-radius: 13px;
+  border-bottom-left-radius: 13px;
+}
+
+.card__header {
+  background-color: white;
 }
