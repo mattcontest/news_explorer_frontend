@@ -3,7 +3,7 @@
   list-style: none;
   width: 400px;
   height: 576px;
-  position: absolute;
+  /* position: absolute; */
 }
 
 .card__image {
@@ -38,4 +38,6 @@
 
 .card__header {
   background-color: white;
+  /* position: absolute; */
+  position: relative;
 }

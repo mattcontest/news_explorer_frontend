@@ -7,6 +7,8 @@ function NewsCardsMap() {
       <h2 className="news__cards_title">Search Results</h2>
       <ul className="news__cards_list">
         <NewsCard />
+        <NewsCard />
+        <NewsCard />
       </ul>
     </div>
   );

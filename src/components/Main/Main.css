@@ -38,6 +38,7 @@
 
 .main__content {
   background-color: rgba(245, 246, 247, 1);
-  height: 974px;
-  border: solid red;
+  /* height: 974px; */
+  height: auto;
+  /* border: solid red; */
 }
