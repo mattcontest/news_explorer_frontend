@@ -1,6 +1,7 @@
 import "./Main.css";
 import Preloader from "../Preloader/Preloader";
 import NoResult from "../NoResult/NoResult";
+import NewsCardsMap from "../NewsCardsMap/NewsCardsMap";
 
 function Main({ isLoading }) {
   let content = null;
@@ -14,10 +15,16 @@ function Main({ isLoading }) {
         <p className="main__preloader_text">Searching for news...</p>
       </div>
     );
-  } else {
+  } else if (1 > 2) {
     content = (
       <div className="main__no-result">
         <NoResult />
+      </div>
+    );
+  } else if (2 > 1) {
+    content = (
+      <div className="main__content">
+        <NewsCardsMap />
       </div>
     );
   }
