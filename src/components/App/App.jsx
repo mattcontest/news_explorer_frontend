@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import "./App.css";
 import Header from "../Header/Header.jsx";
+import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader.jsx";
 import About from "../About/About.jsx";
 import Footer from "../Footer/Footer.jsx";
 import LoginModal from "../LoginModal/LoginModal.jsx";
@@ -67,7 +68,8 @@ function App() {
               path="/saved-news"
               element={
                 <>
-                  <Header handleLoginClick={handleLoginClick} />
+                  {/* <Header handleLoginClick={handleLoginClick} /> */}
+                  <SavedNewsHeader handleLoginClick={handleLoginClick} />
                 </>
               }
             />
