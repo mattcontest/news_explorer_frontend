@@ -3,7 +3,7 @@ import Preloader from "../Preloader/Preloader";
 import NoResult from "../NoResult/NoResult";
 import NewsCardsMap from "../NewsCardsMap/NewsCardsMap";
 
-function Main({ isLoading }) {
+function Main({ isLoading, articles }) {
   let content = null;
 
   if (isLoading) {
@@ -24,7 +24,7 @@ function Main({ isLoading }) {
   } else if (2 > 0) {
     content = (
       <div className="main__content">
-        <NewsCardsMap />
+        <NewsCardsMap articles={articles} />
       </div>
     );
   }

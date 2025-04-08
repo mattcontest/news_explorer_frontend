@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Route, Routes, Navigate } from "react-router-dom";
 import "./App.css";
 import Header from "../Header/Header.jsx";
 import About from "../About/About.jsx";
@@ -7,10 +8,13 @@ import LoginModal from "../LoginModal/LoginModal.jsx";
 import RegisterModal from "../RegisterModal/RegisterModal.jsx";
 import ConfirmationModal from "../ConfirmationModal/ConfirmationModal.jsx";
 import Main from "../Main/Main.jsx";
+import { APIkey } from "../../utils/newsApi.js";
+import { getNews } from "../../utils/newsApi.js";
 
 function App() {
   // const [count, setCount] = useState(0);
   const [activeModal, setActiveModal] = useState("");
+  const [newsArticles, setNewsArticles] = useState([]);
 
   const handleLoginClick = (e) => {
     e.preventDefault();
@@ -26,14 +30,49 @@ function App() {
     setActiveModal("");
   };
 
+  useEffect(() => {
+    //Hardcoding the query for the fetch call for Stage 1.2
+    getNews({ q: "penguin", apiKey: APIkey })
+      .then((data) => {
+        console.log("Received data", data);
+        const articles = data.articles;
+        if (!articles || articles.length == 0) {
+          setNewsArticles([]);
+        } else {
+          setNewsArticles([...articles]);
+        }
+      })
+      .then(() => {
+        console.log("Check inside newsArticles array", newsArticles);
+      });
+  }, []);
+
   return (
     <div className="page">
       <div className="page__content">
         <div className="page__style">
-          <Header handleLoginClick={handleLoginClick} />
-          <Main isLoading={false} />
-          {/* <Main isLoading={true} /> */}
-          <About />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Header handleLoginClick={handleLoginClick} />
+                  <Main isLoading={false} articles={newsArticles} />
+                  <About />
+                </>
+              }
+            />
+
+            <Route
+              path="/saved-news"
+              element={
+                <>
+                  <Header handleLoginClick={handleLoginClick} />
+                </>
+              }
+            />
+            {/* <Main isLoading={true} /> */}
+          </Routes>
           <Footer />
         </div>
       </div>
