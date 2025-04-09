@@ -30,3 +30,11 @@
   font-weight: 400;
   color: rgba(26, 27, 34, 1);
 }
+
+.saved__news_header_keywords {
+  font-family: "Roboto";
+  font-family: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(26, 27, 34, 1);
+}

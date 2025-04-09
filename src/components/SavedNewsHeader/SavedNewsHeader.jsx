@@ -16,7 +16,7 @@ function SavedNewsHeader({ handleLoginClick, isLoggedIn }) {
               Elise, you have 5 saved articles
             </h1>
             <p className="saved__news_header_keywords">
-              By keywords: Nature, Yellowstone, and 2 other
+              By keywords: <b>Nature</b>, <b>Yellowstone</b>,<b> and 2 other</b>
             </p>
           </div>
         </div>
