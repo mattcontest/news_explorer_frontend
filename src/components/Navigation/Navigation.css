@@ -69,3 +69,25 @@
   background-color: white;
   border: solid 1px rgba(209, 210, 214, 1);
 }
+
+.saved__articles_btn {
+  height: 80px;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  font-family: "Roboto";
+  font-weight: 500;
+  /* color: rgba(255, 255, 255, 1); */
+  background-color: transparent;
+  border-bottom: 2px solid rgba(255, 255, 255, 1);
+  cursor: pointer;
+}
+
+.logout_btn {
+  margin-left: 42px;
+  margin-right: 104px;
+  width: 112px;
+  height: 48px;
+  border-radius: 100px;
+  background-color: transparent;
+}

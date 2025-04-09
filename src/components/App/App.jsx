@@ -16,6 +16,7 @@ function App() {
   // const [count, setCount] = useState(0);
   const [activeModal, setActiveModal] = useState("");
   const [newsArticles, setNewsArticles] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   const handleLoginClick = (e) => {
     e.preventDefault();
@@ -57,7 +58,10 @@ function App() {
               path="/"
               element={
                 <>
-                  <Header handleLoginClick={handleLoginClick} />
+                  <Header
+                    handleLoginClick={handleLoginClick}
+                    isLoggedIn={isLoggedIn}
+                  />
                   <Main isLoading={false} articles={newsArticles} />
                   <About />
                 </>
@@ -69,7 +73,10 @@ function App() {
               element={
                 <>
                   {/* <Header handleLoginClick={handleLoginClick} /> */}
-                  <SavedNewsHeader handleLoginClick={handleLoginClick} />
+                  <SavedNewsHeader
+                    handleLoginClick={handleLoginClick}
+                    isLoggedIn={isLoggedIn}
+                  />
                 </>
               }
             />
