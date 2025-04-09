@@ -91,3 +91,16 @@
   border-radius: 100px;
   background-color: transparent;
 }
+
+.saved__articles_btn {
+  height: 80px;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  font-family: "Roboto";
+  font-weight: 500;
+  border-bottom: 3px solid rgba(26, 27, 34, 1);
+  cursor: pointer;
+  width: 178px;
+  margin-left: 42px;
+}
