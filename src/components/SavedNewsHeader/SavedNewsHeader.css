@@ -2,22 +2,18 @@
   /* border: solid red; */
   background-color: transparent;
   position: relative;
-
   width: auto;
   height: 294px;
-  /* border: solid red; */
 }
 
 .saved__news_header_content {
   display: flex;
   justify-content: flex-start;
-  padding-left: 104px;
+  padding-left: 109px;
 }
 
 .saved__news__header_title {
   width: 712px;
-  /* height: 24px;
-  border: solid red; */
   font-family: "Roboto";
   font-size: 18px;
   line-height: 24px;
@@ -28,7 +24,6 @@
 .saved__news_header_description {
   width: 530px;
   height: 92px;
-  /* border: solid red; */
   font-size: 40px;
   line-height: 46px;
   font-family: "Roboto Slab";

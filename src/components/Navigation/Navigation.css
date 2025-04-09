@@ -110,3 +110,9 @@
   width: 178px;
   margin-left: 42px;
 }
+
+.nav_links {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+}
