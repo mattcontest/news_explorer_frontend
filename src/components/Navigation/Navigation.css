@@ -90,6 +90,12 @@
   height: 48px;
   border-radius: 100px;
   background-color: transparent;
+  cursor: pointer;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  vertical-align: middle;
 }
 
 .saved__articles_btn {
