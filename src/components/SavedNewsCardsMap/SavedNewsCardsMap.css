@@ -1,0 +1,16 @@
+.saved__news_cards_map {
+  border: solid red;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  /* justify-items: center; */
+}
+
+.saved__news_list {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1440px;
+  max-height: 1440px;
+  /* overflow: hidden; */
+  /* width: 100%; */
+}

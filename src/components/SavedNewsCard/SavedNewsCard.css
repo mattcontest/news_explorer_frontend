@@ -1,0 +1,40 @@
+.saved__news_card_wrapper {
+  list-style: none;
+  width: 400px;
+  height: 576px;
+}
+
+.card__image {
+  width: 400px;
+  height: 272px;
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
+}
+
+.saved__card_header {
+  background-color: white;
+  position: relative;
+}
+
+.saved_news_delete_btn {
+  position: absolute;
+  top: 400px;
+  left: 340px;
+  top: 21px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.saved__card_info {
+  background: white;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  border-bottom-right-radius: 13px;
+  border-bottom-left-radius: 13px;
+  position: relative;
+}

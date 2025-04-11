@@ -47,7 +47,8 @@
   font-weight: 400;
   width: 721px;
   height: 46px;
-  margin-left: -499px;
+  /* margin-left: -499px; */
+  width: 86%;
   margin-top: 80px;
   margin-bottom: 64px;
 }

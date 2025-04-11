@@ -3,6 +3,7 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import "./App.css";
 import Header from "../Header/Header.jsx";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader.jsx";
+import SavedNews from "../SavedNews/SavedNews.jsx";
 import About from "../About/About.jsx";
 import Footer from "../Footer/Footer.jsx";
 import LoginModal from "../LoginModal/LoginModal.jsx";
@@ -77,6 +78,7 @@ function App() {
                     handleLoginClick={handleLoginClick}
                     isLoggedIn={isLoggedIn}
                   />
+                  <SavedNews articles={newsArticles} />
                 </>
               }
             />
