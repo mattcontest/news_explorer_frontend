@@ -18,6 +18,10 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [newsArticles, setNewsArticles] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [keyword, setKeyword] = useState("");
+  const [noResults, setNoResults] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [savedNews, setSavedNews] = useState([]);
 
   const handleLoginClick = (e) => {
     e.preventDefault();
@@ -33,9 +37,36 @@ function App() {
     setActiveModal("");
   };
 
+  const handleSearchSubmit = (keyword) => {
+    setKeyword(keyword);
+    setIsLoading(true);
+    getNews((res) => {
+      const articles = res.articles;
+      if (!articles || articles.length === 0) {
+        setNoResults(true);
+      } else {
+        setNewsArticles(
+          articles.map((article) => {
+            return {
+              ...article,
+              // keyword: keyword,
+            };
+          })
+        );
+
+        console.log("Content of articles after search submit", newsArticles);
+      }
+    })
+      .catch((err) => {
+        console.error(`Error ${err}`);
+      })
+      .finally(() => setIsLoading(false));
+    setNoResults(false);
+  };
+
   useEffect(() => {
     //Hardcoding the query for the fetch call for Stage 1.2
-    getNews({ q: "penguin", apiKey: APIkey })
+    getNews({ q: keyword, apiKey: APIkey })
       .then((data) => {
         console.log("Received data", data);
         const articles = data.articles;
@@ -48,7 +79,7 @@ function App() {
       .then(() => {
         console.log("Check inside newsArticles array", newsArticles);
       });
-  }, []);
+  }, [keyword]);
 
   return (
     <div className="page">
@@ -62,6 +93,9 @@ function App() {
                   <Header
                     handleLoginClick={handleLoginClick}
                     isLoggedIn={isLoggedIn}
+                    handleSearchSubmit={handleSearchSubmit}
+                    keyword={keyword}
+                    setKeyword={setKeyword}
                   />
                   <Main isLoading={false} articles={newsArticles} />
                   <About />

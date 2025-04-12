@@ -3,7 +3,7 @@ import Navigation from "../Navigation/Navigation";
 import SearchForm from "../SearchForm/SearchForm";
 // import { Routes, Route, Link, useLocation, NavLink } from "react-router-dom";
 
-function Header({ handleLoginClick }) {
+function Header({ handleLoginClick, handleSearchSubmit, keyword, setKeyword }) {
   // const { pathname } = useLocation();
   return (
     <div className="header">
@@ -19,7 +19,11 @@ function Header({ handleLoginClick }) {
           </div>
         </div>
 
-        <SearchForm />
+        <SearchForm
+          handleSearchSubmit={handleSearchSubmit}
+          setKeyword={setKeyword}
+          keyword={keyword}
+        />
       </div>
     </div>
   );
