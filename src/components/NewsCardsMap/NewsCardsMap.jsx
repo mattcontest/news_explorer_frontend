@@ -13,7 +13,7 @@ function NewsCardsMap({ articles }) {
               imageUrl={article.urlToImage}
               title={article.title}
               description={article.description}
-              author={article.author}
+              author={article.source?.name || "Uknown Source"}
               date={new Date(article.publishedAt).toLocaleDateString("en-US", {
                 month: "long",
                 day: "numeric",

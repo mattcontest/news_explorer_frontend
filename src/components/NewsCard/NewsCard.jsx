@@ -2,7 +2,7 @@ import "./NewsCard.css";
 import logo from "../../assets/author_bg.jpg";
 import bookmark from "../../assets/bookmark.svg";
 
-function NewsCard({ key, imageUrl, title, description, date, author }) {
+function NewsCard({ imageUrl, title, description, date, author }) {
   return (
     <li className="news__card_wrapper">
       <div className="card__header">

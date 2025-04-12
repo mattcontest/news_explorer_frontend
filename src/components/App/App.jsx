@@ -39,8 +39,8 @@ function App() {
 
   const handleSearchSubmit = (keyword) => {
     setKeyword(keyword);
-    setIsLoading(true);
     getNews((res) => {
+      setIsLoading(true);
       const articles = res.articles;
       if (!articles || articles.length === 0) {
         setNoResults(true);
@@ -68,12 +68,14 @@ function App() {
     //Hardcoding the query for the fetch call for Stage 1.2
     getNews({ q: keyword, apiKey: APIkey })
       .then((data) => {
+        setIsLoading(true);
         console.log("Received data", data);
         const articles = data.articles;
         if (!articles || articles.length == 0) {
-          setNewsArticles([]);
+          // setNewsArticles([]);
+          setNoResults(true);
         } else {
-          setNewsArticles([...articles]);
+          return setNewsArticles(articles);
         }
       })
       .then(() => {
