@@ -1,4 +1,6 @@
 import "./Navigation.css";
+import logout from "../../assets/logout.svg";
+
 import { useLocation, Route, Routes, NavLink } from "react-router-dom";
 
 function Navigation({ handleLoginClick, isLoggedIn }) {
@@ -15,21 +17,31 @@ function Navigation({ handleLoginClick, isLoggedIn }) {
             NewsExplorer
           </p>
         </NavLink>
-        <button
-          className={`home_btn ${pathname === "/saved-news" && "home_btn__saved_news"}`}
-        >
-          Home
-        </button>
+
+        <NavLink to="/">
+          <button
+            className={`home_btn ${pathname === "/saved-news" && "home_btn__saved_news"}`}
+          >
+            Home
+          </button>
+        </NavLink>
         {isLoggedIn ? (
           <div className="nav_links">
-            <button
-              // className={`saved__articles_btn ${pathname === "/saved-news" && "home_btn__saved_news"}`}
-              className={`saved__articles_btn `}
-            >
-              Saved articles
-            </button>
+            <NavLink to="/saved-news">
+              <button
+                // className={`saved__articles_btn ${pathname === "/saved-news" && "home_btn__saved_news"}`}
+                className={`saved__articles_btn `}
+              >
+                Saved articles
+              </button>
+            </NavLink>
 
-            <button className="logout_btn">Log Out</button>
+            <NavLink to="/">
+              <button className="logout_btn">
+                <p className="username">Elise</p>
+                <img src={logout} className="logout__img" />
+              </button>
+            </NavLink>
           </div>
         ) : (
           <button
