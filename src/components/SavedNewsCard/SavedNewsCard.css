@@ -16,6 +16,25 @@
   position: relative;
 }
 
+.saved__news_keyword {
+  /* border: solid red; */
+  /* width: 40px; */
+  height: 40px;
+  top: 21px;
+  position: absolute;
+  left: 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 14px;
+  /* line-height: 24px; */
+  padding-left: 22px;
+  padding-right: 22px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
 .saved_news_delete_btn {
   position: absolute;
   top: 400px;
@@ -37,4 +56,29 @@
   border-bottom-right-radius: 13px;
   border-bottom-left-radius: 13px;
   position: relative;
+}
+
+.saved__card_info_wrapper {
+  padding-top: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 24px;
+}
+
+.saved__card_date {
+  margin: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(182, 188, 191, 1);
+}
+
+.saved__news_card_description {
+  margin: 0;
+  margin-top: 16px;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  max-height: 88px;
 }

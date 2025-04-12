@@ -15,7 +15,8 @@ function SavedNewsCard({
         <button className="saved_news_delete_btn">
           <img src="" alt="" className="btn__delete_img" />
         </button>
-        <div className="saved__news_keyword">{keyword}</div>
+        {/* <div className="saved__news_keyword">{keyword}</div> */}
+        <button className="saved__news_keyword">Parks</button>
       </div>
 
       <div className="saved__card_info">

@@ -9,12 +9,19 @@ function SavedNewsCardsMap({ articles }) {
           {articles.slice(0, 6).map((article) => {
             return (
               <SavedNewsCard
-                date={article.publishedAt}
+                date={new Date(article.publishedAt).toLocaleDateString(
+                  "en-US",
+                  {
+                    month: "long",
+                    day: "numeric",
+                    year: "numeric",
+                  }
+                )}
                 title={article.title}
                 description={article.description}
                 author={article.author}
                 keyword={article.keyword}
-                imageUrl={article.imageUrl}
+                imageUrl={article.urlToImage}
               />
             );
           })}
