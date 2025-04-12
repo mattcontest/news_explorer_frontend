@@ -1,8 +1,8 @@
 .saved__news_cards_map {
-  border: solid red;
+  /* border: solid red; */
   margin: 0;
-  display: flex;
-  justify-content: center;
+  /* display: flex; */
+  /* justify-content: center; */
   /* justify-items: center; */
 }
 
@@ -10,7 +10,26 @@
   display: flex;
   flex-wrap: wrap;
   max-width: 1440px;
-  max-height: 1440px;
+  /* max-height: 1440px; */
+  padding-left: 106px;
+  padding-top: 62px;
+  gap: 16px;
   /* overflow: hidden; */
   /* width: 100%; */
+  /* border: solid purple; */
+}
+
+.saved__show_more_btn {
+  /* border: solid red; */
+  width: 199px;
+  height: 70px;
+}
+
+.saved__news_wrapper {
+  /* border: solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(245, 246, 247, 1);
 }

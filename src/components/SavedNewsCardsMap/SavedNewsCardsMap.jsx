@@ -19,7 +19,7 @@ function SavedNewsCardsMap({ articles }) {
             );
           })}
         </ul>
-        <button className="show__more_btn">Show More</button>
+        {/* <button className="saved__show_more_btn">Show More</button> */}
       </div>
     </div>
   );
