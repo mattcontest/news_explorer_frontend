@@ -1,4 +1,5 @@
 import "./SavedNewsCard.css";
+import trash from "../../assets/trash.svg";
 
 function SavedNewsCard({
   title,
@@ -13,7 +14,7 @@ function SavedNewsCard({
       <div className="saved__card_header">
         <img src={imageUrl} alt="" className="card__image" />
         <button className="saved_news_delete_btn">
-          <img src="" alt="" className="btn__delete_img" />
+          <img src={trash} alt="" className="btn__delete_img" />
         </button>
         {/* <div className="saved__news_keyword">{keyword}</div> */}
         <button className="saved__news_keyword">Parks</button>
