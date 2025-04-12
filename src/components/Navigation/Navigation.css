@@ -116,3 +116,8 @@
   overflow: hidden;
   align-items: center;
 }
+
+.navbar_link {
+  margin-right: auto;
+  text-decoration: none;
+}

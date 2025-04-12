@@ -8,11 +8,13 @@ function Navigation({ handleLoginClick, isLoggedIn }) {
       <div
         className={`navbar ${pathname === "/saved-news" && "navbar__saved_news"}`}
       >
-        <p
-          className={`logo ${pathname === "/saved-news" && "logo__saved_news"}`}
-        >
-          NewsExplorer
-        </p>
+        <NavLink to="/" className="navbar_link">
+          <p
+            className={`logo ${pathname === "/saved-news" && "logo__saved_news"}`}
+          >
+            NewsExplorer
+          </p>
+        </NavLink>
         <button
           className={`home_btn ${pathname === "/saved-news" && "home_btn__saved_news"}`}
         >

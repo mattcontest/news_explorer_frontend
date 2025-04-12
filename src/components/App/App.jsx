@@ -117,6 +117,7 @@ function App() {
               }
             />
             {/* <Main isLoading={true} /> */}
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
           <Footer />
         </div>
