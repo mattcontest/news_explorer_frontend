@@ -38,10 +38,11 @@ function App() {
   };
 
   const handleSearchSubmit = (keyword) => {
+    setIsLoading(true);
     setKeyword(keyword);
     getNews((res) => {
-      setIsLoading(true);
       const articles = res.articles;
+      console.log("Check articles", articles);
       if (!articles || articles.length === 0) {
         setNoResults(true);
       } else {
@@ -59,6 +60,7 @@ function App() {
     })
       .catch((err) => {
         console.error(`Error ${err}`);
+        setNoResults(true);
       })
       .finally(() => setIsLoading(false));
     setNoResults(false);
@@ -66,9 +68,10 @@ function App() {
 
   useEffect(() => {
     //Hardcoding the query for the fetch call for Stage 1.2
-    getNews({ q: keyword, apiKey: APIkey })
+    getNews({ q: keyword })
       .then((data) => {
         setIsLoading(true);
+
         console.log("Received data", data);
         const articles = data.articles;
         if (!articles || articles.length == 0) {
@@ -99,7 +102,11 @@ function App() {
                     keyword={keyword}
                     setKeyword={setKeyword}
                   />
-                  <Main isLoading={false} articles={newsArticles} />
+                  <Main
+                    isLoading={isLoading}
+                    articles={newsArticles}
+                    noResults={noResults}
+                  />
                   <About />
                 </>
               }

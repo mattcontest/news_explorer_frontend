@@ -3,15 +3,18 @@ import "./SearchForm.css";
 
 function SearchForm({ handleSearchSubmit, keyword, setKeyword }) {
   const [searchItem, setSearchItem] = useState("");
+  const [inputValue, setInputValue] = useState("");
 
   const handleKeyword = (e) => {
     e.preventDefault();
     setSearchItem(e.target.value);
+    setInputValue(e.target.value);
   };
 
   const handleSearch = (e) => {
     e.preventDefault();
     handleSearchSubmit(searchItem);
+    setInputValue("");
   };
 
   return (
@@ -25,7 +28,7 @@ function SearchForm({ handleSearchSubmit, keyword, setKeyword }) {
             name="search"
             placeholder="Enter topic"
             onChange={handleKeyword}
-            // value={keyword}
+            value={inputValue}
           />
           <button className="search__btn" type="submit">
             Search
