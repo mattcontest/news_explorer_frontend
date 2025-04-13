@@ -22,11 +22,14 @@ function Main({ isLoading, articles, noResults }) {
       </div>
     );
   } else if (!noResults) {
-    content = (
-      <div className="main__content">
-        <NewsCardsMap articles={articles} />
-      </div>
-    );
+    {
+      articles > 0 &&
+        (content = (
+          <div className="main__content">
+            <NewsCardsMap articles={articles} />
+          </div>
+        ));
+    }
   }
   return <>{content}</>;
 }

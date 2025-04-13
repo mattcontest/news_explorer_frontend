@@ -2,7 +2,8 @@
   display: grid;
   /* border: solid black; */
   margin: 0;
-  justify-content: center;
+  /* justify-content: center; */
+  padding-left: 106px;
   justify-items: center;
   /* max-height: 576px; */
   /* width: 400px; */
@@ -48,7 +49,7 @@
   width: 721px;
   height: 46px;
   /* margin-left: -499px; */
-  width: 86%;
+  width: 100%;
   margin-top: 80px;
   margin-bottom: 64px;
 }
