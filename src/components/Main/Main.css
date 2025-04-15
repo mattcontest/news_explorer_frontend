@@ -39,6 +39,10 @@
 .main__content {
   background-color: rgba(245, 246, 247, 1);
   /* height: 974px; */
+  /* height: auto; */
+  /* min-height: 50vh; */
+  display: flex;
   height: auto;
+  flex-direction: column;
   /* border: solid red; */
 }

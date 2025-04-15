@@ -29,7 +29,7 @@ function NewsCardsMap({ articles }) {
           );
         })}
       </ul>
-      {cardsShown <= 3 ? (
+      {cardsShown <= 18 ? (
         <button className="show__more_btn" onClick={showMore}>
           Show More
         </button>
