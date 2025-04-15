@@ -23,7 +23,7 @@ function Main({ isLoading, articles, noResults }) {
     );
   } else if (!noResults) {
     {
-      articles > 0 &&
+      articles.length > 0 &&
         (content = (
           <div className="main__content">
             <NewsCardsMap articles={articles} />

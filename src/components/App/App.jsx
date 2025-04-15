@@ -39,25 +39,28 @@ function App() {
 
   const handleSearchSubmit = (keyword) => {
     setIsLoading(true);
-    setKeyword(keyword);
-    getNews((res) => {
-      const articles = res.articles;
-      console.log("Check articles", articles);
-      if (!articles || articles.length === 0) {
-        setNoResults(true);
-      } else {
-        setNewsArticles(
-          articles.map((article) => {
-            return {
-              ...article,
-              // keyword: keyword,
-            };
-          })
-        );
 
-        console.log("Content of articles after search submit", newsArticles);
-      }
-    })
+    setKeyword(keyword);
+
+    getNews({ q: keyword })
+      .then((res) => {
+        const articles = res.articles;
+        console.log("Check articles", articles);
+        if (!articles || articles.length === 0) {
+          setNoResults(true);
+        } else {
+          setNewsArticles(
+            articles.map((article) => {
+              return {
+                ...article,
+                // keyword: keyword,
+              };
+            })
+          );
+
+          console.log("Content of articles after search submit", newsArticles);
+        }
+      })
       .catch((err) => {
         console.error(`Error ${err}`);
         setNoResults(true);
@@ -66,25 +69,24 @@ function App() {
     setNoResults(false);
   };
 
-  useEffect(() => {
-    //Hardcoding the query for the fetch call for Stage 1.2
-    getNews({ q: keyword })
-      .then((data) => {
-        setIsLoading(true);
-
-        console.log("Received data", data);
-        const articles = data.articles;
-        if (!articles || articles.length == 0) {
-          // setNewsArticles([]);
-          setNoResults(true);
-        } else {
-          return setNewsArticles(articles);
-        }
-      })
-      .then(() => {
-        console.log("Check inside newsArticles array", newsArticles);
-      });
-  }, [keyword]);
+  // useEffect(() => {
+  //Hardcoding the query for the fetch call for Stage 1.2
+  // getNews({ q: keyword })
+  //   .then((data) => {
+  //     setIsLoading(true);
+  //     console.log("Received data", data);
+  //     const articles = data.articles;
+  //     if (!articles || articles.length == 0) {
+  //       // setNewsArticles([]);
+  //       setNoResults(true);
+  //     } else {
+  //       return setNewsArticles(articles);
+  //     }
+  //   })
+  //   .then(() => {
+  //     console.log("Check inside newsArticles array", newsArticles);
+  //   });
+  // }, [newsArticles]);
 
   return (
     <div className="page">

@@ -1,11 +1,13 @@
+import SavedNewsCardsMap from "../SavedNewsCardsMap/SavedNewsCardsMap";
 import "./SavedNews.css";
-import SavedNewsCardMap from "../SavedNewsCardsMap/SavedNewsCardsMap";
 
 function SavedNews({ articles }) {
+  console.log("Check articles", articles);
+
   return (
     <div className="saved__news">
       <div className="saved__news_wrapper">
-        <SavedNewsCardMap articles={articles} />
+        <SavedNewsCardsMap articles={articles} />
       </div>
     </div>
   );
