@@ -1,12 +1,18 @@
 import "./NewsCardsMap.css";
 import NewsCard from "../NewsCard/NewsCard";
+import { useState } from "react";
 
 function NewsCardsMap({ articles }) {
+  const [cardsShown, setCardsShown] = useState(3);
+  const showMore = (e) => {
+    e.preventDefault();
+    setCardsShown(cardsShown + 3);
+  };
   return (
     <div className="newscards__map">
       <h2 className="news__cards_title">Search Results</h2>
       <ul className="news__cards_list">
-        {articles.slice(0, 6).map((article) => {
+        {articles.slice(0, cardsShown).map((article) => {
           return (
             <NewsCard
               key={article._id}
@@ -23,7 +29,13 @@ function NewsCardsMap({ articles }) {
           );
         })}
       </ul>
-      <button className="show__more_btn">Show More</button>
+      {cardsShown <= 3 ? (
+        <button className="show__more_btn" onClick={showMore}>
+          Show More
+        </button>
+      ) : (
+        ""
+      )}
     </div>
   );
 }
