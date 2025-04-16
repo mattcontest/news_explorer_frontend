@@ -56,11 +56,16 @@
   font-size: 40px;
   font-weight: 400;
   width: 721px;
-  width: auto;
+  /* width: auto; */
   height: 46px;
   /* margin-left: -499px; */
   /* width: calc(100% -104px); */
   margin-top: 80px;
   margin-bottom: 64px;
-  margin-left: 104px;
+  align-self: flex-start;
+  margin-left: 108px;
+  /* padding-left: 205px; */
+  /* margin-left: 235px; */
+  /* margin-left: -104px; */
+  /* padding-left: 204px; */
 }

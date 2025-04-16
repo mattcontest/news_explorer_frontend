@@ -55,3 +55,29 @@
   max-width: 600px;
   max-height: 120px;
 }
+
+@media screen and (max-width: 768px) {
+  .about {
+    overflow: hidden;
+  }
+
+  .about__wrapper {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 40px;
+  }
+
+  .author__image-avatar {
+    /* padding-top: 61px; */
+    margin-top: 61px;
+    object-fit: cover;
+    width: 232px;
+    height: 232px;
+  }
+
+  .author_title {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
