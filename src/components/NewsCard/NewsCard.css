@@ -98,3 +98,45 @@
   text-transform: uppercase;
   color: rgba(182, 188, 191, 1);
 }
+
+@media screen and (max-width: 768px) {
+  .news__card_wrapper {
+    width: 224px;
+    height: 420px;
+    margin-bottom: 8px;
+  }
+
+  .card__image {
+    width: 224px;
+    height: 150px;
+  }
+
+  .card__date {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .card__name {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 24px;
+    overflow: hidden;
+  }
+
+  .card__description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    overflow: hidden;
+  }
+
+  .card__author {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 0;
+    margin: 0;
+    margin-top: 12px;
+  }
+}
