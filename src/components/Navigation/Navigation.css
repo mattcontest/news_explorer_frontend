@@ -155,6 +155,10 @@
 
   .logo {
     margin-left: 40px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    vertical-align: middle;
   }
 
   .signin_btn {
