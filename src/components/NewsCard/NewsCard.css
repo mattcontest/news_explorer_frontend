@@ -24,6 +24,8 @@
   flex-direction: column;
   justify-content: center;
   border-radius: 10px;
+  background-color: white;
+  border: solid white;
 }
 
 .card__info {
@@ -97,6 +99,10 @@
   line-height: 20px;
   text-transform: uppercase;
   color: rgba(182, 188, 191, 1);
+}
+
+.btn__image {
+  background-color: white;
 }
 
 @media screen and (max-width: 768px) {
