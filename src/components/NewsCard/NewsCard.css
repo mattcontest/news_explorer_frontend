@@ -26,6 +26,7 @@
   border-radius: 10px;
   background-color: white;
   border: solid white;
+  cursor: pointer;
 }
 
 .card__info {
@@ -44,10 +45,6 @@
   /* position: absolute; */
   position: relative;
 }
-
-/* .card__author {
-  margin: 0;
-} */
 
 .card__date {
   /* border: solid red; */
