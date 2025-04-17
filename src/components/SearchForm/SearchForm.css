@@ -53,9 +53,11 @@
 
 @media screen and (max-width: 768px) {
   .search_form_wrapper {
-    max-width: 452px;
+    /* max-width: 452px; */
+    max-width: 432px;
     max-height: 56px;
-    margin-top: 48px;
+    margin-top: 30px;
+    margin-left: 143px;
   }
 
   .search_form {
@@ -68,9 +70,11 @@
 
   .search__form {
     height: 56px;
+    width: 448px;
   }
 
   .search__btn {
     height: 56px;
+    width: 160px;
   }
 }

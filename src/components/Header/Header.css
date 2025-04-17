@@ -48,6 +48,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .header {
+    height: 400px;
+  }
+
   .header__title {
     margin-top: 38px;
     margin-bottom: 16px;
