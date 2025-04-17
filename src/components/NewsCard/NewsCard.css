@@ -139,4 +139,9 @@
     margin: 0;
     margin-top: 12px;
   }
+
+  .save__btn {
+    left: 176px;
+    top: 7px;
+  }
 }
