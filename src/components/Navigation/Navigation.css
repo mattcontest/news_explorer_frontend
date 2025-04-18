@@ -101,6 +101,7 @@
   align-items: center;
   padding-left: 19px;
   padding-right: 10px;
+  border: solid rgba(209, 210, 214, 1) 1px;
 }
 
 .saved__articles_btn {
