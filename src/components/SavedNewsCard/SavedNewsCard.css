@@ -23,6 +23,7 @@
   top: 21px;
   position: absolute;
   left: 24px;
+  border: white;
   border-radius: 10px;
   cursor: pointer;
   font-family: "Roboto";
@@ -33,6 +34,7 @@
   padding-right: 22px;
   padding-top: 8px;
   padding-bottom: 8px;
+  background-color: white;
 }
 
 .saved_news_delete_btn {
@@ -45,7 +47,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border: white;
   border-radius: 10px;
+  align-items: center;
+  background-color: white;
 }
 
 .saved__card_info {
@@ -133,5 +138,21 @@
     margin-top: 12px;
     margin-bottom: 16px;
     padding: 0;
+  }
+
+  .saved__news_keyword {
+    height: 40px;
+    width: 83px;
+    right: 92px;
+    left: 8px;
+    top: 8px;
+    border-radius: 10px;
+  }
+
+  .saved_news_delete_btn {
+    left: 174px;
+    right: -162px;
+    top: 8px;
+    left: 178px;
   }
 }

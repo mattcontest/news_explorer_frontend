@@ -71,4 +71,8 @@
     font-size: 18px;
     line-height: 24px;
   }
+
+  .saved__news_header_content {
+    padding-left: 40px;
+  }
 }

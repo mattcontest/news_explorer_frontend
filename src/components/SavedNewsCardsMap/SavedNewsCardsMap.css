@@ -42,8 +42,15 @@
 @media screen and (max-width: 768px) {
   .saved__news_list {
     gap: 8px;
+    /* row-gap: 42px; */
     row-gap: 42px;
-    column-gap: 16px;
+    column-gap: 8px;
+    /* border: solid red; */
+    /* padding: 0; */
+    /* padding-left: 9px; */
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 32px;
   }
 
   .saved__news_wrapper {
