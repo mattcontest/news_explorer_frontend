@@ -1,5 +1,4 @@
 .news__card_wrapper {
-  /* border: solid black; */
   list-style: none;
   width: 400px;
   height: 576px;
@@ -42,14 +41,11 @@
 
 .card__header {
   background-color: white;
-  /* position: absolute; */
   position: relative;
 }
 
 .card__date {
-  /* border: solid red; */
   margin: 0;
-  /* margin-top: 17px; */
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
@@ -67,9 +63,6 @@
 }
 
 .card__info_wrapper {
-  /* border: solid red; */
-  /* margin-left: 24px; */
-  /* margin-right: 24px; */
   padding-top: 24px;
   padding-left: 24px;
   padding-right: 24px;
@@ -87,8 +80,6 @@
 }
 
 .card__author {
-  /* margin-top: 18px; */
-
   padding-top: 18px;
   font-family: "Roboto Slab";
   font-weight: 700;

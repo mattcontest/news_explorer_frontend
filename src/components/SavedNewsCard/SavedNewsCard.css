@@ -87,3 +87,19 @@
   height: 24px;
   width: 24px;
 }
+
+@media screen and (max-width: 768px) {
+  .saved__news_card_wrapper {
+    /* border: solid red; */
+    width: 224px;
+    height: 420px;
+  }
+
+  .saved__news_card_name {
+    overflow: hidden;
+  }
+
+  .saved__news_card_description {
+    overflow: hidden;
+  }
+}

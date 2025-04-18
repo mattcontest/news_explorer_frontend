@@ -176,4 +176,36 @@
     font-weight: 500;
     font-size: 16px;
   }
+
+  .navbar__saved_news {
+    /* border: solid red; */
+    height: 66px;
+  }
+
+  .logo__saved_news {
+    width: 200px;
+    height: 24.8px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+
+    margin-left: 40px;
+  }
+
+  .logout_btn {
+    margin-right: 40px;
+    margin-left: 16px;
+  }
+
+  .saved__articles_btn {
+    font-weight: 500;
+    height: 66px;
+    width: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* vertical-align: baseline; */
+    /* justify-content: center; */
+    /* border: solid red; */
+  }
 }
