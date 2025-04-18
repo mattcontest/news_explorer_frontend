@@ -95,11 +95,43 @@
     height: 420px;
   }
 
+  .saved__card_info_wrapper {
+    /* padding: 0; */
+    padding-top: 0px;
+    margin-top: 20px;
+  }
+
+  .saved__card_date {
+    margin: 0;
+    padding: 0;
+    width: 144px;
+    height: 24px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
   .saved__news_card_name {
     overflow: hidden;
+    margin: 0;
+    margin-top: 8px;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 24px;
   }
 
   .saved__news_card_description {
     overflow: hidden;
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    font-family: "Roboto";
+  }
+
+  .saved__card_author {
+    margin-top: 12px;
+    margin-bottom: 16px;
+    padding: 0;
   }
 }

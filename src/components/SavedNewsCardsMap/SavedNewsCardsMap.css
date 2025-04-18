@@ -40,6 +40,12 @@
 }
 
 @media screen and (max-width: 768px) {
+  .saved__news_list {
+    gap: 8px;
+    row-gap: 42px;
+    column-gap: 16px;
+  }
+
   .saved__news_wrapper {
     display: flex;
     flex: 1;
