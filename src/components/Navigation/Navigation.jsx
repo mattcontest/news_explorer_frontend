@@ -2,21 +2,33 @@ import "./Navigation.css";
 import logout from "../../assets/logout.svg";
 import close from "../../assets/close_mobile.svg";
 import menu from "../../assets/menu.svg";
+import saved_menu from "../../assets/saved_menu.svg";
 
 import { useLocation, Route, Routes, NavLink } from "react-router-dom";
 import { useState } from "react";
 
 function Navigation({ handleLoginClick, isLoggedIn }) {
   const { pathname } = useLocation();
-  const [MobileMenuOpen, setMobileMenuOpen] = useState(true);
+  const [MobileMenuOpen, setMobileMenuOpen] = useState(false);
+  // const [toggleActive, setToggleActive] = useState(false);
+
+  const toggleMobile = () => {
+    setMobileMenuOpen((value) => !value);
+  };
+
   return (
     <div className="navigation">
       {MobileMenuOpen && <div className="nav__overlay"></div>}
 
       <button
         className={`nav_mobile-menu ${pathname === "/saved-news" ? "nav__movile-menu_black" : ""}`}
+        onClick={toggleMobile}
       >
-        <img src={menu} alt="" className="nav__mobile-menu-icon" />
+        <img
+          src={` ${pathname === "/saved-news" ? saved_menu : menu}`}
+          alt=""
+          className="nav__mobile-menu-icon"
+        />
       </button>
 
       <nav className={`navig__nav ${MobileMenuOpen ? "open" : "closed"}`}>
@@ -26,7 +38,11 @@ function Navigation({ handleLoginClick, isLoggedIn }) {
           Home
         </button> */}
         <div className="navig_mobile-header">
-          <p className="navig__mobile_logo">NewsExplorer</p>
+          <p
+            className={`navig__mobile_logo ${pathname === "/saved-news" ? "navig__mobile_logo_saved" : " "}`}
+          >
+            NewsExplorer
+          </p>
 
           {/* <button className="close__btn">
             <img src={close} className="close__btn_logo" />

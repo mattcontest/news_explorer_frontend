@@ -158,6 +158,10 @@
   display: none;
 }
 
+.nav_mobile-menu {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .navbar {
     height: 80px;
@@ -224,6 +228,13 @@
     display: none;
   }
 
+  .nav_mobile-menu {
+    display: none;
+  }
+  .navig_mobile-header {
+    display: none;
+  }
+
   .open {
     visibility: visible;
     display: block;
@@ -240,6 +251,10 @@
     justify-content: flex-end;
   }
 
+  .navig_mobile-header {
+    display: block;
+  }
+
   .navbar {
     border: solid red;
     visibility: hidden;
@@ -247,6 +262,7 @@
   }
 
   .nav_mobile-menu {
+    display: block;
     position: absolute;
     /* border: solid red; */
     margin-right: 16px;
@@ -270,7 +286,7 @@
 
   .navig__nav {
     /* border: solid red; */
-    /* display: none; */
+    display: block;
     height: 56px;
     width: 100%;
     border: solid 1px gray;
@@ -295,5 +311,18 @@
     line-height: 24px;
     color: white;
     margin-left: 16px;
+  }
+
+  .navig__mobile_logo_saved {
+    color: black;
+  }
+
+  .nav__overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 }
