@@ -48,27 +48,35 @@ function Navigation({ handleLoginClick, isLoggedIn }) {
             <img src={close} className="close__btn_logo" />
           </button> */}
         </div>
-        {/* {!(pathname === "/saved-news") && (
-          <button
-            className={`navigation__signin-btn ${"nav__mobile-sign_in"} ${MobileMenuOpen ? "mobile__open" : ""}`}
-          >
-            Sign In
-          </button>
-        )}
 
-        {isLoggedIn ? (
-          <button
-            className={`navigation__logout-btn ${"nav__mobile-logout"} ${MobileMenuOpen ? "mobile__open" : ""}`}
-          >
-            Log Out
-          </button>
-        ) : (
-          <button
-            className={`navigation__signin-btn ${"nav__mobile-sign_in"} ${MobileMenuOpen ? "mobile__open" : ""}`}
-          >
-            Sign In
-          </button>
-        )} */}
+        <div
+          className={`menu__options ${MobileMenuOpen ? "show_options" : ""}`}
+        >
+          {console.log("Is Logged in true?", isLoggedIn)}
+          {!(pathname === "/saved-news") && (
+            <button
+              className={`navigation__signin-btn ${"nav__mobile-sign_in"} ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
+            >
+              Sign In
+            </button>
+          )}
+
+          {isLoggedIn ? (
+            <button
+              className={`navigation__logout-btn ${"nav__mobile-logout"} ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
+            >
+              Log Out
+            </button>
+          ) : (
+            <></>
+
+            // <button
+            //   className={`navigation__signin-btn ${"nav__mobile-sign_in"} ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
+            // >
+            //   Sign In
+            // </button>
+          )}
+        </div>
       </nav>
 
       <div
