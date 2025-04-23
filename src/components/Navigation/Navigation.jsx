@@ -52,7 +52,16 @@ function Navigation({ handleLoginClick, isLoggedIn }) {
         <div
           className={`menu__options ${MobileMenuOpen ? "show_options" : ""}`}
         >
-          {console.log("Is Logged in true?", isLoggedIn)}
+          <div
+            className={` navig__moobile_open-header  ${MobileMenuOpen ? "open" : ""}`}
+          >
+            <p
+              className={`navig__mobile_logo-open ${MobileMenuOpen ? "open" : "closed"}`}
+            >
+              NewsExplorer
+            </p>
+          </div>
+
           {!(pathname === "/saved-news") && (
             <button
               className={`navigation__signin-btn ${"nav__mobile-sign_in"} ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
@@ -97,7 +106,8 @@ function Navigation({ handleLoginClick, isLoggedIn }) {
             Home
           </button>
         </NavLink>
-        {isLoggedIn ? (
+        {/* {isLoggedIn? ( */}
+        {pathname === "/saved-news" ? (
           <div className="nav_links">
             <NavLink to="/saved-news">
               <button
