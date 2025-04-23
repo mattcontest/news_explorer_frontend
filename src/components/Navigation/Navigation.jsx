@@ -62,29 +62,37 @@ function Navigation({ handleLoginClick, isLoggedIn }) {
             </p>
           </div>
 
-          {!(pathname === "/saved-news") && (
+          <div className="options__bar">
             <button
-              className={`navigation__signin-btn nav__mobile-sign_in ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
+              className={`navigation__home-mobile ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
             >
-              Sign In
+              Home
             </button>
-          )}
 
-          {isLoggedIn ? (
-            <button
-              className={`navigation__logout-btn ${"nav__mobile-logout"} ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
-            >
-              Log Out
-            </button>
-          ) : (
-            <></>
+            {!(pathname === "/saved-news") && (
+              <button
+                className={`navigation__signin-btn nav__mobile-sign_in ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
+              >
+                Sign In
+              </button>
+            )}
 
-            // <button
-            //   className={`navigation__signin-btn ${"nav__mobile-sign_in"} ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
-            // >
-            //   Sign In
-            // </button>
-          )}
+            {isLoggedIn ? (
+              <button
+                className={`navigation__logout-btn ${"nav__mobile-logout"} ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
+              >
+                Log Out
+              </button>
+            ) : (
+              <></>
+
+              // <button
+              //   className={`navigation__signin-btn ${"nav__mobile-sign_in"} ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
+              // >
+              //   Sign In
+              // </button>
+            )}
+          </div>
         </div>
       </nav>
 

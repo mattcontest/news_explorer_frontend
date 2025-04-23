@@ -17,7 +17,7 @@ function App() {
   // const [count, setCount] = useState(0);
   const [activeModal, setActiveModal] = useState("");
   const [newsArticles, setNewsArticles] = useState([]);
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [keyword, setKeyword] = useState("");
   const [noResults, setNoResults] = useState(false);
   const [isLoading, setIsLoading] = useState(false);

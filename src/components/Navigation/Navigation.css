@@ -284,9 +284,41 @@
 }
 
 @media screen and (max-width: 320px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .navigation__home-mobile {
+    border: none;
+    width: 50px;
+    margin-left: 16px;
+    font-family: "Roboto";
+    font-size: 18px;
+    line-height: 56px;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+  }
+
+  .navigation__signin-btn {
+    width: 288px;
+    height: 56px;
+    border-radius: 100px;
+    border: solid 1px;
+    margin-left: 16px;
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 18px;
+    vertical-align: middle;
+    color: rgba(255, 255, 255, 1);
+    background-color: transparent;
+  }
+
   .navigation {
     display: flex;
     justify-content: flex-end;
+    max-width: 320px;
+    width: 100%;
   }
 
   /* .navig_mobile-header {
@@ -346,6 +378,7 @@
     border-left: none;
     border-right: none;
     z-index: 2;
+    max-width: 320px;
     /* border-bottom: solid rgba(196, 196, 196, 0.01) 2px; */
   }
 
@@ -363,6 +396,20 @@
 
   .menu__options.show_options {
     display: block;
+    /* border: solid red; */
+    /* width: 100%; */
+    max-width: 320px;
+    width: 100%;
+  }
+
+  .options__bar {
+    /* border: solid red; */
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    /* max-width: 320px; */
+    /* width: 50%; */
+    gap: 22px;
   }
 
   .show_options {
