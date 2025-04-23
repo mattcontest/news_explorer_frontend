@@ -64,7 +64,7 @@ function Navigation({ handleLoginClick, isLoggedIn }) {
 
           {!(pathname === "/saved-news") && (
             <button
-              className={`navigation__signin-btn ${"nav__mobile-sign_in"} ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
+              className={`navigation__signin-btn nav__mobile-sign_in ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
             >
               Sign In
             </button>
