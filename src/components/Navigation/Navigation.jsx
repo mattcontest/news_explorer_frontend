@@ -76,6 +76,13 @@ function Navigation({ handleLoginClick, isLoggedIn }) {
                 Sign In
               </button>
             )}
+            {pathname === "/saved-news" && (
+              <button
+                className={`navigation__saved-articles ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
+              >
+                Saved Articles
+              </button>
+            )}
 
             {isLoggedIn ? (
               <button
