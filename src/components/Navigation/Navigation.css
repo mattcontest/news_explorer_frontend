@@ -461,7 +461,7 @@
 
   .navig__mobile_logo_saved {
     color: black;
-    z-index: 2;
+    /* z-index: 2; */
   }
 
   .navig__mobile_logo-open {
