@@ -466,6 +466,13 @@
 
   .navig__mobile_logo-open {
     color: white;
+    width: 117px;
+    height: 24px;
+    font-family: "Roboto Slab";
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    margin-left: 16px;
   }
 
   .navig__moobile_open-header {
