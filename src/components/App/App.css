@@ -5,6 +5,9 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  /* change */
+  flex: 1;
+  box-sizing: border-box;
 }
 
 .page__content {
@@ -33,6 +36,12 @@
 @media (max-width: 760px) {
   .page__style {
     background-size: cover;
+  }
+}
+@media (max-width: 320px) {
+  .page__content {
+    max-width: 320px;
+    overflow-x: hidden;
   }
 }
 

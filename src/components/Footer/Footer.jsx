@@ -3,24 +3,26 @@ import "./Footer.css";
 function Footer() {
   return (
     <footer className="footer">
-      <p className="footer_text">Developed by Mattia C</p>
-
       <div className="footer__links">
         <a href="" className="home footer__link">
           Home
         </a>
-        <a href="" className="portfolio footer__link">
+        {/* <a href="" className="portfolio footer__link">
           Portfolio
-        </a>
+        </a> */}
         <div className="footer__socials">
           <a href="" className="github footer__link">
             GitHub
           </a>
-          <a href="" className="linkedin footer__link">
+          {/* <a href="" className="linkedin footer__link">
             LinkedIn
+          </a> */}
+          <a href="" className="tripleten footer__link">
+            TripleTen
           </a>
         </div>
       </div>
+      <p className="footer_text">Developed by Mattia C</p>
     </footer>
   );
 }
