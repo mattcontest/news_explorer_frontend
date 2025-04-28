@@ -139,3 +139,19 @@
     top: 7px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .news__cards_list {
+    justify-content: flex-start;
+  }
+
+  .news__card_wrapper {
+    height: 440px;
+    width: 288px;
+  }
+
+  .card__image {
+    max-width: 288px;
+    width: 100%;
+  }
+}
