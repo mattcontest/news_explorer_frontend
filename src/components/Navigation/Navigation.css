@@ -288,6 +288,10 @@
     overflow-x: hidden;
   }
 
+  .navig_mobile-header {
+    /* border: solid red; */
+  }
+
   .navigation__home-mobile {
     border: none;
     /* border: solid; */
@@ -404,6 +408,7 @@
     z-index: 2;
     max-width: 320px;
     /* border-bottom: solid rgba(196, 196, 196, 0.01) 2px; */
+    /* border: solid red; */
   }
 
   .open {
@@ -413,7 +418,13 @@
 
   .navig__moobile_open-header.open {
     display: block;
+    /* border: solid rgba(196, 196, 196, 0.01); */
+    border: solid rgb(201, 202, 207);
+    border-left: none;
+    border-right: none;
+    border-top: none;
   }
+
   .close__btn_logo {
     background-color: transparent;
   }
@@ -430,7 +441,7 @@
     /* border: solid red; */
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     /* max-width: 320px; */
     /* width: 50%; */
     /* gap: 22px; */
