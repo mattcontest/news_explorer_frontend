@@ -21,7 +21,7 @@ function Navigation({ handleLoginClick, isLoggedIn }) {
       {MobileMenuOpen && <div className="nav__overlay"></div>}
 
       <button
-        className={`nav_mobile-menu ${pathname === "/saved-news" ? "nav__movile-menu_black" : ""}`}
+        className={`nav_mobile-menu ${pathname === "/saved-news" ? "nav__movile-menu_black" : ""} ${MobileMenuOpen ? "nav_movile-menu-close" : ""}`}
         onClick={toggleMobile}
       >
         <img

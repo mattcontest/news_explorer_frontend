@@ -376,7 +376,8 @@
     background-color: transparent;
     border: transparent;
     cursor: pointer;
-    z-index: 100;
+    z-index: 10;
+    /* z-index: 100; */
   }
 
   .logo {
@@ -492,5 +493,10 @@
   .mobile__close {
     /* border: solid red; */
     display: none;
+  }
+
+  .nav_movile-menu-close {
+    border: solid red;
+    z-index: 4;
   }
 }
