@@ -162,7 +162,7 @@
     top: 0;
   }
   .show__more_btn {
-    margin-left: 16px;
+    margin-left: -16px;
     margin-right: 16px;
     height: 56px;
     width: 288px;
