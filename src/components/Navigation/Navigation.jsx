@@ -39,7 +39,7 @@ function Navigation({ handleLoginClick, isLoggedIn }) {
         </button> */}
         <div className="navig_mobile-header">
           <p
-            className={`navig__mobile_logo ${pathname === "/saved-news" ? "navig__mobile_logo_saved" : " "}`}
+            className={`navig__mobile_logo ${pathname === "/saved-news" ? "navig__mobsile_logo_saved" : " "}`}
           >
             NewsExplorer
           </p>
