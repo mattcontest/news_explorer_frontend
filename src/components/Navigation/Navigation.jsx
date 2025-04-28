@@ -21,11 +21,12 @@ function Navigation({ handleLoginClick, isLoggedIn }) {
       {MobileMenuOpen && <div className="nav__overlay"></div>}
 
       <button
-        className={`nav_mobile-menu ${pathname === "/saved-news" ? "nav__movile-menu_black" : ""} ${MobileMenuOpen ? "nav_movile-menu-close" : ""}`}
+        className={`nav_mobile-menu ${pathname === "/saved-news" ? "nav__movile-menu_black" : ""} ${MobileMenuOpen ? "nav_mobile-menu-close" : ""}`}
         onClick={toggleMobile}
       >
         <img
-          src={` ${pathname === "/saved-news" ? saved_menu : menu}`}
+          // src={` ${pathname === "/saved-news" ? saved_menu : menu} ${MobileMenuOpen ? close : menu}`}
+          src={` ${MobileMenuOpen ? close : pathname === "/saved-news" ? saved_menu : menu}`}
           alt=""
           className="nav__mobile-menu-icon"
         />

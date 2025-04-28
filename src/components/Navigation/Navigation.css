@@ -506,8 +506,8 @@
     display: none;
   }
 
-  .nav_movile-menu-close {
-    border: solid red;
+  .nav_mobile-menu-close {
+    /* border: solid red; */
     z-index: 4;
   }
 }
