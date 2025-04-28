@@ -22,7 +22,7 @@ function Footer() {
           </a>
         </div>
       </div>
-      <p className="footer_text">Developed by Mattia C</p>
+      <p className="footer_text">© 2025 Supersite, Powered by News API</p>
     </footer>
   );
 }

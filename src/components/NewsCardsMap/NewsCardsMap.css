@@ -30,6 +30,7 @@
   gap: 16px;
   margin: 0;
   padding: 0;
+  margin-right: 6px;
 }
 
 .show__more_btn {
@@ -104,5 +105,13 @@
 @media screen and (max-width: 320px) {
   .news__cards_list {
     justify-content: flex-start;
+    row-gap: 21px;
+  }
+
+  .show__more_btn {
+    /* margin-top: 16px; */
+    /* margin-bottom: 16px; */
+    margin-top: 32px;
+    margin-bottom: 25px;
   }
 }

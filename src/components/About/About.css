@@ -112,6 +112,11 @@
     margin-left: 0;
   }
 
+  .author__image {
+    display: flex;
+    justify-content: center;
+  }
+
   .author__description {
     margin-bottom: 128px;
   }
