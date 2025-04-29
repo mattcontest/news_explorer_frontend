@@ -76,3 +76,30 @@
     padding-left: 40px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .saved__news_header_content {
+    /* border: solid red; */
+    padding-left: 16px;
+  }
+
+  .saved__news__header_title {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+  }
+
+  .saved__news_header_description {
+    font-size: 30px;
+    width: 288px;
+    line-height: 34px;
+    margin-bottom: 50px;
+  }
+
+  .saved__news_header_keywords {
+    width: 288px;
+    margin-bottom: 32px;
+  }
+}
