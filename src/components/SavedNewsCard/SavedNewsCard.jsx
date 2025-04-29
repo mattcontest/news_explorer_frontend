@@ -12,7 +12,7 @@ function SavedNewsCard({
   return (
     <li className="saved__news_card_wrapper">
       <div className="saved__card_header">
-        <img src={imageUrl} alt="" className="card__image" />
+        <img src={imageUrl} alt="" className="card__image saved__card-image" />
         <button className="saved_news_delete_btn">
           <img src={trash} alt="" className="btn__delete_img" />
         </button>

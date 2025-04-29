@@ -63,3 +63,17 @@
     padding-bottom: 50px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .saved__news_list {
+    justify-content: flex-start;
+    /* border: solid purple; */
+    row-gap: 21px;
+    padding-top: 0px;
+    margin-top: 24px;
+  }
+
+  .saved__news_wrapper {
+    padding-bottom: 12px;
+  }
+}

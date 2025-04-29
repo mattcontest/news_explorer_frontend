@@ -156,3 +156,22 @@
     left: 178px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .saved__news_card_wrapper {
+    height: 440px;
+    width: 288px;
+  }
+
+  .saved__card-image {
+    max-width: 288px;
+    width: 100%;
+  }
+
+  .saved_news_delete_btn {
+    right: 0;
+    left: 231px;
+    margin-top: 16px;
+    top: -8px;
+  }
+}
