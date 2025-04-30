@@ -23,7 +23,11 @@ function SavedNewsCard({
       <div className="saved__card_info">
         <div className="saved__card_info_wrapper">
           <p className="saved__card_date">{date}</p>
-          <h2 className="saved__news_card_name">{title}</h2>
+          <h2 className="saved__news_card_name">
+            {title && title.length > 50
+              ? `${title.slice(0, 58)}...`
+              : `${title}`}
+          </h2>
           <p className="saved__news_card_description">{description}</p>
           <p className="saved__card_author">{author}</p>
         </div>

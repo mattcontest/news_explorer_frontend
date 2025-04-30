@@ -80,12 +80,19 @@
 
 .saved__news_card_description {
   margin: 0;
-  margin-top: 16px;
+  /* margin-top: 16px; */
   font-family: "Roboto";
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
   max-height: 88px;
+  max-width: 352px;
+  max-height: 88px;
+}
+
+.saved__news_card_name {
+  max-width: 352px;
+  max-height: 65px;
 }
 
 .btn__delete_img {
@@ -161,11 +168,14 @@
   .saved__news_card_wrapper {
     height: 440px;
     width: 288px;
+    margin-bottom: 8px;
   }
 
   .saved__card-image {
-    max-width: 288px;
-    width: 100%;
+    width: 288px;
+    height: 196%;
+
+    /* border: solid red; */
   }
 
   .saved_news_delete_btn {
@@ -173,5 +183,16 @@
     left: 231px;
     margin-top: 16px;
     top: -8px;
+  }
+
+  .saved__card_info {
+    height: 243px;
+  }
+
+  .saved__news_card_name {
+    width: 256px;
+    height: 48px;
+    font-size: 22px;
+    line-height: 24px;
   }
 }
