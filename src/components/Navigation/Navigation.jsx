@@ -64,11 +64,13 @@ function Navigation({ handleLoginClick, isLoggedIn }) {
           </div>
 
           <div className="options__bar">
-            <button
-              className={`navigation__home-mobile ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
-            >
-              Home
-            </button>
+            <NavLink to="/">
+              <button
+                className={`navigation__home-mobile ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
+              >
+                Home
+              </button>
+            </NavLink>
 
             {!(pathname === "/saved-news") && (
               <button
