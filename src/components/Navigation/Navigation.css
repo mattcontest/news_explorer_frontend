@@ -341,6 +341,10 @@
     background-color: transparent;
   }
 
+  .navigation__signin-btn:hover {
+    opacity: 50%;
+    cursor: pointer;
+  }
   .navigation {
     display: flex;
     justify-content: flex-end;

@@ -88,6 +88,8 @@
     display: flex;
     gap: 40px;
     align-items: center;
+    /* width: 200px; */
+
     /* border: solid; */
     margin-left: 231px;
   }
@@ -109,6 +111,12 @@
 
   .github {
     margin-right: -14px;
-    margin-top: -157px;
+    margin-top: -147px;
   }
 }
+
+/* @media screen and (max-width: 320px) and (max-height: 560px) {
+  .github {
+    margin-top: -147px;
+  }
+} */
