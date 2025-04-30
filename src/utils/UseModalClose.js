@@ -14,16 +14,17 @@ function useModalClose(isOpen, onClose) {
       if (e.target.classList.contains("modal")) {
         onClose();
       }
-
-      document.addEventListener("keydown", handleEscape);
-      document.addEventListener("mousedown", handleOverlay);
-
-      return () => {
-        document.removeEventListener("keydown", handleEscape);
-        document.removeEventListener("mousedown", handleOverlay);
-      };
     };
-  });
+
+    document.addEventListener("keydown", handleEscape);
+    document.addEventListener("mousedown", handleOverlay);
+
+    return () => {
+      console.log("Clicked!");
+      document.removeEventListener("keydown", handleEscape);
+      document.removeEventListener("mousedown", handleOverlay);
+    };
+  }, [isOpen]);
 }
 
 export default useModalClose;
