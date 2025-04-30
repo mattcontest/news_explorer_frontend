@@ -9,16 +9,13 @@ function Footer() {
         </a>
         {/* <a href="" className="portfolio footer__link">
           Portfolio
-        </a> */}
+          </a> */}
+        <a href="" className="tripleten footer__link">
+          TripleTen
+        </a>
         <div className="footer__socials">
           <a href="" className="github footer__link">
             GitHub
-          </a>
-          {/* <a href="" className="linkedin footer__link">
-            LinkedIn
-          </a> */}
-          <a href="" className="tripleten footer__link">
-            TripleTen
           </a>
         </div>
       </div>
