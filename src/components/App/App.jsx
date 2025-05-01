@@ -12,9 +12,12 @@ import ConfirmationModal from "../ConfirmationModal/ConfirmationModal.jsx";
 import Main from "../Main/Main.jsx";
 import { APIkey } from "../../utils/newsApi.js";
 import { getNews } from "../../utils/newsApi.js";
+import { getArticles } from "../../utils/api.js";
+import { checkToken, signIn, signUp } from "../../utils/auth.js";
 
 function App() {
   // const [count, setCount] = useState(0);
+  const [currentUser, setCurrentUser] = useState({});
   const [activeModal, setActiveModal] = useState("");
   const [newsArticles, setNewsArticles] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -22,6 +25,55 @@ function App() {
   const [noResults, setNoResults] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [savedNews, setSavedNews] = useState([]);
+
+  const handleSignUp = async (email, password) => {
+    return await signUp();
+  };
+
+  const handleSignIn = async (eial, password) => {
+    try {
+      const res = await signIn();
+      if (res.token) {
+        localStorage.setItem("token", res.token);
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleCheckToken = async () => {
+    try {
+      const token = localStorage.getItem("token");
+      if (!token) return;
+
+      const res = await checkToken(token);
+      if (res.data) {
+        setIsLoggedIn(true);
+        const { name, email, _id } = res.data;
+        setCurrentUser({ name, email, _id });
+        //After checking the token the relative saved articles from the db should be returned
+        retrieveArticles();
+      }
+    } catch (error) {
+      console.error("Unablel to check token", error);
+    }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setIsLoggedIn(false);
+    setCurrentUser({});
+    //Clearing up the saved articles after the logout,
+    //Even tough the /saved-news page won't be available to the user until it logs in
+    setSavedNews({});
+
+    console.log("Logged out!");
+  };
+
+  const retrieveArticles = async () => {
+    const articles = await getArticles();
+    setSavedNews(articles);
+  };
 
   const handleLoginClick = (e) => {
     e.preventDefault();
