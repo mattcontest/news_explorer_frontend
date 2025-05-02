@@ -10,7 +10,8 @@ function SavedNewsCardsMap({ articles }) {
       <div className="saved__news_wrapper">
         <ul className="saved__news_list">
           {/* {articles.slice(0, 6).map((article) => { */}
-          {articlesPreset.slice(0, 3).map((article) => {
+          {/* {articlesPreset.slice(0, 3).map((article) => { */}
+          {articles.slice(0, 3).map((article) => {
             return (
               <SavedNewsCard
                 key={article._id}

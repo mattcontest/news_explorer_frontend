@@ -9,6 +9,7 @@ function Header({
   keyword,
   setKeyword,
   isLoggedIn,
+  handleLogout,
 }) {
   // const { pathname } = useLocation();
   return (
@@ -17,6 +18,7 @@ function Header({
         <Navigation
           handleLoginClick={handleLoginClick}
           isLoggedIn={isLoggedIn}
+          handleLogout={handleLogout}
         />
         <div className="header__content">
           <div className="internal__header__wrapper">

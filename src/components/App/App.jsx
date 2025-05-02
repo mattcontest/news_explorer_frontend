@@ -30,11 +30,14 @@ function App() {
     return await signUp();
   };
 
-  const handleSignIn = async (eial, password) => {
+  const handleSignIn = async (email, password) => {
     try {
+      console.log("1. Starting with sign in");
       const res = await signIn();
       if (res.token) {
+        console.log("2. Get token", res.token);
         localStorage.setItem("token", res.token);
+        handleCheckToken();
       }
     } catch (err) {
       console.error(err);
@@ -43,19 +46,29 @@ function App() {
 
   const handleCheckToken = async () => {
     try {
+      console.log("3. Checking token");
       const token = localStorage.getItem("token");
-      if (!token) return;
+      // if (!token) return;
 
       const res = await checkToken(token);
+
+      if (!token) {
+        console.log("5. No Token found so no articles retrieved");
+        return;
+      } else {
+        console.log("4. Token check repsosne", res);
+      }
+
       if (res.data) {
         setIsLoggedIn(true);
         const { name, email, _id } = res.data;
         setCurrentUser({ name, email, _id });
+        console.log("5. About to retrieve articles");
         //After checking the token the relative saved articles from the db should be returned
         retrieveArticles();
       }
     } catch (error) {
-      console.error("Unablel to check token", error);
+      console.error("Unable to check token", error);
     }
   };
 
@@ -65,13 +78,14 @@ function App() {
     setCurrentUser({});
     //Clearing up the saved articles after the logout,
     //Even tough the /saved-news page won't be available to the user until it logs in
-    setSavedNews({});
+    setSavedNews([]);
 
     console.log("Logged out!");
   };
 
   const retrieveArticles = async () => {
     const articles = await getArticles();
+    console.log("After retrieving the articles", articles);
     setSavedNews(articles);
   };
 
@@ -140,6 +154,11 @@ function App() {
   //   });
   // }, [newsArticles]);
 
+  useEffect(() => {
+    console.log("App mounted, checking token");
+    handleCheckToken();
+  }, []);
+
   return (
     <div className="page">
       <div className="page__content">
@@ -155,6 +174,7 @@ function App() {
                     handleSearchSubmit={handleSearchSubmit}
                     keyword={keyword}
                     setKeyword={setKeyword}
+                    handleLogout={handleLogout}
                   />
                   <Main
                     isLoading={isLoading}
@@ -174,8 +194,9 @@ function App() {
                   <SavedNewsHeader
                     handleLoginClick={handleLoginClick}
                     isLoggedIn={isLoggedIn}
+                    handleLogout={handleLogout}
                   />
-                  <SavedNews articles={newsArticles} />
+                  <SavedNews articles={savedNews} />
                 </>
               }
             />
@@ -192,6 +213,7 @@ function App() {
         isOpen={activeModal === "login"}
         handleCloseModal={closeActiveModal}
         handleSignupClick={handleSignupClick}
+        onSubmit={handleSignIn}
       />
       <RegisterModal
         title={"Sign Up"}

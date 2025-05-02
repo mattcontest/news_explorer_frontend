@@ -4,7 +4,7 @@ const articlesPreset = [
   {
     name: "Gizmodo.com",
     keyword: "Nature",
-    author: "Margherita Bassi",
+    author: "Margherita Bassini",
     title:
       "Tourists Watch in Horror as 60 Orcas Rip Apart Endangered Blue Whale ",
     description:

@@ -1,13 +1,14 @@
 import "./SavedNewsHeader.css";
 import Navigation from "../Navigation/Navigation";
 
-function SavedNewsHeader({ handleLoginClick, isLoggedIn }) {
+function SavedNewsHeader({ handleLoginClick, isLoggedIn, handleLogout }) {
   return (
     <div className="saved__news_header">
       <div className="saved__news_header_wrapper">
         <Navigation
           handleLoginClick={handleLoginClick}
           isLoggedIn={isLoggedIn}
+          handleLogout={handleLogout}
         />
         <div className="saved__news_header_content">
           <div className="internal__saved_header_wrapper">

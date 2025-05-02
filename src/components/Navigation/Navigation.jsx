@@ -7,9 +7,13 @@ import saved_menu from "../../assets/saved_menu.svg";
 import { useLocation, Route, Routes, NavLink } from "react-router-dom";
 import { useState } from "react";
 
-function Navigation({ handleLoginClick, isLoggedIn }) {
+function Navigation({ handleLoginClick, isLoggedIn, handleLogout }) {
   const { pathname } = useLocation();
   const [MobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const handleLogoutClick = () => {
+    handleLogout();
+    setMobileMenuOpen(false);
+  };
   // const [toggleActive, setToggleActive] = useState(false);
 
   const toggleMobile = () => {
@@ -72,7 +76,7 @@ function Navigation({ handleLoginClick, isLoggedIn }) {
               </button>
             </NavLink>
 
-            {!(pathname === "/saved-news") && (
+            {!(pathname === "/saved-news") && !isLoggedIn && (
               <button
                 className={`navigation__signin-btn nav__mobile-sign_in ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
                 onClick={handleLoginClick}
@@ -91,7 +95,9 @@ function Navigation({ handleLoginClick, isLoggedIn }) {
             {isLoggedIn ? (
               <button
                 className={`navigation__logout-btn ${"nav__mobile-logout"} ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
+                onClick={handleLogoutClick}
               >
+                {/* onClick={handleLogout} */}
                 Log Out
               </button>
             ) : (
@@ -138,7 +144,7 @@ function Navigation({ handleLoginClick, isLoggedIn }) {
             </NavLink>
 
             <NavLink to="/">
-              <button className="logout_btn">
+              <button className="logout_btn" onClick={handleLogout}>
                 <p className="username">Elise</p>
                 <img src={logout} className="logout__img" />
               </button>
