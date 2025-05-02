@@ -17,7 +17,7 @@ const articlesPreset = [
   },
   {
     name: "Gizmodo.com",
-    keyword: "Nature",
+    keyword: "Poison",
     author: "Ed Cara",
     title:
       "Anthrax Outbreak Kills at Least 50 Hippos in Africa’s Oldest National Park",

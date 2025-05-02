@@ -296,7 +296,8 @@
     border: none;
     /* border: solid; */
     width: 288px;
-    height: 56px;
+    /* height: 56px; */
+    height: 26px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -309,6 +310,7 @@
     cursor: pointer;
     margin-top: 16px;
     margin-bottom: 22px;
+    /* border: solid red; */
   }
 
   .navigation__saved-articles {
@@ -322,6 +324,7 @@
     /* line-height: 56px; */
     background-color: transparent;
     color: rgba(255, 255, 255, 1);
+    margin-bottom: 10px;
     cursor: pointer;
     display: flex;
     justify-content: flex-start;
@@ -339,6 +342,24 @@
     vertical-align: middle;
     color: rgba(255, 255, 255, 1);
     background-color: transparent;
+  }
+
+  .navigation__logout-btn {
+    width: 288px;
+    height: 56px;
+    border-radius: 100px;
+    border: solid 1px;
+    margin-left: 16px;
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 18px;
+    vertical-align: middle;
+    color: rgba(255, 255, 255, 1);
+    background-color: transparent;
+  }
+  .navigation__logout-btn:hover {
+    opacity: 50%;
+    cursor: pointer;
   }
 
   .navigation__signin-btn:hover {
