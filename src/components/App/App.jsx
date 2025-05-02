@@ -6,6 +6,7 @@ import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader.jsx";
 import SavedNews from "../SavedNews/SavedNews.jsx";
 import About from "../About/About.jsx";
 import Footer from "../Footer/Footer.jsx";
+import CurrentUserContext from "../context/CurrentUserContext.js";
 import LoginModal from "../LoginModal/LoginModal.jsx";
 import RegisterModal from "../RegisterModal/RegisterModal.jsx";
 import ConfirmationModal from "../ConfirmationModal/ConfirmationModal.jsx";
@@ -160,77 +161,79 @@ function App() {
   }, []);
 
   return (
-    <div className="page">
-      <div className="page__content">
-        <div className="page__style">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Header
-                    handleLoginClick={handleLoginClick}
-                    isLoggedIn={isLoggedIn}
-                    handleSearchSubmit={handleSearchSubmit}
-                    keyword={keyword}
-                    setKeyword={setKeyword}
-                    handleLogout={handleLogout}
-                  />
-                  <Main
-                    isLoading={isLoading}
-                    articles={newsArticles}
-                    noResults={noResults}
-                  />
-                  <About />
-                </>
-              }
-            />
+    <CurrentUserContext.Provider value={{ currentUser, isLoggedIn }}>
+      <div className="page">
+        <div className="page__content">
+          <div className="page__style">
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <>
+                    <Header
+                      handleLoginClick={handleLoginClick}
+                      isLoggedIn={isLoggedIn}
+                      handleSearchSubmit={handleSearchSubmit}
+                      keyword={keyword}
+                      setKeyword={setKeyword}
+                      handleLogout={handleLogout}
+                    />
+                    <Main
+                      isLoading={isLoading}
+                      articles={newsArticles}
+                      noResults={noResults}
+                    />
+                    <About />
+                  </>
+                }
+              />
 
-            <Route
-              path="/saved-news"
-              element={
-                <>
-                  {/* <Header handleLoginClick={handleLoginClick} /> */}
-                  <SavedNewsHeader
-                    handleLoginClick={handleLoginClick}
-                    isLoggedIn={isLoggedIn}
-                    handleLogout={handleLogout}
-                  />
-                  <SavedNews articles={savedNews} />
-                </>
-              }
-            />
-            {/* <Main isLoading={true} /> */}
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
-          <Footer />
+              <Route
+                path="/saved-news"
+                element={
+                  <>
+                    {/* <Header handleLoginClick={handleLoginClick} /> */}
+                    <SavedNewsHeader
+                      handleLoginClick={handleLoginClick}
+                      isLoggedIn={isLoggedIn}
+                      handleLogout={handleLogout}
+                    />
+                    <SavedNews articles={savedNews} />
+                  </>
+                }
+              />
+              {/* <Main isLoading={true} /> */}
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+            <Footer />
+          </div>
         </div>
+        <LoginModal
+          title={"Sign In"}
+          buttonText={"Sign in"}
+          activeModal={activeModal}
+          isOpen={activeModal === "login"}
+          handleCloseModal={closeActiveModal}
+          handleSignupClick={handleSignupClick}
+          onSubmit={handleSignIn}
+        />
+        <RegisterModal
+          title={"Sign Up"}
+          buttonText={"Sign Up"}
+          activeModal={activeModal}
+          isOpen={activeModal === "signup"}
+          handleCloseModal={closeActiveModal}
+          handleLoginClick={handleLoginClick}
+        />
+        <ConfirmationModal
+          title={"Registation succesfully completed! "}
+          activeModal={activeModal}
+          handleCloseModal={closeActiveModal}
+          buttonContent={"Sign in"}
+          handleSignupClick={handleSignupClick}
+        />
       </div>
-      <LoginModal
-        title={"Sign In"}
-        buttonText={"Sign in"}
-        activeModal={activeModal}
-        isOpen={activeModal === "login"}
-        handleCloseModal={closeActiveModal}
-        handleSignupClick={handleSignupClick}
-        onSubmit={handleSignIn}
-      />
-      <RegisterModal
-        title={"Sign Up"}
-        buttonText={"Sign Up"}
-        activeModal={activeModal}
-        isOpen={activeModal === "signup"}
-        handleCloseModal={closeActiveModal}
-        handleLoginClick={handleLoginClick}
-      />
-      <ConfirmationModal
-        title={"Registation succesfully completed! "}
-        activeModal={activeModal}
-        handleCloseModal={closeActiveModal}
-        buttonContent={"Sign in"}
-        handleSignupClick={handleSignupClick}
-      />
-    </div>
+    </CurrentUserContext.Provider>
   );
 }
 
