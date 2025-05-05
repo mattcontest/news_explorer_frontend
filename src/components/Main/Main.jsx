@@ -3,7 +3,7 @@ import Preloader from "../Preloader/Preloader";
 import NoResult from "../NoResult/NoResult";
 import NewsCardsMap from "../NewsCardsMap/NewsCardsMap";
 
-function Main({ isLoading, articles, noResults }) {
+function Main({ isLoading, articles, noResults, isLoggedIn }) {
   let content = null;
 
   if (isLoading) {
@@ -26,7 +26,7 @@ function Main({ isLoading, articles, noResults }) {
       articles.length > 0 &&
         (content = (
           <div className="main__content">
-            <NewsCardsMap articles={articles} />
+            <NewsCardsMap articles={articles} isLoggedIn={isLoggedIn} />
           </div>
         ));
     }

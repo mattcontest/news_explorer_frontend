@@ -56,11 +56,38 @@
   position: relative;
 }
 
+.card__login-banner {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: 22px;
+  right: 69px;
+  border: solid rgba(255, 255, 255, 1);
+  font-family: "Roboto";
+  font-weight: 500;
+  line-height: 100%;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 1);
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 12px;
+}
+
+.card__header .save__btn:hover + .card__login-banner-disabled {
+  visibility: hidden;
+}
+
+.card__header .save__btn:hover + .card__login-banner {
+  display: block;
+}
+
 .card__date {
   margin: 0;
   font-weight: 400;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 10px;
   color: rgba(182, 188, 191, 1);
 }
 
@@ -179,6 +206,11 @@
     height: 100%; */
     width: 288px;
     height: 196px;
+  }
+
+  .card__login-banner {
+    top: 17px;
+    right: 58px;
   }
 
   .save__btn {

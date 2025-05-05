@@ -2,7 +2,7 @@ import "./NewsCardsMap.css";
 import NewsCard from "../NewsCard/NewsCard";
 import { useState } from "react";
 
-function NewsCardsMap({ articles }) {
+function NewsCardsMap({ articles, isLoggedIn }) {
   const [cardsShown, setCardsShown] = useState(3);
   const showMore = (e) => {
     e.preventDefault();
@@ -29,6 +29,7 @@ function NewsCardsMap({ articles }) {
                     year: "numeric",
                   }
                 )}
+                isLoggedIn={isLoggedIn}
               />
             );
           })}

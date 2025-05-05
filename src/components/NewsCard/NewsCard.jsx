@@ -4,14 +4,20 @@ import bookmark from "../../assets/bookmark.svg";
 import bookmark__default from "../../assets/save_default.svg";
 import bookmark__saved from "../../assets/saved__default.svg";
 
-function NewsCard({ imageUrl, title, description, date, author }) {
+function NewsCard({ imageUrl, title, description, date, author, isLoggedIn }) {
   return (
     <li className="news__card_wrapper">
+      {console.log(isLoggedIn)}
       <div className="card__header">
         <img src={imageUrl} alt="" className="card__image" />
         <button className="save__btn">
           <img src={bookmark__default} alt="" className="btn__image" />
         </button>
+        <div
+          className={`card__login-banner  ${isLoggedIn ? "card__login-banner-disabled" : ""}`}
+        >
+          Sign in to save articles
+        </div>
       </div>
       <div className="card__info">
         <div className="card__info_wrapper">

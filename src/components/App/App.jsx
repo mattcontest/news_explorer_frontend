@@ -198,6 +198,7 @@ function App() {
                       handleLogout={handleLogout}
                     />
                     <Main
+                      isLoggedIn={isLoggedIn}
                       isLoading={isLoading}
                       articles={newsArticles}
                       noResults={noResults}
