@@ -48,7 +48,8 @@
 }
 
 .search__btn:hover {
-  opacity: 50%;
+  /* opacity: 50%; */
+  background: rgba(52, 126, 255, 1);
 }
 
 @media screen and (max-width: 768px) {

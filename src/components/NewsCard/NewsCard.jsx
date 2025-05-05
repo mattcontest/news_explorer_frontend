@@ -1,6 +1,8 @@
 import "./NewsCard.css";
 import logo from "../../assets/author_bg.jpg";
 import bookmark from "../../assets/bookmark.svg";
+import bookmark__default from "../../assets/save_default.svg";
+import bookmark__saved from "../../assets/saved__default.svg";
 
 function NewsCard({ imageUrl, title, description, date, author }) {
   return (
@@ -8,7 +10,7 @@ function NewsCard({ imageUrl, title, description, date, author }) {
       <div className="card__header">
         <img src={imageUrl} alt="" className="card__image" />
         <button className="save__btn">
-          <img src={bookmark} alt="" className="btn__image" />
+          <img src={bookmark__default} alt="" className="btn__image" />
         </button>
       </div>
       <div className="card__info">

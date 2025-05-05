@@ -51,6 +51,7 @@
   border-radius: 10px;
   align-items: center;
   background-color: white;
+  cursor: pointer;
 }
 
 .saved__card_info {
@@ -102,6 +103,10 @@
 .btn__delete_img {
   height: 24px;
   width: 24px;
+}
+
+.btn__delete_img:hover {
+  content: url("../../assets/active__trash.svg");
 }
 
 @media screen and (max-width: 768px) {
