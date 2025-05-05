@@ -218,7 +218,7 @@ function App() {
                       isLoggedIn={isLoggedIn}
                       handleLogout={handleLogout}
                     />
-                    <SavedNews articles={savedNews} />
+                    <SavedNews articles={savedNews} isLoggedIn={isLoggedIn} />
                   </>
                 }
               />

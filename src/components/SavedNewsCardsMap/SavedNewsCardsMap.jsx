@@ -2,7 +2,7 @@ import SavedNewsCard from "../SavedNewsCard/SavedNewsCard";
 import "./SavedNewsCardsMap.css";
 import { articlesPreset } from "../../assets/data";
 
-function SavedNewsCardsMap({ articles }) {
+function SavedNewsCardsMap({ articles, isLoggedIn }) {
   console.log("Check here", articles);
 
   return (
@@ -28,6 +28,7 @@ function SavedNewsCardsMap({ articles }) {
                 author={article.author}
                 keyword={article.keyword}
                 imageUrl={article.urlToImage}
+                isLoggedIn={isLoggedIn}
               />
             );
           })}

@@ -34,7 +34,7 @@ function NewsCardsMap({ articles, isLoggedIn }) {
             );
           })}
         </ul>
-        {cardsShown <= 18 ? (
+        {cardsShown <= 5 ? (
           <button className="show__more_btn" onClick={showMore}>
             Show More
           </button>

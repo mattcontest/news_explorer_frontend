@@ -1,4 +1,5 @@
 import "./Footer.css";
+import github from "../../assets/github.svg";
 
 function Footer() {
   return (
@@ -14,8 +15,12 @@ function Footer() {
           TripleTen
         </a>
         <div className="footer__socials">
-          <a href="" className="github footer__link">
-            GitHub
+          <a
+            href="https://github.com/mattcontest"
+            className="github footer__link"
+          >
+            {/* GitHub */}
+            <img src={github} alt="" className="github__logo" />
           </a>
         </div>
       </div>

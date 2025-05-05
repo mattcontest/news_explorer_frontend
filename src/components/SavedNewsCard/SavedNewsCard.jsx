@@ -8,6 +8,7 @@ function SavedNewsCard({
   description,
   author,
   keyword,
+  isLoggedIn,
 }) {
   return (
     <li className="saved__news_card_wrapper">
@@ -16,6 +17,9 @@ function SavedNewsCard({
         <button className="saved_news_delete_btn">
           <img src={trash} alt="" className="btn__delete_img" />
         </button>
+
+        {/* <div className={`saved__card_remove-banner  ${isLoggedIn ? "saved__card_remove-banner-disabled" : ""} `}>Removed from saved </div> */}
+        <div className={`saved__card_remove-banner `}>Removed from saved </div>
         {/* <div className="saved__news_keyword">{keyword}</div> */}
         <button className="saved__news_keyword">{keyword}</button>
       </div>

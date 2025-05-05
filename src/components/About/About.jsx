@@ -11,12 +11,14 @@ function About() {
         <div className="author">
           <h1 className="author_title">About the author</h1>
           <p className="author__description">
-            This block describes the project author. Here you should indicate
-            your <br /> name, what you do, and which development technologies
-            you know. <br /> <br />
-            You can also talk about your experience with TripleTen, what you
-            learned
-            <br /> there, and how you can help potential customers.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+            et felis magna. Etiam mattis, velit vel tempor hendrerit, neque dui
+            ultricies mi, a ultrices tortor nunc vitae magna. <br />
+            <br /> <br />
+            Phasellus et felis magna. Etiam mattis, velit vel tempor a ultrices
+            tortor nunc vitae magna. Etiam in odio dolor
+            <br />
+            Etiam dolor dui, commodo a lacus vel, eleifend tempor tortor.
           </p>
         </div>
       </div>
