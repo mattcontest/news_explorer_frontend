@@ -27,8 +27,26 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [savedNews, setSavedNews] = useState([]);
 
-  const handleSignUp = async (email, password) => {
-    return await signUp();
+  // const handleSignUp = async (email, password) => {
+  const handleSignUp = async (email, username, password) => {
+    console.log("In future it will use email, username and password");
+    console.log("email", email);
+    console.log("username", username);
+    console.log("password", password);
+    try {
+      const res = await signUp(email, username, password);
+      console.log(
+        "Then from here save the user in the db, this will be done at next stage upon approval"
+      );
+      // return res;
+      // if (res.token) {
+      //   console.log("-Sign Up 2. Get Token", res.token);
+      //   localStorage.setItem("token", res.token);
+      //   // handleCheckToken;
+      // }
+    } catch (error) {
+      console.error("Signin Up Error", error);
+    }
   };
 
   const handleSignIn = async (email, password) => {
@@ -157,6 +175,7 @@ function App() {
 
   useEffect(() => {
     console.log("App mounted, checking token");
+    console.log("Check current user", currentUser);
     handleCheckToken();
   }, []);
 
@@ -224,6 +243,7 @@ function App() {
           isOpen={activeModal === "signup"}
           handleCloseModal={closeActiveModal}
           handleLoginClick={handleLoginClick}
+          handleSignUp={handleSignUp}
         />
         <ConfirmationModal
           title={"Registation succesfully completed! "}

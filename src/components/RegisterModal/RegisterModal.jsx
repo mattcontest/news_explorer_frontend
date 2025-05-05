@@ -1,5 +1,6 @@
 import "./RegisterModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import { useState } from "react";
 
 function RegisterModal({
   title,
@@ -8,7 +9,32 @@ function RegisterModal({
   isOpen,
   handleCloseModal,
   handleLoginClick,
+  handleSignUp,
 }) {
+  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleUsernameChange = (e) => {
+    setUsername(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!email || !password || !username) {
+      return;
+    }
+    handleSignUp(email, username, password);
+    handleCloseModal();
+  };
   return (
     <ModalWithForm
       title={title}
@@ -16,6 +42,8 @@ function RegisterModal({
       activeModal={activeModal}
       isOpen={isOpen}
       handleCloseModal={handleCloseModal}
+      handleSignUp={handleSignUp}
+      onSubmit={handleSubmit}
     >
       <label
         htmlFor="signin__email"
@@ -27,6 +55,8 @@ function RegisterModal({
           className="modal__input"
           id="signin__email"
           placeholder="Enter email"
+          onChange={handleEmailChange}
+          value={email}
         />
       </label>
       <label
@@ -39,6 +69,8 @@ function RegisterModal({
           className="modal__input"
           id="signin__password"
           placeholder="Enter password"
+          onChange={handlePasswordChange}
+          value={password}
         />
       </label>
       <label
@@ -51,6 +83,8 @@ function RegisterModal({
           className="modal__input"
           id="signin__username"
           placeholder="Enter your username"
+          value={username}
+          onChange={handleUsernameChange}
         />
       </label>
       <div className="btn__container">

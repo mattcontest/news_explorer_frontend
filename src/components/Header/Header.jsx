@@ -1,6 +1,8 @@
 import "./Header.css";
 import Navigation from "../Navigation/Navigation";
 import SearchForm from "../SearchForm/SearchForm";
+import { useContext } from "react";
+import CurrentUserContext from "../context/CurrentUserContext";
 // import { Routes, Route, Link, useLocation, NavLink } from "react-router-dom";
 
 function Header({
@@ -12,6 +14,7 @@ function Header({
   handleLogout,
 }) {
   // const { pathname } = useLocation();
+  const currentUser = useContext(CurrentUserContext);
   return (
     <div className="header">
       <div className="header_wrapper">

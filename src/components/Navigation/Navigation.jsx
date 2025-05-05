@@ -5,7 +5,8 @@ import menu from "../../assets/menu.svg";
 import saved_menu from "../../assets/saved_menu.svg";
 
 import { useLocation, Route, Routes, NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import CurrentUserContext from "../context/CurrentUserContext";
 
 function Navigation({ handleLoginClick, isLoggedIn, handleLogout }) {
   const { pathname } = useLocation();
@@ -19,6 +20,9 @@ function Navigation({ handleLoginClick, isLoggedIn, handleLogout }) {
   const toggleMobile = () => {
     setMobileMenuOpen((value) => !value);
   };
+
+  const currentUser = useContext(CurrentUserContext);
+  console.log("Check currentUser", currentUser.currentUser.name);
 
   return (
     <div className="navigation">
@@ -145,7 +149,9 @@ function Navigation({ handleLoginClick, isLoggedIn, handleLogout }) {
 
             <NavLink to="/">
               <button className="logout_btn" onClick={handleLogout}>
-                <p className="username">Elise</p>
+                <p className="username">
+                  {currentUser?.currentUser.name || "Elise"}
+                </p>
                 <img src={logout} className="logout__img" />
               </button>
             </NavLink>
