@@ -14,7 +14,7 @@ The project is experiencing a MIME type error that prevents proper loading of as
 
 ### Deployment Link
 
-[News Explorer Frontend](https://mattcontest.github.io/news-explorer-frontend/)
+[News Explorer Frontend](https://mattcontest.github.io/news_explorer_frontend/)
 
 ## Project Features
 
