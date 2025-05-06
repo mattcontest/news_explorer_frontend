@@ -80,6 +80,35 @@
   }
 }
 
+@media screen and (max-width: 430px) {
+  .search_form_wrapper {
+    /* border: solid red; */
+    max-width: 288px;
+    max-height: 128px;
+    /* margin-left: 16px; */
+    /* margin-right: 16px; */
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+  }
+
+  .search__form {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .search__btn {
+    position: static;
+    width: 100%;
+  }
+
+  .internal__header__wrapper {
+    margin-bottom: 46px;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .search_form_wrapper {
     /* border: solid red; */
