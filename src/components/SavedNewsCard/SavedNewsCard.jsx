@@ -19,7 +19,7 @@ function SavedNewsCard({
         </button>
 
         {/* <div className={`saved__card_remove-banner  ${isLoggedIn ? "saved__card_remove-banner-disabled" : ""} `}>Removed from saved </div> */}
-        <div className={`saved__card_remove-banner `}>Removed from saved </div>
+        <div className={`saved__card_remove-banner `}>Remove from saved </div>
         {/* <div className="saved__news_keyword">{keyword}</div> */}
         <button className="saved__news_keyword">{keyword}</button>
       </div>
