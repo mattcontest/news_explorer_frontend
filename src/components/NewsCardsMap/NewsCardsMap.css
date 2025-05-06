@@ -104,6 +104,13 @@
   }
 }
 
+@media screen and (max-width: 430px) {
+  .show__more_btn {
+    margin-left: 10px;
+    /* border: solid red; */
+  }
+}
+
 @media screen and (max-width: 320px) {
   .news__cards_title {
     margin-top: 32px;
