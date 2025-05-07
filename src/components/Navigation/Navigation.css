@@ -23,6 +23,8 @@
 
 .navigation {
   position: relative;
+  border: solid 1px rgba(209, 210, 214, 1);
+
   /* display: flex; */
 }
 
@@ -87,7 +89,10 @@
 
 .navbar__saved_news {
   background-color: white;
-  border: solid 1px rgba(209, 210, 214, 1);
+  /* border: solid 1px rgba(209, 210, 214, 1); */
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .saved__articles_btn {
