@@ -118,6 +118,11 @@ function App() {
     setActiveModal("signup");
   };
 
+  const handleRegistrationSuccess = () => {
+    console.log("Registration success confirmation!");
+    setActiveModal("confirm");
+  };
+
   const closeActiveModal = () => {
     setActiveModal("");
   };
@@ -245,10 +250,12 @@ function App() {
           handleCloseModal={closeActiveModal}
           handleLoginClick={handleLoginClick}
           handleSignUp={handleSignUp}
+          handleRegistrationSuccess={handleRegistrationSuccess}
         />
         <ConfirmationModal
           title={"Registation succesfully completed! "}
           activeModal={activeModal}
+          isOpen={activeModal === "confirm"}
           handleCloseModal={closeActiveModal}
           buttonContent={"Sign in"}
           handleSignupClick={handleSignupClick}

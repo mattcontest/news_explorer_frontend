@@ -10,6 +10,7 @@ function RegisterModal({
   handleCloseModal,
   handleLoginClick,
   handleSignUp,
+  handleRegistrationSuccess,
 }) {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
@@ -34,6 +35,7 @@ function RegisterModal({
     }
     handleSignUp(email, username, password);
     handleCloseModal();
+    handleRegistrationSuccess();
   };
   return (
     <ModalWithForm

@@ -6,6 +6,7 @@ function ConfirmationModal({
   handleCloseModal,
   buttonContent,
   handleSignupClick,
+  isOpen,
 }) {
   return (
     <ModalTemplate
@@ -14,6 +15,7 @@ function ConfirmationModal({
       handleCloseModal={handleCloseModal}
       buttonContent={buttonContent}
       handleSignupClick={handleSignupClick}
+      isOpen={isOpen}
     />
   );
 }

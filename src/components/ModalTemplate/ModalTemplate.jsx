@@ -1,5 +1,6 @@
 import "./ModalTemplate.css";
 import close_btn from "../../assets/close.svg";
+import useModalClose from "../../utils/UseModalClose";
 
 function ModalTemplate({
   title,
@@ -7,11 +8,11 @@ function ModalTemplate({
   activeModal,
   buttonContent,
   handleSignupClick,
+  isOpen,
 }) {
+  useModalClose(isOpen, handleCloseModal);
   return (
-    <div
-      className={`modal__template ${activeModal === "confirm" && "modal_open"} `}
-    >
+    <div className={`modal__template ${isOpen ? "modal_open" : ""} `}>
       <div
         className={`modal__template_content modal__template_content_${activeModal}`}
       >
