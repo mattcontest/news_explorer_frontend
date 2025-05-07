@@ -1,2 +1,6 @@
 @import url(../node_modules/normalize.css/normalize.css);
 @import url(./vendor/fonts.css);
+
+* {
+  /* border: solid red; */
+}
