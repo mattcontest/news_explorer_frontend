@@ -11,6 +11,9 @@
   display: flex;
   justify-content: flex-start;
   padding-left: 109px;
+  max-width: 1329px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .saved__news__header_title {
