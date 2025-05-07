@@ -64,6 +64,15 @@
   position: relative;
 }
 
+.saved__card_author {
+  font-family: "Roboto Slab";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  color: rgba(182, 188, 191, 1);
+}
+
 .saved__card_info_wrapper {
   padding-top: 24px;
   padding-left: 24px;
@@ -98,6 +107,10 @@
   max-width: 352px;
   max-height: 65px;
   overflow: hidden;
+  font-family: "Roboto Slab";
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 30px;
 }
 
 .btn__delete_img {
