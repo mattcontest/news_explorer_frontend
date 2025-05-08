@@ -186,12 +186,13 @@
 }
 
 @media screen and (max-width: 430px) {
-  .news__cards_list {
+  /* .news__cards_list {
     display: flex;
     /* justify-content: flex-start; */
-    align-items: center;
-    gap: 16px;
-  }
+  /* align-items: center; */
+  /* gap: 16px; */
+  /* } */
+  /* */
 
   .news__card_wrapper {
     height: 440px;

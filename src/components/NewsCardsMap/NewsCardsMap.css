@@ -118,9 +118,17 @@
     font-weight: 400;
     font-size: 30px;
     line-height: 34px;
+    max-width: 250px;
   }
+
+  .newscards__map {
+    align-items: normal;
+    /* border: solid red; */
+  }
+
   .news__cards_list {
-    justify-content: flex-start;
+    display: flex;
+    justify-content: center !important;
     row-gap: 21px;
   }
 
