@@ -109,6 +109,15 @@
     margin-left: 10px;
     /* border: solid red; */
   }
+
+  .news__cards_title {
+    max-width: 272px;
+    width: 100%;
+  }
+  .show__more_btn {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media screen and (max-width: 320px) {
