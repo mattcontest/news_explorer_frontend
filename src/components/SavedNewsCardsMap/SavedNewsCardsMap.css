@@ -12,8 +12,9 @@
   max-width: 1440px;
 
   /* max-height: 1440px; */
-  padding-left: 106px;
-  padding-top: 62px;
+  /* padding-left: 106px; */
+  /* padding-top: 62px; */
+  justify-content: center;
   gap: 16px;
   /* overflow: hidden; */
   /* width: 100%; */
