@@ -64,6 +64,18 @@
   }
 }
 
+@media screen and (max-width: 430px) {
+  .saved__news_list {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .saved__news_wrapper {
+    min-width: 100%;
+    align-items: normal;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .saved__news_list {
     /* justify-content: flex-start; */
