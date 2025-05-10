@@ -109,8 +109,8 @@
   overflow: hidden;
   font-family: "Roboto Slab";
   font-weight: 400;
-  font-size: 26px;
-  line-height: 30px;
+  font-size: 21px;
+  line-height: 24px;
 }
 
 .btn__delete_img {
@@ -176,8 +176,8 @@
     margin: 0;
     margin-top: 8px;
     font-weight: 400;
-    font-size: 22px;
-    line-height: 24px;
+    font-size: 21px;
+    line-height: 21px;
   }
 
   .saved__news_card_description {

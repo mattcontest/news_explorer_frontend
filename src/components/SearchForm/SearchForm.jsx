@@ -18,12 +18,12 @@ function SearchForm({ handleSearchSubmit, keyword, setKeyword }) {
   };
 
   return (
-    <form className="search__form_system" onSubmit={handleSearch}>
+    <form className="search__form-system" onSubmit={handleSearch}>
       {/* <form className="search__form_system"> */}
-      <div className="search_form">
-        <div className="search_form_wrapper">
+      <div className="search__form">
+        <div className="search__form-wrapper">
           <input
-            className="search__form"
+            className="search__form-input"
             type="text"
             name="search"
             placeholder="Enter topic"

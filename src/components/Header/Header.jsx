@@ -17,7 +17,7 @@ function Header({
   const currentUser = useContext(CurrentUserContext);
   return (
     <div className="header">
-      <div className="header_wrapper">
+      <div className="header__wrapper">
         <Navigation
           handleLoginClick={handleLoginClick}
           isLoggedIn={isLoggedIn}

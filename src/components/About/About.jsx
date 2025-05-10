@@ -11,14 +11,18 @@ function About() {
         <div className="author">
           <h1 className="author_title">About the author</h1>
           <p className="author__description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-            et felis magna. Etiam mattis, velit vel tempor hendrerit, neque dui
-            ultricies mi, a ultrices tortor nunc vitae magna. <br />
-            <br /> <br />
-            Phasellus et felis magna. Etiam mattis, velit vel tempor a ultrices
-            tortor nunc vitae magna. Etiam in odio dolor
-            <br />
-            Etiam dolor dui, commodo a lacus vel, eleifend tempor tortor.
+            At the intersection of education and technology, I’ve developed the
+            ability to clearly explain software concepts, thanks to my
+            experience as a Graduate Teaching Assistant in Computer Science at
+            Northeastern University. I completed both General Assembly’s
+            Software Engineering Immersive and TripleTen’s Web Development
+            program, spending over 700 hours building full-stack web apps.
+            Through these, I worked with JavaScript, HTML, CSS, React, Node.js,
+            Express.js, and MongoDB, while also gaining hands-on experience with
+            API integration, responsive UI design, and deploying projects to
+            production. I’m passionate about creating intuitive, user-centered
+            web applications, and I’m excited to bring my skills and continuous
+            learning mindset to my first role as a frontend engineer.
           </p>
         </div>
       </div>
