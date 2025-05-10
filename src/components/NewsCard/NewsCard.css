@@ -139,6 +139,21 @@
 }
 
 @media screen and (max-width: 768px) {
+  .card__name {
+    max-width: 352px;
+    width: 100%;
+    max-height: 65px;
+    height: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    font-size: 18px;
+    line-height: 23px;
+  }
+
   .news__card_wrapper {
     width: 224px;
     height: 420px;
@@ -156,12 +171,12 @@
     line-height: 24px;
   }
 
-  .card__name {
+  /* .card__name {
     font-weight: 400;
     font-size: 22px;
     line-height: 24px;
     overflow: hidden;
-  }
+  } */
 
   .card__description {
     font-weight: 400;

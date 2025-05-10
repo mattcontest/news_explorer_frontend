@@ -23,9 +23,10 @@ function NewsCard({ imageUrl, title, description, date, author, isLoggedIn }) {
         <div className="card__info_wrapper">
           <p className="card__date">{date}</p>
           <h2 className="card__name">
-            {title && title.length > 50
-              ? `${title.slice(0, 50)}...`
-              : `${title}`}
+            {/* {title && title.length > 50
+              ? `${title.slice(0, 40)}...`
+              : `${title}`} */}
+            {title}
           </h2>
           <p className="card__description">
             {/* {description && description.length > 100
