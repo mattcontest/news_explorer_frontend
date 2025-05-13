@@ -229,6 +229,12 @@
     width: 100%;
   }
 
+  .saved__card_remove-banner {
+    top: 9px;
+    right: 50px;
+    bottom: 152.2px;
+  }
+
   .saved__card_info {
     /* max-width: 329px; */
     width: 100%;

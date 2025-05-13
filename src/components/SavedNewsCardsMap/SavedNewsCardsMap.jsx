@@ -12,9 +12,11 @@ function SavedNewsCardsMap({ articles, isLoggedIn }) {
           {/* {articles.slice(0, 6).map((article) => { */}
           {/* {articlesPreset.slice(0, 3).map((article) => { */}
           {articles.slice(0, 3).map((article) => {
+            const uniqueKey = `${article.title}-${article.publishedAt}`;
             return (
               <SavedNewsCard
-                key={article._id}
+                // key={article._id}
+                key={uniqueKey}
                 date={new Date(article.publishedAt).toLocaleDateString(
                   "en-US",
                   {

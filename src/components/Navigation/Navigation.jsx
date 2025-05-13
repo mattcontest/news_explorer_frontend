@@ -166,12 +166,26 @@ function Navigation({ handleLoginClick, isLoggedIn, handleLogout }) {
             </NavLink>
           </div>
         ) : (
-          <button
-            className={`signin_btn ${pathname === "/saved-news" && "signin_btn__saved_news"}`}
-            onClick={handleLoginClick}
-          >
-            Sign in
-          </button>
+          <>
+            {isLoggedIn ? (
+              <NavLink to="/saved-news">
+                <button
+                  className={`signin_btn ${pathname === "/saved-news" && "signin_btn__saved_news"}`}
+                  // onClick={handleLoginClick}
+                >
+                  Saved Articicles
+                </button>
+              </NavLink>
+            ) : (
+              <button
+                className={`signin_btn ${pathname === "/saved-news" && "signin_btn__saved_news"}`}
+                onClick={handleLoginClick}
+              >
+                Sign in
+              </button>
+            )}
+            ;
+          </>
         )}
       </div>
     </div>
