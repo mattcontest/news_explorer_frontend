@@ -79,6 +79,15 @@ function Navigation({ handleLoginClick, isLoggedIn, handleLogout }) {
                 Home
               </button>
             </NavLink>
+            {!(pathname === "/saved-news") && isLoggedIn && (
+              <NavLink to="/saved-news">
+                <button
+                  className={`navigation__home-mobile navigation__home-mobile-saved  ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
+                >
+                  Saved Article
+                </button>
+              </NavLink>
+            )}
 
             {!(pathname === "/saved-news") && !isLoggedIn && (
               <button

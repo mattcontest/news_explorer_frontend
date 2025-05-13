@@ -325,6 +325,11 @@
     /* border: solid red; */
   }
 
+  .navigation__home-mobile-saved {
+    margin-bottom: 9px;
+    margin-top: -5px;
+    /* border: solid red; */
+  }
   .navigation__saved-articles {
     /* border: solid red; */
     border: none;
@@ -385,6 +390,12 @@
     justify-content: flex-end;
     max-width: 430px;
     width: 100%;
+  }
+
+  .nav__mobile-logout {
+    /* border: solid red; */
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* .navig_mobile-header {
@@ -581,6 +592,11 @@
     /* border: solid red; */
   }
 
+  .navigation__home-mobile-saved {
+    margin-bottom: 9px;
+    margin-top: -5px;
+    /* border: solid red; */
+  }
   .navigation__saved-articles {
     /* border: solid red; */
     border: none;
