@@ -10,9 +10,9 @@ function NewsCardsMap({ articles, isLoggedIn }) {
   };
   return (
     <>
-      <div className="newscards__map">
-        <h2 className="news__cards_title">Search Results</h2>
-        <ul className="news__cards_list">
+      <div className="news__cards">
+        <h2 className="news__cards-title">Search Results</h2>
+        <ul className="news__cards-list ">
           {articles.slice(0, cardsShown).map((article) => {
             return (
               <NewsCard

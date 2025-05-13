@@ -9,10 +9,10 @@ function Main({ isLoading, articles, noResults, isLoggedIn }) {
   if (isLoading) {
     content = (
       <div className="main__preloader">
-        <div className="main__preloader_circle">
+        <div className="main__preloader-circle">
           <Preloader />
         </div>
-        <p className="main__preloader_text">Searching for news...</p>
+        <p className="main__preloader-text">Searching for news...</p>
       </div>
     );
   } else if (noResults) {
@@ -25,7 +25,7 @@ function Main({ isLoading, articles, noResults, isLoggedIn }) {
     {
       articles.length > 0 &&
         (content = (
-          <div className="main__content">
+          <div className="main">
             <NewsCardsMap articles={articles} isLoggedIn={isLoggedIn} />
           </div>
         ));

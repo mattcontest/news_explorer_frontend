@@ -30,7 +30,7 @@ function SearchForm({ handleSearchSubmit, keyword, setKeyword }) {
             onChange={handleKeyword}
             value={inputValue}
           />
-          <button className="search__btn" type="submit">
+          <button className="search__form-btn" type="submit">
             Search
           </button>
         </div>

@@ -12,7 +12,7 @@
   background-color: rgba(245, 246, 247, 1);
 }
 
-.main__preloader_circle {
+.main__preloade-circle {
   position: relative;
   margin-bottom: 24px;
   /* border: solid black; */
@@ -20,7 +20,7 @@
   height: 74px;
 }
 
-.main__preloader_text {
+.main__preloader-text {
   width: 280px;
   /* border: solid red; */
   text-align: center;
@@ -36,7 +36,7 @@
   background-color: rgba(245, 246, 247, 1);
 }
 
-.main__content {
+.main {
   background-color: rgba(245, 246, 247, 1);
   /* height: 974px; */
   /* height: auto; */

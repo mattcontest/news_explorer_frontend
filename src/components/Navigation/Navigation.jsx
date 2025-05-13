@@ -29,14 +29,14 @@ function Navigation({ handleLoginClick, isLoggedIn, handleLogout }) {
       {MobileMenuOpen && <div className="nav__overlay"></div>}
 
       <button
-        className={`nav_mobile-menu ${pathname === "/saved-news" ? "nav__movile-menu_black" : ""} ${MobileMenuOpen ? "nav_mobile-menu-close" : ""}`}
+        className={`nav__mobile-menu ${pathname === "/saved-news" ? "nav__movile-menu_black" : ""} ${MobileMenuOpen ? "nav_mobile-menu-close" : ""}`}
         onClick={toggleMobile}
       >
         <img
           // src={` ${pathname === "/saved-news" ? saved_menu : menu} ${MobileMenuOpen ? close : menu}`}
           src={` ${MobileMenuOpen ? close : pathname === "/saved-news" ? saved_menu : menu}`}
           alt=""
-          className="nav__mobile-menu-icon"
+          className="nav__mobile-menu__icon"
         />
       </button>
 
@@ -46,9 +46,9 @@ function Navigation({ handleLoginClick, isLoggedIn, handleLogout }) {
         >
           Home
         </button> */}
-        <div className="navig_mobile-header">
+        <div className="navig__mobile-header">
           <p
-            className={`navig__mobile_logo ${pathname === "/saved-news" ? "navig__mobile_logo_saved" : " "}`}
+            className={`navig__mobile-logo ${pathname === "/saved-news" ? "navig__mobile_logo_saved" : " "}`}
           >
             NewsExplorer
           </p>
