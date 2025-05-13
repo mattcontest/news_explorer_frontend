@@ -81,7 +81,7 @@
     height: 536px;
   }
 
-  .internal__header__wrapper {
+  .header__content-wrapper {
     max-width: 320px;
   }
 
@@ -128,7 +128,7 @@
     /* border: solid red; */
   }
 
-  .internal__header__wrapper {
+  .header__content-wrapper {
     max-width: 320px;
   }
 

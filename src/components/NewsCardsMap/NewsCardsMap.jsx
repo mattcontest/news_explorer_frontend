@@ -14,9 +14,11 @@ function NewsCardsMap({ articles, isLoggedIn }) {
         <h2 className="news__cards-title">Search Results</h2>
         <ul className="news__cards-list ">
           {articles.slice(0, cardsShown).map((article) => {
+            const uniqueKey = `${article.title}-${article.publishedAt}`;
             return (
               <NewsCard
-                key={article._id}
+                // key={article._id}
+                key={uniqueKey}
                 imageUrl={article.urlToImage}
                 title={article.title}
                 description={article.description}
@@ -35,7 +37,7 @@ function NewsCardsMap({ articles, isLoggedIn }) {
           })}
         </ul>
         {cardsShown <= 5 ? (
-          <button className="show__more_btn" onClick={showMore}>
+          <button className="show__more-btn " onClick={showMore}>
             Show More
           </button>
         ) : (

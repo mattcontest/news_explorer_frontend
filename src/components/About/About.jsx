@@ -9,7 +9,7 @@ function About() {
           <img src={avatar} alt="Avatar" className="author__image-avatar" />
         </div>
         <div className="author">
-          <h1 className="author_title">About the author</h1>
+          <h3 className="author_title">About the author</h3>
           <p className="author__description">
             At the intersection of education and technology, I’ve developed the
             ability to clearly explain software concepts, thanks to my

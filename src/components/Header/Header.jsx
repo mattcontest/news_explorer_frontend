@@ -24,7 +24,7 @@ function Header({
           handleLogout={handleLogout}
         />
         <div className="header__content">
-          <div className="internal__header__wrapper">
+          <div className="header__content-wrapper">
             <h1 className="header__title">What's going on in the world?</h1>
             <p className="header__description">
               Find the latest news on any topic and save them on your personal
