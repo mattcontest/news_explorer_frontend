@@ -7,7 +7,7 @@
   height: 374px;
 }
 
-.no__result_title {
+.no__result-title {
   width: 356px;
   height: 30px;
   /* border: solid red; */
@@ -19,7 +19,7 @@
   margin-bottom: 16px;
 }
 
-.no__result_text {
+.no__result-text {
   /* border: solid red; */
   width: 356px;
   height: 48px;

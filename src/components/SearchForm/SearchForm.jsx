@@ -18,9 +18,9 @@ function SearchForm({ handleSearchSubmit, keyword, setKeyword }) {
   };
 
   return (
-    <form className="search__form-system" onSubmit={handleSearch}>
+    <form className="search__form" onSubmit={handleSearch}>
       {/* <form className="search__form_system"> */}
-      <div className="search__form">
+      <div className="search__form-system">
         <div className="search__form-wrapper">
           <input
             className="search__form-input"

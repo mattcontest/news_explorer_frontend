@@ -39,7 +39,7 @@
   margin-left: 56px;
 }
 
-.author_title {
+.author__title {
   font-family: "Roboto Slab";
   font-weight: 400;
   font-size: 40px;
@@ -78,7 +78,7 @@
     height: 232px;
   }
 
-  .author_title {
+  .author__title {
     font-weight: 400;
     font-size: 30px;
     line-height: 40px;
@@ -110,7 +110,7 @@
     height: 232px;
   }
 
-  .author_title {
+  .author__title {
     font-weight: 400;
     font-size: 30px;
     line-height: 40px;
@@ -156,7 +156,7 @@
     /* margin-bottom: 128px; */
   }
 
-  .author_title {
+  .author__title {
     font-weight: 400;
     font-size: 30px;
     line-height: 40px;
@@ -200,7 +200,7 @@
     margin-bottom: 128px;
   }
 
-  .author_title {
+  .author__title {
     font-weight: 400;
     font-size: 30px;
     line-height: 40px;
@@ -243,7 +243,7 @@
     margin-bottom: 128px;
   }
 
-  .author_title {
+  .author__title {
     font-weight: 400;
     font-size: 30px;
     line-height: 40px;

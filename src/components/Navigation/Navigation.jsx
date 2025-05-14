@@ -30,7 +30,7 @@ function Navigation({ handleLoginClick, isLoggedIn, handleLogout }) {
       {MobileMenuOpen && <div className="nav__overlay"></div>}
 
       <button
-        className={`nav__mobile-menu ${pathname === "/saved-news" ? "nav__movile-menu_black" : ""} ${MobileMenuOpen ? "nav_mobile-menu-close" : ""}`}
+        className={`navigation__mobile-menu ${pathname === "/saved-news" ? "nav__movile-menu_black" : ""} ${MobileMenuOpen ? "nav_mobile-menu-close" : ""}`}
         onClick={toggleMobile}
       >
         <img
@@ -41,7 +41,7 @@ function Navigation({ handleLoginClick, isLoggedIn, handleLogout }) {
         />
       </button>
 
-      <nav className={`navig__nav ${MobileMenuOpen ? "open" : "closed"}`}>
+      <nav className={`navigation__nav ${MobileMenuOpen ? "open" : "closed"}`}>
         {/* <button
           className={`navigation__home-btn ${pathname === "/saved-news" ? "saved__news-home-btn" : ""} ${MobileMenuOpen ? "mobile__open" : ""}`}
         >
@@ -72,7 +72,7 @@ function Navigation({ handleLoginClick, isLoggedIn, handleLogout }) {
             </p>
           </div>
 
-          <div className="options__bar">
+          <div className="menu__options-bar">
             <NavLink to="/">
               <button
                 className={`navigation__home-mobile ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
