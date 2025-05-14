@@ -216,6 +216,7 @@
 @media screen and (max-width: 430px) {
   .card__image {
     width: 100%;
+    object-fit: cover;
   }
 
   .saved_news_delete_btn {

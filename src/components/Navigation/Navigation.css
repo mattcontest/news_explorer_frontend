@@ -316,7 +316,7 @@
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 614px) {
   .navig__smobile-header {
     /* border: solid red; */
   }
@@ -405,7 +405,7 @@
   .navigation {
     display: flex;
     justify-content: flex-end;
-    max-width: 550px;
+    max-width: 614px;
     width: 100%;
   }
 
@@ -473,7 +473,7 @@
     border-left: none;
     border-right: none;
     z-index: 2;
-    max-width: 550px;
+    max-width: 614px;
     /* border-bottom: solid rgba(196, 196, 196, 0.01) 2px; */
     /* border: solid red; */
   }
@@ -500,7 +500,7 @@
     display: block;
     /* border: solid red; */
     /* width: 100%; */
-    max-width: 550px;
+    max-width: 614px;
     width: 100%;
   }
 

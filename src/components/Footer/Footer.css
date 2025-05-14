@@ -47,6 +47,13 @@
   color: black;
 }
 
+@media screen and (max-width: 1227px) {
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .footer {
     padding-left: 40px;
