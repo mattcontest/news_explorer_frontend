@@ -11,8 +11,8 @@ function NewsCardsMap({ articles, isLoggedIn }) {
   return (
     <>
       <div className="news__cards">
-        <h2 className="news__cards-title">Search Results</h2>
         <ul className="news__cards-list ">
+          <h2 className="news__cards-title">Search Results</h2>
           {articles.slice(0, cardsShown).map((article) => {
             const uniqueKey = `${article.title}-${article.publishedAt}`;
             return (

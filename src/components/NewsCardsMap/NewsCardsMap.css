@@ -31,6 +31,7 @@
   margin: 0;
   padding: 0;
   margin-right: 6px;
+  /* border: solid red; */
 }
 
 .show__more-btn {
@@ -58,7 +59,7 @@
   font-family: "Roboto Slab";
   font-size: 40px;
   font-weight: 400;
-  width: 321px;
+  /* width: 321px; */
   /* width: auto; */
   height: 46px;
   /* margin-left: -499px; */
@@ -67,6 +68,10 @@
   margin-bottom: 64px;
   align-self: flex-start;
   margin-left: 108px;
+  max-width: 1440px;
+  width: 100%;
+  /* border: solid red; */
+
   /* padding-left: 205px; */
   /* margin-left: 235px; */
   /* margin-left: -104px; */
