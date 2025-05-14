@@ -49,6 +49,7 @@ function LoginModal({
           placeholder="Enter Email"
           onChange={handleEmailChange}
           value={email}
+          required
         />
       </label>
       <label
@@ -63,6 +64,7 @@ function LoginModal({
           placeholder="Enter Password"
           onChange={handlePasswordChange}
           value={password}
+          required
         />
       </label>
       <div className="btn__container">

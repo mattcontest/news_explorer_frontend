@@ -59,6 +59,7 @@ function RegisterModal({
           placeholder="Enter email"
           onChange={handleEmailChange}
           value={email}
+          required
         />
       </label>
       <label
@@ -73,6 +74,7 @@ function RegisterModal({
           placeholder="Enter password"
           onChange={handlePasswordChange}
           value={password}
+          required
         />
       </label>
       <label

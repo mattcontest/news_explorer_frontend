@@ -29,6 +29,7 @@ function SearchForm({ handleSearchSubmit, keyword, setKeyword }) {
             placeholder="Enter topic"
             onChange={handleKeyword}
             value={inputValue}
+            required
           />
           <button className="search__form-btn" type="submit">
             Search
