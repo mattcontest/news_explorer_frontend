@@ -37,7 +37,7 @@ function Navigation({ handleLoginClick, isLoggedIn, handleLogout }) {
           // src={` ${pathname === "/saved-news" ? saved_menu : menu} ${MobileMenuOpen ? close : menu}`}
           src={` ${MobileMenuOpen ? close : pathname === "/saved-news" ? saved_menu : menu}`}
           alt=""
-          className="nav__mobile-menu__icon"
+          className="mobile-menu_icon"
         />
       </button>
 
