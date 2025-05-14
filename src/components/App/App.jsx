@@ -24,7 +24,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [keyword, setKeyword] = useState("");
   const [noResults, setNoResults] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [savedNews, setSavedNews] = useState([]);
 
   // const handleSignUp = async (email, password) => {

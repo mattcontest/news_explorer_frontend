@@ -28,6 +28,11 @@
   padding-right: 36px;
 }
 
+.modal__content_login {
+  /* border: solid red; */
+  height: 380px;
+}
+
 .modal__title {
   margin: 0;
   /* width: 88px; */

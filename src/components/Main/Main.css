@@ -2,10 +2,12 @@
   display: flex;
   flex-direction: column;
 
-  height: 282px;
+  min-height: 200px;
+  height: 100%;
+
   align-items: center;
   justify-content: center;
-
+  position: relative;
   /* padding-top: 80px; */
   /* padding-bottom: 80px; */
 
@@ -30,6 +32,7 @@
   font-size: 18px;
   margin: 0;
   padding: 0;
+  margin-top: 80px;
 }
 
 .main__no-result {
