@@ -1,5 +1,6 @@
 import "./Navigation.css";
-import logout from "../../assets/logout.svg";
+import logout from "../../assets/logout__white.svg";
+import logout__black from "../../assets/logout.svg";
 import close from "../../assets/close_mobile.svg";
 import menu from "../../assets/menu.svg";
 import saved_menu from "../../assets/saved_menu.svg";
@@ -161,21 +162,35 @@ function Navigation({ handleLoginClick, isLoggedIn, handleLogout }) {
                 <p className="username">
                   {currentUser?.currentUser.name || "Elise"}
                 </p>
-                <img src={logout} className="logout__img" />
+                <img src={logout__black} className="logout__img" />
               </button>
             </NavLink>
           </div>
         ) : (
           <>
             {isLoggedIn ? (
-              <NavLink to="/saved-news">
+              <>
+                <NavLink to="/saved-news">
+                  <button
+                    className={`saved__articles-btn ${pathname === "/saved-news" && "signin_btn__saved_news"}`}
+                    // onClick={handleLoginClick}
+                  >
+                    Saved Articicles
+                  </button>
+                </NavLink>
                 <button
-                  className={`signin_btn ${pathname === "/saved-news" && "signin_btn__saved_news"}`}
-                  // onClick={handleLoginClick}
+                  className="logout_btn logout__btn-home"
+                  onClick={handleLogout}
                 >
-                  Saved Articicles
+                  <p className="username">
+                    {currentUser?.currentUser.name || "Elise"}
+                  </p>
+                  <img
+                    src={pathname === "/saved-news" ? logout__black : logout}
+                    className="logout__img"
+                  />
                 </button>
-              </NavLink>
+              </>
             ) : (
               <button
                 className={`signin_btn ${pathname === "/saved-news" && "signin_btn__saved_news"}`}
@@ -184,7 +199,6 @@ function Navigation({ handleLoginClick, isLoggedIn, handleLogout }) {
                 Sign in
               </button>
             )}
-            ;
           </>
         )}
       </div>
