@@ -63,7 +63,7 @@ function Navigation({ handleLoginClick, isLoggedIn, handleLogout }) {
           className={`menu__options ${MobileMenuOpen ? "show_options" : ""}`}
         >
           <div
-            className={` navig__moobile_open-header  ${MobileMenuOpen ? "open" : ""}`}
+            className={` navig__mobile_open-header  ${MobileMenuOpen ? "open" : ""}`}
           >
             <p
               className={`navig__mobile_logo-open ${MobileMenuOpen ? "open" : "closed"}`}
@@ -75,6 +75,7 @@ function Navigation({ handleLoginClick, isLoggedIn, handleLogout }) {
           <div className="menu__options-bar">
             <NavLink to="/">
               <button
+                // className={`navigation__home-mobile ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
                 className={`navigation__home-mobile ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
               >
                 Home

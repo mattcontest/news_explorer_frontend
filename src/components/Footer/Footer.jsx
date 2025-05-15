@@ -4,7 +4,7 @@ import github from "../../assets/github.svg";
 function Footer() {
   return (
     <footer className="footer">
-      <div className="footer__mobile mobile__open">
+      <div className="footer__mobile footer__mobile-open">
         <div className="footer__links">
           <div className="footer__links-first">
             <a href="" className="home footer__link">

@@ -32,7 +32,7 @@
   display: block;
 }
 
-.mobile__open {
+.footer__mobile-open {
   display: none;
 }
 
@@ -73,7 +73,7 @@
     display: block;
   }
 
-  .mobile__open {
+  .footer__mobile-open {
     display: none;
   }
 
@@ -170,7 +170,7 @@
 }
 
 @media screen and (max-width: 320px) {
-  .mobile__open {
+  .footer__mobile-open {
     display: block;
   }
 

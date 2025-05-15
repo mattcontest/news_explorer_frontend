@@ -12,31 +12,33 @@ function NewsCardsMap({ articles, isLoggedIn }) {
     <>
       <div className="news">
         <div className="news__cards">
-          <ul className="news__cards-list ">
+          <div className="news__cards-wrapper">
             <h2 className="news__cards-title">Search Results</h2>
-            {articles.slice(0, cardsShown).map((article) => {
-              const uniqueKey = `${article.title}-${article.publishedAt}`;
-              return (
-                <NewsCard
-                  // key={article._id}
-                  key={uniqueKey}
-                  imageUrl={article.urlToImage}
-                  title={article.title}
-                  description={article.description}
-                  author={article.source?.name || "Uknown Source"}
-                  date={new Date(article.publishedAt).toLocaleDateString(
-                    "en-US",
-                    {
-                      month: "long",
-                      day: "numeric",
-                      year: "numeric",
-                    }
-                  )}
-                  isLoggedIn={isLoggedIn}
-                />
-              );
-            })}
-          </ul>
+            <ul className="news__cards-list ">
+              {articles.slice(0, cardsShown).map((article) => {
+                const uniqueKey = `${article.title}-${article.publishedAt}`;
+                return (
+                  <NewsCard
+                    // key={article._id}
+                    key={uniqueKey}
+                    imageUrl={article.urlToImage}
+                    title={article.title}
+                    description={article.description}
+                    author={article.source?.name || "Uknown Source"}
+                    date={new Date(article.publishedAt).toLocaleDateString(
+                      "en-US",
+                      {
+                        month: "long",
+                        day: "numeric",
+                        year: "numeric",
+                      }
+                    )}
+                    isLoggedIn={isLoggedIn}
+                  />
+                );
+              })}
+            </ul>
+          </div>
           {cardsShown <= 5 ? (
             <button className="show__more-btn " onClick={showMore}>
               Show More
