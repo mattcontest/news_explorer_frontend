@@ -16,7 +16,7 @@ function Header({
   // const { pathname } = useLocation();
   const currentUser = useContext(CurrentUserContext);
   return (
-    <div className="header">
+    <header className="header">
       <div className="header__wrapper">
         <Navigation
           handleLoginClick={handleLoginClick}
@@ -39,7 +39,7 @@ function Header({
           keyword={keyword}
         />
       </div>
-    </div>
+    </header>
   );
 }
 

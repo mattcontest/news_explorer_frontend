@@ -67,15 +67,30 @@
   margin-top: 80px;
   margin-bottom: 64px;
   align-self: flex-start;
-  margin-left: 108px;
-  max-width: 1440px;
-  width: 100%;
+  /* margin-left: 108px; */
+  /* padding-left: 104px; */
+  /* max-width: 1440px; */
+  width: 290px;
+  /* border: solid red; */
+  /* margin-left: 34px; */
+  /* margin-right: auto; */
+
+  /* margin: 80px auto 64px 104px; */
+
+  /* width: calc(100% - 20%); */
   /* border: solid red; */
 
   /* padding-left: 205px; */
   /* margin-left: 235px; */
   /* margin-left: -104px; */
   /* padding-left: 204px; */
+}
+
+@media screen and (max-width: 1394px) {
+  .news__cards-title {
+    /* border: solid red; */
+    margin-left: 104px;
+  }
 }
 
 @media screen and (max-width: 768px) {
