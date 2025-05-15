@@ -8,7 +8,7 @@
 }
 
 .no__result-title {
-  width: 356px;
+  width: 206px;
   height: 30px;
   /* border: solid red; */
   text-align: center;
@@ -21,7 +21,7 @@
 
 .no__result-text {
   /* border: solid red; */
-  width: 356px;
+  width: 200px;
   height: 48px;
   font-weight: 400;
   text-align: center;
