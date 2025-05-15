@@ -54,6 +54,10 @@
   background: rgba(52, 126, 255, 1);
 }
 
+.search__form-btn:active {
+  background-color: rgba(42, 101, 204, 1);
+}
+
 @media screen and (max-width: 768px) {
   .search__form-input {
     height: 56px;

@@ -10,7 +10,7 @@ function NewsCardsMap({ articles, isLoggedIn }) {
   };
   return (
     <>
-      <div className="news">
+      <section className="news">
         <div className="news__cards">
           <div className="news__cards-wrapper">
             <h2 className="news__cards-title">Search Results</h2>
@@ -47,7 +47,7 @@ function NewsCardsMap({ articles, isLoggedIn }) {
             ""
           )}
         </div>
-      </div>
+      </section>
     </>
   );
 }

@@ -131,7 +131,7 @@ function Navigation({ handleLoginClick, isLoggedIn, handleLogout }) {
       <div
         className={`navbar ${pathname === "/saved-news" && "navbar__saved_news"}`}
       >
-        <NavLink to="/" className="navbar_link">
+        <NavLink to="/" className="navbar__link">
           <p
             className={`logo ${pathname === "/saved-news" && "logo__saved_news"}`}
           >
@@ -148,7 +148,7 @@ function Navigation({ handleLoginClick, isLoggedIn, handleLogout }) {
         </NavLink>
         {/* {isLoggedIn? ( */}
         {pathname === "/saved-news" ? (
-          <div className="nav_links">
+          <div className="nav__links">
             <NavLink to="/saved-news">
               <button
                 // className={`saved__articles_btn ${pathname === "/saved-news" && "home_btn__saved_news"}`}
@@ -159,11 +159,14 @@ function Navigation({ handleLoginClick, isLoggedIn, handleLogout }) {
             </NavLink>
 
             <NavLink to="/">
-              <button className="logout_btn" onClick={handleLogout}>
+              <button
+                className="nav__links-logout logout__btn"
+                onClick={handleLogout}
+              >
                 <p className="username">
                   {currentUser?.currentUser.name || "Elise"}
                 </p>
-                <img src={logout__black} className="logout__img" />
+                <img src={logout__black} className="nav__links-img" />
               </button>
             </NavLink>
           </div>
@@ -180,7 +183,7 @@ function Navigation({ handleLoginClick, isLoggedIn, handleLogout }) {
                   </button>
                 </NavLink>
                 <button
-                  className="logout_btn logout__btn-home"
+                  className="nav__links-logout nav__links-logout nav__links-home "
                   onClick={handleLogout}
                 >
                   <p className="username">
@@ -188,7 +191,7 @@ function Navigation({ handleLoginClick, isLoggedIn, handleLogout }) {
                   </p>
                   <img
                     src={pathname === "/saved-news" ? logout__black : logout}
-                    className="logout__img"
+                    className="nav__links-img"
                   />
                 </button>
               </>
