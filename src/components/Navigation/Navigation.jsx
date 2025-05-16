@@ -59,19 +59,19 @@ function Navigation({ handleLoginClick, isLoggedIn, handleLogout }) {
           </button> */}
         </div>
 
-        <div
-          className={`menu__options ${MobileMenuOpen ? "show_options" : ""}`}
-        >
+        <div className="menu">
           <div
-            className={` navig__mobile_open-header  ${MobileMenuOpen ? "open" : ""}`}
+            className={`menu__options ${MobileMenuOpen ? "show_options" : ""}`}
           >
-            <p
-              className={`navig__mobile_logo-open ${MobileMenuOpen ? "open" : "closed"}`}
+            <div
+              className={` navig__mobile_open-header  ${MobileMenuOpen ? "open" : ""}`}
             >
-              NewsExplorer
-            </p>
-          </div>
-          <div className="menu">
+              <p
+                className={`navig__mobile_logo-open ${MobileMenuOpen ? "open" : "closed"}`}
+              >
+                NewsExplorer
+              </p>
+            </div>
             <div className="menu__options-bar">
               <NavLink to="/">
                 <button
