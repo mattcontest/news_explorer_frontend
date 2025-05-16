@@ -8,17 +8,21 @@ function Main({ isLoading, articles, noResults, isLoggedIn }) {
 
   if (isLoading) {
     content = (
-      <div className="main__preloader">
-        <div className="main__preloader-circle">
-          <Preloader />
+      <div className="main">
+        <div className="main__preloader">
+          <div className="main__preloader-circle">
+            <Preloader />
+          </div>
+          <p className="main__preloader-text">Searching for news...</p>
         </div>
-        <p className="main__preloader-text">Searching for news...</p>
       </div>
     );
   } else if (noResults) {
     content = (
-      <div className="main__no-result">
+      <div className="main">
+        {/* <div className="main__no-result"> */}
         <NoResult />
+        {/* </div> */}
       </div>
     );
   } else if (!noResults) {

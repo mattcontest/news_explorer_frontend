@@ -49,8 +49,8 @@ function Footer() {
         </div>
       </div>
 
-      <div className="footer_non-mobile desktop-open">
-        <div className="footer_non-mobile-links">
+      <div className="footer__non-mobile desktop-open">
+        <div className="footer__non-mobile-links">
           <div className="footer__non-mobile-first">
             <a href="" className=" footer__link">
               Home

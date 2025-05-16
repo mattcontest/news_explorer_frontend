@@ -16,7 +16,7 @@
   margin: 0 auto;
 }
 
-.footer_non-mobile-links {
+.footer__non-mobile-links {
   border: red;
   display: flex;
 }
