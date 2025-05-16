@@ -71,59 +71,60 @@ function Navigation({ handleLoginClick, isLoggedIn, handleLogout }) {
               NewsExplorer
             </p>
           </div>
-
-          <div className="menu__options-bar">
-            <NavLink to="/">
-              <button
-                // className={`navigation__home-mobile ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
-                className={`navigation__home-mobile ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
-              >
-                Home
-              </button>
-            </NavLink>
-            {!(pathname === "/saved-news") && isLoggedIn && (
-              <NavLink to="/saved-news">
+          <div className="menu">
+            <div className="menu__options-bar">
+              <NavLink to="/">
                 <button
-                  className={`navigation__home-mobile navigation__home-mobile-saved  ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
+                  // className={`navigation__home-mobile ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
+                  className={`navigation__home-mobile ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
                 >
-                  Saved Article
+                  Home
                 </button>
               </NavLink>
-            )}
+              {!(pathname === "/saved-news") && isLoggedIn && (
+                <NavLink to="/saved-news">
+                  <button
+                    className={`navigation__home-mobile navigation__home-mobile-saved  ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
+                  >
+                    Saved Article
+                  </button>
+                </NavLink>
+              )}
 
-            {!(pathname === "/saved-news") && !isLoggedIn && (
-              <button
-                className={`navigation__signin-btn nav__mobile-sign_in ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
-                onClick={handleLoginClick}
-              >
-                Sign In
-              </button>
-            )}
-            {pathname === "/saved-news" && (
-              <button
-                className={`navigation__saved-articles ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
-              >
-                Saved Articles
-              </button>
-            )}
+              {!(pathname === "/saved-news") && !isLoggedIn && (
+                <button
+                  className={`navigation__signin-btn nav__mobile-sign_in ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
+                  onClick={handleLoginClick}
+                >
+                  Sign In
+                </button>
+              )}
+              {pathname === "/saved-news" && (
+                <button
+                  className={`navigation__saved-articles ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
+                >
+                  Saved Articles
+                </button>
+              )}
 
-            {isLoggedIn ? (
-              <button
-                className={`navigation__logout-btn ${"nav__mobile-logout"} ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
-                onClick={handleLogoutClick}
-              >
-                {/* onClick={handleLogout} */}
-                Log Out
-              </button>
-            ) : (
-              <></>
+              {isLoggedIn ? (
+                <button
+                  className={`navigation__logout-btn ${"nav__mobile-logout"} ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
+                  onClick={handleLogoutClick}
+                >
+                  {/* onClick={handleLogout} */}
+                  Log Out
+                </button>
+              ) : (
+                <></>
 
-              // <button
-              //   className={`navigation__signin-btn ${"nav__mobile-sign_in"} ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
-              // >
-              //   Sign In
-              // </button>
-            )}
+                // <button
+                //   className={`navigation__signin-btn ${"nav__mobile-sign_in"} ${MobileMenuOpen ? "mobile__open" : "mobile__close"}`}
+                // >
+                //   Sign In
+                // </button>
+              )}
+            </div>
           </div>
         </div>
       </nav>
