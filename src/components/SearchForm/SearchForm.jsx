@@ -18,25 +18,27 @@ function SearchForm({ handleSearchSubmit, keyword, setKeyword }) {
   };
 
   return (
-    <form className="search__form" onSubmit={handleSearch}>
-      {/* <form className="search__form_system"> */}
-      <div className="search__form-system">
-        <div className="search__form-wrapper">
-          <input
-            className="search__form-input"
-            type="text"
-            name="search"
-            placeholder="Enter topic"
-            onChange={handleKeyword}
-            value={inputValue}
-            required
-          />
-          <button className="search__form-btn" type="submit">
-            Search
-          </button>
+    <div className="search">
+      <form className="search__form" onSubmit={handleSearch}>
+        {/* <form className="search__form_system"> */}
+        <div className="search__form-system">
+          <div className="search__form-wrapper">
+            <input
+              className="search__form-input"
+              type="text"
+              name="search"
+              placeholder="Enter topic"
+              onChange={handleKeyword}
+              value={inputValue}
+              required
+            />
+            <button className="search__form-btn" type="submit">
+              Search
+            </button>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 }
 

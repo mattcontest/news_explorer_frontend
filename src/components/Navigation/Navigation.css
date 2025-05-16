@@ -226,11 +226,11 @@
   border: solid red;
 }
 
-.navig__mobile_logo-open {
+.navigation__mobile_logo-open {
   display: none;
 }
 
-.navig__mobile-header {
+.navigation__mobile-header {
   display: none;
 }
 
@@ -303,7 +303,7 @@
   .navigation__mobile-menu {
     display: none;
   }
-  .navig__mobile-header {
+  .navigation__mobile-header {
     display: none;
   }
 
@@ -429,7 +429,7 @@
     /* border: solid red; */
   /* }  */
 
-  .navigation .navig__mobile-header {
+  .navigation .navigation__mobile-header {
     display: block;
   }
 
@@ -485,7 +485,7 @@
     /* height: 230px; */
   }
 
-  .navig__mobile_open-header.open {
+  .navigation__mobile_open-header.open {
     display: block;
     /* border: solid rgba(196, 196, 196, 0.01); */
     border: solid rgb(201, 202, 207);
@@ -547,7 +547,7 @@
     /* z-index: 2; */
   }
 
-  .navig__mobile_logo-open {
+  .navigation__mobile_logo-open {
     color: white;
     width: 117px;
     height: 24px;
@@ -703,7 +703,7 @@
     /* border: solid red; */
   /* }  */
 
-  .navigation .navig__mobile-header {
+  .navigation .navigation__mobile-header {
     display: block;
   }
 
@@ -820,7 +820,7 @@
     /* z-index: 2; */
   }
 
-  .navig__mobile_logo-open {
+  .navigation__mobile_logo-open {
     color: white;
     width: 117px;
     height: 24px;
@@ -861,7 +861,7 @@
     overflow-x: hidden;
   }
 
-  .navig__mobile-header {
+  .navigation__mobile-header {
     /* border: solid red; */
   }
 
@@ -963,7 +963,7 @@
     /* border: solid red; */
   /* }  */
 
-  .navigation .navig__mobile-header {
+  .navigation .navigation__mobile-header {
     display: block;
   }
 
@@ -1079,7 +1079,7 @@
     /* z-index: 2; */
   }
 
-  .navig__mobile_logo-open {
+  .navigation__mobile_logo-open {
     color: white;
     width: 117px;
     height: 24px;

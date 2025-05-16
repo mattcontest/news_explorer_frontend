@@ -47,7 +47,7 @@ function Navigation({ handleLoginClick, isLoggedIn, handleLogout }) {
         >
           Home
         </button> */}
-        <div className="navig__mobile-header">
+        <div className="navigation__mobile-header">
           <p
             className={`navig__mobile-logo ${pathname === "/saved-news" ? "navig__mobile_logo_saved" : " "}`}
           >
@@ -64,10 +64,10 @@ function Navigation({ handleLoginClick, isLoggedIn, handleLogout }) {
             className={`menu__options ${MobileMenuOpen ? "show_options" : ""}`}
           >
             <div
-              className={` navig__mobile_open-header  ${MobileMenuOpen ? "open" : ""}`}
+              className={` navigation__mobile_open-header  ${MobileMenuOpen ? "open" : ""}`}
             >
               <p
-                className={`navig__mobile_logo-open ${MobileMenuOpen ? "open" : "closed"}`}
+                className={`navigation__mobile_logo-open ${MobileMenuOpen ? "open" : "closed"}`}
               >
                 NewsExplorer
               </p>

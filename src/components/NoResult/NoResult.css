@@ -1,4 +1,4 @@
-.no__result {
+.no-result {
   /* border: solid red; */
   display: flex;
   flex-direction: column;
@@ -7,7 +7,7 @@
   height: 374px;
 }
 
-.no__result-title {
+.no-result__title {
   width: 206px;
   height: 30px;
   /* border: solid red; */
@@ -19,7 +19,7 @@
   margin-bottom: 16px;
 }
 
-.no__result-text {
+.no-result__text {
   /* border: solid red; */
   width: 200px;
   height: 48px;
