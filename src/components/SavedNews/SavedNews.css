@@ -1,0 +1,5 @@
+.saved__news {
+  /* border: solid purple; */
+  display: flex;
+  flex: 1;
+}

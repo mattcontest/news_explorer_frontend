@@ -1,0 +1,68 @@
+.modal__content_signup {
+  background-color: rgba(255, 255, 255, 1);
+  position: relative;
+  height: 458px;
+  max-width: 430px;
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid;
+  padding-top: 34px;
+  padding-left: 36px;
+  padding-right: 36px;
+}
+
+.modal__label_signup {
+  margin-bottom: 31px;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  color: rgba(47, 113, 229, 1);
+}
+
+.modal__label_signup:nth-child(3) {
+  margin-bottom: 39px;
+}
+
+.modal__register_btn {
+  border-radius: 100px;
+  height: 64px;
+  border: none;
+  /* border: solid red; */
+  padding-top: 20px;
+  padding-bottom: 20px;
+  /* margin: 0; */
+  margin-bottom: 16px;
+  width: 100%;
+  /* border: solid red; */
+  margin-bottom: 16px;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0;
+  cursor: pointer;
+  /* margin-bottom: 16px; */
+}
+
+.modal__register_txt {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(47, 113, 229, 1);
+  cursor: pointer;
+}
+
+.modal__login_instead_btn {
+  border: none;
+  background-color: transparent;
+  width: 226px;
+  align-self: center;
+  height: 20px;
+}
+
+@media screen and (max-width: 320px) {
+  .modal__content_signup {
+    margin-top: 54px;
+  }
+}
