@@ -13,7 +13,7 @@ import ConfirmationModal from "../ConfirmationModal/ConfirmationModal.jsx";
 import Main from "../Main/Main.jsx";
 import { APIkey } from "../../utils/newsApi.js";
 import { getNews } from "../../utils/newsApi.js";
-import { getArticles } from "../../utils/api.js";
+import { getArticles, saveItem } from "../../utils/api.js";
 import { checkToken, signIn, signUp } from "../../utils/auth.js";
 
 function App() {
@@ -61,6 +61,25 @@ function App() {
     } catch (err) {
       console.error(err);
     }
+  };
+
+  const handleLoginIn = ({ email, password }) => {
+    if (!email || !password) {
+      return;
+    }
+
+    signIn({ email, password })
+      .then((res) => {
+        if (res.token) {
+          setIsLoggedIn(true);
+          localStorage.setItem("jwt", res.token);
+          setCurrentUser({ username: res.username, _id: res._id });
+          closeActiveModal();
+        }
+      })
+      .catch((err) => {
+        console.error("Failed to log in", err);
+      });
   };
 
   const handleCheckToken = async () => {
@@ -125,6 +144,30 @@ function App() {
 
   const closeActiveModal = () => {
     setActiveModal("");
+  };
+
+  function checkItemInArray(item, array) {
+    return array.some((arrayItem = item.url === arrayItem.url));
+  }
+
+  const handleSaveItem = (item) => {
+    item.isSaved = !item.isSaved;
+    item.keyword = keyword;
+    checkItemInArray(item, savedNews)
+      ? console.log("News already saved!")
+      : saveItem(item, token)
+          .then((article) => {
+            item._id = article.data._id;
+            setSavedNews([article.data, ...savedNews]);
+            console.log("Article saved");
+          })
+          .catch((err) => {
+            console.error("Failed to save article", err);
+          });
+
+    if (item.isSaved && !savedNews.includes(item)) {
+      setSavedNews([item, ...savedNews]);
+    }
   };
 
   const handleSearchSubmit = (keyword) => {
