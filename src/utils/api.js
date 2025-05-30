@@ -100,4 +100,14 @@ export function deleteItem(item, token) {
   });
 }
 
-export { checkResponse, getArticles, saveItem, deleteItem };
+export function getSavedNews(token) {
+  return request(`${BASE_URL}/articles`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  });
+}
+
+export { checkResponse, getArticles, saveItem, deleteItem, getSavedNews };
