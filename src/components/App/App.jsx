@@ -49,34 +49,41 @@ function App() {
     }
   };
 
-  const handleSignIn = async (email, password) => {
-    try {
-      console.log("1. Starting with sign in");
-      const res = await signIn();
-      if (res.token) {
-        console.log("2. Get token", res.token);
-        localStorage.setItem("token", res.token);
-        handleCheckToken();
-      }
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  // const handleSignIn = async (email, password) => {
+  //   try {
+  //     console.log("1. Starting with sign in");
+  //     const res = await signIn();
+  //     if (res.token) {
+  //       console.log("2. Get token", res.token);
+  //       localStorage.setItem("token", res.token);
+  //       handleCheckToken();
+  //     }
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
 
-  const handleLoginIn = ({ email, password }) => {
+  const handleSignIn = ({ email, password }) => {
     if (!email || !password) {
       return;
     }
 
+    console.log("We reached this stage", email, password);
     signIn({ email, password })
       .then((res) => {
+        console.log("SUCCESS: Got response from signIn", res);
+
         if (res.token) {
           setIsLoggedIn(true);
-          localStorage.setItem("jwt", res.token);
+          localStorage.setItem("token", res.token);
+          console.log("Check inside of res", res);
           setCurrentUser({ username: res.username, _id: res._id });
-          closeActiveModal();
+          // closeActiveModal();
         }
       })
+      // .then(() => {
+      //   closeActiveModal();
+      // })
       .catch((err) => {
         console.error("Failed to log in", err);
       });
@@ -153,6 +160,7 @@ function App() {
   const handleSaveItem = (item) => {
     item.isSaved = !item.isSaved;
     item.keyword = keyword;
+    const token = localStorage.getItem("token");
     checkItemInArray(item, savedNews)
       ? console.log("News already saved!")
       : saveItem(item, token)
@@ -225,7 +233,8 @@ function App() {
     console.log("App mounted, checking token");
     console.log("Check current user", currentUser);
     handleCheckToken();
-  }, []);
+    console.log("After checking token", currentUser);
+  }, [isLoggedIn]);
 
   return (
     <CurrentUserContext.Provider value={{ currentUser, isLoggedIn }}>

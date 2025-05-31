@@ -18,7 +18,7 @@ function LoginModal({
     }
 
     onSubmit({ email, password });
-    handleCloseModal();
+    // handleCloseModal();
   };
 
   const [email, setEmail] = useState();

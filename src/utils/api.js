@@ -65,7 +65,7 @@ const getArticles = async () => {
   // });
 };
 
-export function saveItem(
+function saveItem(
   { keyword, title, date, source, link, image, owner, isSaved },
   token
 ) {
@@ -90,7 +90,7 @@ export function saveItem(
   });
 }
 
-export function deleteItem(item, token) {
+function deleteItem(item, token) {
   return request(`${BASE_URL}/articles/${item._id}`, {
     method: "DELETE",
     headers: {
@@ -100,7 +100,7 @@ export function deleteItem(item, token) {
   });
 }
 
-export function getSavedNews(token) {
+function getSavedNews(token) {
   return request(`${BASE_URL}/articles`, {
     method: "GET",
     headers: {
