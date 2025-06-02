@@ -101,7 +101,7 @@ function App() {
         console.log("5. No Token found so no articles retrieved");
         return;
       } else {
-        console.log("4. Token check repsosne", res);
+        console.log("4. Token check response", res);
       }
 
       if (res.data) {
