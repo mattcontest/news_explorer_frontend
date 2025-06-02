@@ -77,8 +77,8 @@ function App() {
           setIsLoggedIn(true);
           localStorage.setItem("token", res.token);
           console.log("Check inside of res", res);
-          setCurrentUser({ username: res.username, _id: res._id });
-          // closeActiveModal();
+          setCurrentUser({ username: res.name, _id: res._id });
+          closeActiveModal();
         }
       })
       // .then(() => {
