@@ -38,12 +38,12 @@ function App() {
       console.log(
         "Then from here save the user in the db, this will be done at next stage upon approval"
       );
-      // return res;
-      // if (res.token) {
-      //   console.log("-Sign Up 2. Get Token", res.token);
-      //   localStorage.setItem("token", res.token);
-      //   // handleCheckToken;
-      // }
+      if (res.token) {
+        console.log("-Sign Up 2. Get Token", res.token);
+        localStorage.setItem("token", res.token);
+        // handleCheckToken;
+      }
+      return res;
     } catch (error) {
       console.error("Signin Up Error", error);
     }
@@ -104,9 +104,10 @@ function App() {
         console.log("4. Token check response", res);
       }
 
-      if (res.data) {
+      if (res) {
         setIsLoggedIn(true);
-        const { name, email, _id } = res.data;
+        const { name, email, _id } = res;
+        console.log("When checking the token, res", res);
         setCurrentUser({ name, email, _id });
         console.log("5. About to retrieve articles");
         //After checking the token the relative saved articles from the db should be returned

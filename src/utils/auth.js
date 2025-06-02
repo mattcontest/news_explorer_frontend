@@ -38,10 +38,18 @@ export const signIn = async ({ email, password }) => {
 };
 
 export const checkToken = async (token) => {
-  return fetch(`${BASE_URL}/users/me`, {
+  const res = await fetch(`${BASE_URL}/users/me`, {
     headers: {
       "Content-Type": "application/json",
       authorization: `Bearer ${token}`,
     },
   });
+
+  if (!res.ok) {
+    const errorMessage = await res.text();
+    console.error("Token check failed", res.status, errorMessage);
+    throw new Error("Token check failed: ", res.status);
+  }
+
+  return res.json();
 };
