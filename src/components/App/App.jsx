@@ -193,6 +193,7 @@ function App() {
         } else {
           setNewsArticles(
             articles.map((article) => {
+              console.log("Individual article", article._id);
               return {
                 ...article,
                 // keyword: keyword,
@@ -200,7 +201,7 @@ function App() {
             })
           );
 
-          console.log("Content of articles after search submit", newsArticles);
+          // console.log("Content of articles after search submit", );
         }
       })
       .catch((err) => {
@@ -260,6 +261,8 @@ function App() {
                       isLoading={isLoading}
                       articles={newsArticles}
                       noResults={noResults}
+                      handleSaveItem={handleSaveItem}
+                      setActiveModal={setActiveModal}
                     />
                     <About />
                   </>

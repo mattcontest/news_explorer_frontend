@@ -4,9 +4,33 @@ import bookmark from "../../assets/bookmark.svg";
 import bookmark__default from "../../assets/save_default.svg";
 import bookmark__saved from "../../assets/saved__default.svg";
 
-function NewsCard({ imageUrl, title, description, date, author, isLoggedIn }) {
+function NewsCard({
+  data,
+  imageUrl,
+  title,
+  description,
+  date,
+  author,
+  isLoggedIn,
+  handleSaveItem,
+  setActiveModal,
+  id,
+  keyId,
+}) {
+  const handleSaveNewsClick = () => {
+    if (isLoggedIn) {
+      // isSaved ?
+      console.log("Info that are being passed to handleSaveItem", data);
+      handleSaveItem(data);
+    } else {
+      setActiveModal("signin");
+    }
+    // handleSaveItem({id:});
+  };
+
   return (
     <li className="news__card_wrapper">
+      {console.log("Visualize data:", keyId)}
       {console.log(isLoggedIn)}
       <div className="card__header">
         <img src={imageUrl} alt="" className="card__image" />

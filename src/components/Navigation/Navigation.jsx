@@ -23,7 +23,9 @@ function Navigation({ handleLoginClick, isLoggedIn, handleLogout }) {
   };
 
   const currentUser = useContext(CurrentUserContext);
-  console.log("Check currentUser", currentUser.name);
+
+  // console.log("Check currentUser", currentUser?.name);
+  console.log("Check currentUser", currentUser.currentUser.name);
 
   return (
     <div className="navigation">
