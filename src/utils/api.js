@@ -65,11 +65,18 @@ const getArticles = async () => {
   // });
 };
 
-function saveItem(
-  { keyword, title, date, source, link, image, owner, isSaved },
-  token
-) {
-  return request(`${BASE_URL}/articles`, {
+function saveItem({ keyword, title, date, source, link, image }, token) {
+  console.log(
+    "Right before saveItem ",
+    keyword,
+    title,
+    date,
+    source,
+    link,
+    image,
+    token
+  );
+  return fetch(`${BASE_URL}/articles`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -82,8 +89,6 @@ function saveItem(
       source: source,
       link: link,
       image: image,
-      owner: owner,
-      isSaved: isSaved,
     }),
   }).then((data) => {
     return data;

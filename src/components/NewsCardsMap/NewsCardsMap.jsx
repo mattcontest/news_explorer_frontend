@@ -22,13 +22,10 @@ function NewsCardsMap({
             <h2 className="news__cards-title">Search Results</h2>
             <ul className="news__cards-list ">
               {articles.slice(0, cardsShown).map((article) => {
-                // const uniqueKey = btoa(
-                //   `${article.title}-${article.publishedAt}`
-                // );
                 const uniqueKey = uuidv4();
                 return (
                   <NewsCard
-                    // key={article._id}
+                    key={uniqueKey}
                     data={article}
                     keyId={uniqueKey}
                     imageUrl={article.urlToImage}
@@ -43,13 +40,6 @@ function NewsCardsMap({
                         year: "numeric",
                       }
                     )}
-                    // id={new Date(article.publishedAt)
-                    // .toLocaleDateString("en-US", {
-                    //   month: "long",
-                    //   day: "numeric",
-                    //   year: "numeric",
-                    // })
-                    // .toString()}
                     isLoggedIn={isLoggedIn}
                     handleSaveItem={handleSaveItem}
                     setActiveModal={setActiveModal}

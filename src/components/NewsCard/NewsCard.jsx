@@ -14,18 +14,30 @@ function NewsCard({
   isLoggedIn,
   handleSaveItem,
   setActiveModal,
-  id,
   keyId,
 }) {
   const handleSaveNewsClick = () => {
-    if (isLoggedIn) {
-      // isSaved ?
-      console.log("Info that are being passed to handleSaveItem", data);
-      handleSaveItem(data);
-    } else {
-      setActiveModal("signin");
+    if (!isLoggedIn) {
+      console.log("Shouldn't be firing?");
+      setActiveModal("login");
+      return;
     }
-    // handleSaveItem({id:});
+    console.log("Loggin titlle and image from the props", title, imageUrl);
+    console.log("Logging data in Newscards.jsx", data);
+    console.log("Logging url", data.url);
+    console.log("Logging imageUrl", data.urlToImage);
+    // console.log("Loggin keyword", data.keyword);
+
+    const refinedArticle = {
+      title: title,
+      date: data.publishedAt,
+      source: data.source?.name,
+      link: data.url,
+      image: data.urlToImage,
+    };
+
+    console.log("Artile about to be sent to the backend", refinedArticle);
+    handleSaveItem(refinedArticle);
   };
 
   return (
@@ -34,7 +46,7 @@ function NewsCard({
       {console.log(isLoggedIn)}
       <div className="card__header">
         <img src={imageUrl} alt="" className="card__image" />
-        <button className="save__btn">
+        <button className="save__btn" onClick={handleSaveNewsClick}>
           <img src={bookmark__default} alt="" className="btn__image" />
         </button>
         <div

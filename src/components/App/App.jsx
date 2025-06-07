@@ -160,23 +160,67 @@ function App() {
 
   const handleSaveItem = (item) => {
     item.isSaved = !item.isSaved;
-    item.keyword = keyword;
-    const token = localStorage.getItem("token");
-    checkItemInArray(item, savedNews)
-      ? console.log("News already saved!")
-      : saveItem(item, token)
-          .then((article) => {
-            item._id = article.data._id;
-            setSavedNews([article.data, ...savedNews]);
-            console.log("Article saved");
-          })
-          .catch((err) => {
-            console.error("Failed to save article", err);
-          });
+    // item.keyword = keyword;
 
-    if (item.isSaved && !savedNews.includes(item)) {
-      setSavedNews([item, ...savedNews]);
+    const token = localStorage.getItem("token");
+    console.log("Opening item in App.jsx", item);
+
+    // checkItemInArray(item, savedNews)
+    //   ? console.log("News already saved!")
+    //   : saveItem(item, token)
+    //       .then((article) => {
+    //         item._id = article.data._id;
+    //         setSavedNews([article.data, ...savedNews]);
+    //         console.log("Article saved");
+    //       })
+    //       .catch((err) => {
+    //         console.error("Failed to save article", err);
+    //       });
+
+    console.log("Check keyword", keyword);
+    const refinedArticle = {
+      keyword: keyword,
+      title: item.title,
+      date: item.date,
+      source: item.source || "Unknown",
+      link: item.link,
+      image: item.image,
+    };
+
+    console.log("This refinedArticle from App.jsx", refinedArticle);
+
+    if (
+      !refinedArticle.title ||
+      !refinedArticle.date ||
+      !refinedArticle.link ||
+      !refinedArticle.image
+    ) {
+      console.warn("Skipping invalid article:", refinedArticle);
+      return;
     }
+
+    const isAlreadySaved = savedNews.some(
+      (saved) => saved && saved.link === refinedArticle.link
+    );
+
+    if (isAlreadySaved) {
+      console.log("News already saved");
+      return;
+    }
+
+    // if (item.isSaved && !savedNews.includes(item)) {
+    //   setSavedNews([item, ...savedNews]);
+    // }
+
+    saveItem(refinedArticle, token)
+      .then((res) => {
+        const savedArticle = res.data;
+        setSavedNews([savedArticle, ...savedNews]);
+        console.log("Article we just saved:", savedArticle);
+      })
+      .catch((err) => {
+        console.error("Error:", err);
+      });
   };
 
   const handleSearchSubmit = (keyword) => {
