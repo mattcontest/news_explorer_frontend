@@ -215,6 +215,8 @@ function App() {
     saveItem(refinedArticle, token)
       .then((res) => {
         const savedArticle = res.data;
+        console.log("Saved Article", savedArticle);
+        console.log("Check res before", res);
         setSavedNews([savedArticle, ...savedNews]);
         console.log("Article we just saved:", savedArticle);
       })

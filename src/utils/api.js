@@ -91,7 +91,7 @@ function saveItem({ keyword, title, date, source, link, image }, token) {
       image: image,
     }),
   }).then((data) => {
-    return data;
+    return data.json();
   });
 }
 
