@@ -23,7 +23,7 @@ function NewsCard({
       return;
     }
     console.log("Loggin titlle and image from the props", title, imageUrl);
-    console.log("Logging data in Newscards.jsx", data);
+    console.log("Logging data in Newscard.jsx", data);
     console.log("Logging url", data.url);
     console.log("Logging imageUrl", data.urlToImage);
     // console.log("Loggin keyword", data.keyword);
@@ -34,6 +34,7 @@ function NewsCard({
       source: data.source?.name,
       link: data.url,
       image: data.urlToImage,
+      text: data.description,
     };
 
     console.log("Artile about to be sent to the backend", refinedArticle);

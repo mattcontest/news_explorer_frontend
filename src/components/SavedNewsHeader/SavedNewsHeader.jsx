@@ -1,7 +1,12 @@
 import "./SavedNewsHeader.css";
 import Navigation from "../Navigation/Navigation";
 
-function SavedNewsHeader({ handleLoginClick, isLoggedIn, handleLogout }) {
+function SavedNewsHeader({
+  handleLoginClick,
+  isLoggedIn,
+  handleLogout,
+  articles,
+}) {
   return (
     <div className="saved__news_header">
       <div className="saved__news_header_wrapper">

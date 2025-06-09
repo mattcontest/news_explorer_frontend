@@ -1,9 +1,13 @@
 import SavedNewsCard from "../SavedNewsCard/SavedNewsCard";
 import "./SavedNewsCardsMap.css";
 import { articlesPreset } from "../../assets/data";
+import { v4 as uuidv4 } from "uuid";
 
 function SavedNewsCardsMap({ articles, isLoggedIn }) {
-  console.log("Check here", articles);
+  console.log(
+    "Check here articles that are saved in SavedNewsCardsMap",
+    articles
+  );
 
   return (
     <div className="saved__news_cards_map">
@@ -12,29 +16,28 @@ function SavedNewsCardsMap({ articles, isLoggedIn }) {
           {/* {articles.slice(0, 6).map((article) => { */}
           {/* {articlesPreset.slice(0, 3).map((article) => { */}
           {articles
-            .filter(
-              (article) => article && article.title && article.publishedAt
-            )
-            .slice(0, 3)
+            .filter((article) => article && article.title && article.date)
+            .slice(0, 6)
             .map((article) => {
-              const uniqueKey = `${article.title}-${article.publishedAt}`;
+              // const uniqueKey = `${article.title}-${article.publishedAt}`;
+              const uniqueKey = uuidv4();
+              console.log("Inside map saved article", article);
+              console.log("Inside map saved article", article.keyword);
               return (
                 <SavedNewsCard
                   // key={article._id}
                   key={uniqueKey}
-                  date={new Date(article.publishedAt).toLocaleDateString(
-                    "en-US",
-                    {
-                      month: "long",
-                      day: "numeric",
-                      year: "numeric",
-                    }
-                  )}
+                  date={new Date(article.date).toLocaleDateString("en-US", {
+                    month: "long",
+                    day: "numeric",
+                    year: "numeric",
+                  })}
                   title={article.title}
-                  description={article.description}
-                  author={article.author}
+                  description={article.article}
+                  author={article.source}
                   keyword={article.keyword}
-                  imageUrl={article.urlToImage}
+                  imageUrl={article.image}
+                  text={article.text}
                   isLoggedIn={isLoggedIn}
                 />
               );

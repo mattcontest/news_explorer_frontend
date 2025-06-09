@@ -65,7 +65,7 @@ const getArticles = async () => {
   // });
 };
 
-function saveItem({ keyword, title, date, source, link, image }, token) {
+function saveItem({ keyword, title, date, source, link, image, text }, token) {
   console.log(
     "Right before saveItem ",
     keyword,
@@ -74,6 +74,7 @@ function saveItem({ keyword, title, date, source, link, image }, token) {
     source,
     link,
     image,
+    text,
     token
   );
   return fetch(`${BASE_URL}/articles`, {
@@ -89,6 +90,7 @@ function saveItem({ keyword, title, date, source, link, image }, token) {
       source: source,
       link: link,
       image: image,
+      text: text,
     }),
   }).then((data) => {
     return data.json();
@@ -106,12 +108,14 @@ function deleteItem(item, token) {
 }
 
 function getSavedNews(token) {
-  return request(`${BASE_URL}/articles`, {
+  return fetch(`${BASE_URL}/articles`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
       authorization: `Bearer ${token}`,
     },
+  }).then((data) => {
+    return data.json();
   });
 }
 

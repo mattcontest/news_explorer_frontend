@@ -13,7 +13,7 @@ import ConfirmationModal from "../ConfirmationModal/ConfirmationModal.jsx";
 import Main from "../Main/Main.jsx";
 import { APIkey } from "../../utils/newsApi.js";
 import { getNews } from "../../utils/newsApi.js";
-import { getArticles, saveItem } from "../../utils/api.js";
+import { getArticles, getSavedNews, saveItem } from "../../utils/api.js";
 import { checkToken, signIn, signUp } from "../../utils/auth.js";
 
 function App() {
@@ -178,6 +178,7 @@ function App() {
     //       });
 
     console.log("Check keyword", keyword);
+    console.log("Check entire Item", item);
     const refinedArticle = {
       keyword: keyword,
       title: item.title,
@@ -185,6 +186,7 @@ function App() {
       source: item.source || "Unknown",
       link: item.link,
       image: item.image,
+      text: item.text,
     };
 
     console.log("This refinedArticle from App.jsx", refinedArticle);
@@ -193,7 +195,8 @@ function App() {
       !refinedArticle.title ||
       !refinedArticle.date ||
       !refinedArticle.link ||
-      !refinedArticle.image
+      !refinedArticle.image ||
+      !refinedArticle.text
     ) {
       console.warn("Skipping invalid article:", refinedArticle);
       return;
@@ -223,6 +226,16 @@ function App() {
       .catch((err) => {
         console.error("Error:", err);
       });
+  };
+
+  const handleRetrieveSavedArticles = () => {
+    const token = localStorage.getItem("token");
+
+    getSavedNews(token).then((res) => {
+      console.log("Here's the bag", res);
+      console.log("Articles that are saved", res.data);
+      setSavedNews([...res.data]);
+    });
   };
 
   const handleSearchSubmit = (keyword) => {
@@ -282,6 +295,7 @@ function App() {
     console.log("Check current user", currentUser);
     handleCheckToken();
     console.log("After checking token", currentUser);
+    handleRetrieveSavedArticles();
   }, [isLoggedIn]);
 
   return (
@@ -324,6 +338,7 @@ function App() {
                       handleLoginClick={handleLoginClick}
                       isLoggedIn={isLoggedIn}
                       handleLogout={handleLogout}
+                      articles={savedNews}
                     />
                     <SavedNews articles={savedNews} isLoggedIn={isLoggedIn} />
                   </>
