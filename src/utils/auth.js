@@ -1,12 +1,12 @@
 import { BASE_URL } from "./constants";
 
-export const signUp = async (email, username, password) => {
+export const signUp = async (email, name, password) => {
   return fetch(`${BASE_URL}/signup`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ email, username, password }),
+    body: JSON.stringify({ email, name, password }),
   });
 };
 

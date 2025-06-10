@@ -28,13 +28,13 @@ function App() {
   const [savedNews, setSavedNews] = useState([]);
 
   // const handleSignUp = async (email, password) => {
-  const handleSignUp = async (email, username, password) => {
+  const handleSignUp = async (email, name, password) => {
     console.log("In future it will use email, username and password");
     console.log("email", email);
-    console.log("username", username);
+    console.log("username", name);
     console.log("password", password);
     try {
-      const res = await signUp(email, username, password);
+      const res = await signUp(email, name, password);
       console.log(
         "Then from here save the user in the db, this will be done at next stage upon approval"
       );
@@ -72,12 +72,14 @@ function App() {
     signIn({ email, password })
       .then((res) => {
         console.log("SUCCESS: Got response from signIn", res);
+        console.log("Check token", res.token);
 
         if (res.token) {
           setIsLoggedIn(true);
           localStorage.setItem("token", res.token);
           console.log("Check inside of res", res);
-          setCurrentUser({ username: res.name, _id: res._id });
+          setCurrentUser({ name: res.name, _id: res._id });
+
           closeActiveModal();
         }
       })
@@ -104,10 +106,12 @@ function App() {
         console.log("4. Token check response", res);
       }
 
+      console.log("HandleCheckToken", res);
+
       if (res) {
         setIsLoggedIn(true);
         const { name, email, _id } = res;
-        console.log("When checking the token, res", res);
+        console.log("When checking the token, res -->", res);
         setCurrentUser({ name, email, _id });
         console.log("5. About to retrieve articles");
         //After checking the token the relative saved articles from the db should be returned
@@ -297,6 +301,10 @@ function App() {
     console.log("After checking token", currentUser);
     handleRetrieveSavedArticles();
   }, [isLoggedIn]);
+
+  useEffect(() => {
+    console.log("Insde CurrentUser state", currentUser);
+  }, [currentUser]);
 
   return (
     <CurrentUserContext.Provider value={{ currentUser, isLoggedIn }}>

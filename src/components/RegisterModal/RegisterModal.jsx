@@ -13,7 +13,7 @@ function RegisterModal({
   handleRegistrationSuccess,
 }) {
   const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
   const handleEmailChange = (e) => {
@@ -21,7 +21,7 @@ function RegisterModal({
   };
 
   const handleUsernameChange = (e) => {
-    setUsername(e.target.value);
+    setName(e.target.value);
   };
 
   const handlePasswordChange = (e) => {
@@ -30,10 +30,10 @@ function RegisterModal({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!email || !password || !username) {
+    if (!email || !password || !name) {
       return;
     }
-    handleSignUp(email, username, password);
+    handleSignUp(email, name, password);
     handleCloseModal();
     handleRegistrationSuccess();
   };
@@ -87,7 +87,7 @@ function RegisterModal({
           className="modal__input"
           id="signin__username"
           placeholder="Enter your username"
-          value={username}
+          value={name}
           onChange={handleUsernameChange}
         />
       </label>
