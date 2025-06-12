@@ -3,7 +3,7 @@ import "./SavedNewsCardsMap.css";
 import { articlesPreset } from "../../assets/data";
 import { v4 as uuidv4 } from "uuid";
 
-function SavedNewsCardsMap({ articles, isLoggedIn }) {
+function SavedNewsCardsMap({ articles, isLoggedIn, handleDeleteArticle }) {
   console.log(
     "Check here articles that are saved in SavedNewsCardsMap",
     articles
@@ -27,6 +27,7 @@ function SavedNewsCardsMap({ articles, isLoggedIn }) {
                 <SavedNewsCard
                   // key={article._id}
                   key={uniqueKey}
+                  keyId={article._id}
                   date={new Date(article.date).toLocaleDateString("en-US", {
                     month: "long",
                     day: "numeric",
@@ -39,6 +40,7 @@ function SavedNewsCardsMap({ articles, isLoggedIn }) {
                   imageUrl={article.image}
                   text={article.text}
                   isLoggedIn={isLoggedIn}
+                  handleDeleteArticle={handleDeleteArticle}
                 />
               );
             })}

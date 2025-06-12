@@ -344,7 +344,6 @@ function App() {
                       noResults={noResults}
                       handleSaveItem={handleSaveItem}
                       setActiveModal={setActiveModal}
-                      handleDeleteArticle={handleDeleteArticle}
                     />
                     <About />
                   </>
@@ -362,7 +361,11 @@ function App() {
                       handleLogout={handleLogout}
                       articles={savedNews}
                     />
-                    <SavedNews articles={savedNews} isLoggedIn={isLoggedIn} />
+                    <SavedNews
+                      articles={savedNews}
+                      isLoggedIn={isLoggedIn}
+                      handleDeleteArticle={handleDeleteArticle}
+                    />
                   </>
                 }
               />
