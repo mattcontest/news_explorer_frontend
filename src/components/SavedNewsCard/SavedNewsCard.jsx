@@ -20,7 +20,7 @@ function SavedNewsCard({
       return;
     }
     console.log("Check this keyid", keyId);
-    // handleDeleteArticle(keyId);
+    handleDeleteArticle(keyId);
   };
 
   return (

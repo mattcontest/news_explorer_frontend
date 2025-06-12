@@ -98,13 +98,16 @@ function saveItem({ keyword, title, date, source, link, image, text }, token) {
 }
 
 function deleteItem(item, token) {
-  return request(`${BASE_URL}/articles/${item._id}`, {
+  return fetch(`${BASE_URL}/articles/${item}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
       authorization: `Bearer ${token}`,
     },
   });
+  // .then((data) => {
+  // return data.json();
+  // });
 }
 
 function getSavedNews(token) {

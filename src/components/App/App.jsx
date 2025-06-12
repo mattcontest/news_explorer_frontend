@@ -97,19 +97,19 @@ function App() {
   };
 
   const handleCheckToken = async () => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      console.log("5. No Token found so no articles retrieved");
+      return;
+    } else {
+      // console.log("4. Token check response", );
+    }
+
     try {
       console.log("3. Checking token");
-      const token = localStorage.getItem("token");
       // if (!token) return;
 
       const res = await checkToken(token);
-
-      if (!token) {
-        console.log("5. No Token found so no articles retrieved");
-        return;
-      } else {
-        console.log("4. Token check response", res);
-      }
 
       console.log("HandleCheckToken", res);
 
@@ -300,7 +300,7 @@ function App() {
   // }, [newsArticles]);
 
   const handleDeleteArticle = (item) => {
-    console.log("Article about to get deleted", item);
+    console.log("Article id about to get deleted", item);
     const token = localStorage.getItem("token");
     deleteItem(item, token).then((res) => {
       console.log("Res from delete article handle", res);
@@ -309,10 +309,17 @@ function App() {
 
   useEffect(() => {
     console.log("App mounted, checking token");
-    console.log("Check current user", currentUser);
     handleCheckToken();
-    console.log("After checking token", currentUser);
+    console.log("Check current user", currentUser);
+  }, []);
+
+  useEffect(() => {
+    // if (isLoggedIn) {
+    // handleCheckToken();
     handleRetrieveSavedArticles();
+    // }
+    // console.log("App mounted, checking token");
+    // console.log("After checking token", currentUser);
   }, [isLoggedIn]);
 
   useEffect(() => {
