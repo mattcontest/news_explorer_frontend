@@ -304,6 +304,11 @@ function App() {
     const token = localStorage.getItem("token");
     deleteItem(item, token).then((res) => {
       console.log("Res from delete article handle", res);
+      console.log("Check this item", item);
+
+      setSavedNews((prevArticles) => {
+        return prevArticles.filter((thing) => thing._id !== item);
+      });
     });
   };
 

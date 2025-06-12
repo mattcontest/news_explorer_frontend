@@ -104,10 +104,9 @@ function deleteItem(item, token) {
       "Content-Type": "application/json",
       authorization: `Bearer ${token}`,
     },
+  }).then((data) => {
+    return data.json();
   });
-  // .then((data) => {
-  // return data.json();
-  // });
 }
 
 function getSavedNews(token) {

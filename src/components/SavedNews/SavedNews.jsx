@@ -8,7 +8,7 @@ function SavedNews({ articles, isLoggedIn, handleDeleteArticle }) {
     <div className="saved__news">
       <div className="saved__news_wrapper">
         <SavedNewsCardsMap
-          articles={articles}
+          articles={articles || []}
           isLoggedIn={isLoggedIn}
           handleDeleteArticle={handleDeleteArticle}
         />
