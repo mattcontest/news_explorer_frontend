@@ -19,6 +19,24 @@ function SavedNewsHeader({
     currentUser.currentUser.email
   );
 
+  const filteredKeywords = (articles) => {
+    // console.log(articles.keyword);
+    const keywords = [];
+    articles.map((article) => {
+      // console.log("Individual article", article);
+      if (!keywords.includes(article.keyword)) {
+        keywords.push(article.keyword);
+      }
+
+      // console.log("Check the keywords", keywords);
+    });
+    return keywords;
+  };
+  // console.log("Start here for the keywords", articles);
+
+  // console.log("Check final keywords", filteredKeywords(articles));
+  const keywords = filteredKeywords(articles);
+
   return (
     <div className="saved__news_header">
       <div className="saved__news_header_wrapper">
@@ -35,7 +53,8 @@ function SavedNewsHeader({
               articles
             </h1>
             <p className="saved__news_header_keywords">
-              By keywords: <b>Nature</b>, <b>Yellowstone</b>,<b> and 2 other</b>
+              By keywords: <b>{keywords[0]}</b>, <b>{keywords[1]}</b>,
+              <b> and {keywords.length - 2} other</b>
             </p>
           </div>
         </div>
