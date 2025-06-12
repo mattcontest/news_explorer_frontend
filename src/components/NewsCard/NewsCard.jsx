@@ -15,7 +15,16 @@ function NewsCard({
   handleSaveItem,
   setActiveModal,
   keyId,
+  handleDeleteArticle,
 }) {
+  const handleDeleteNewsClick = () => {
+    if (!isLoggedIn) {
+      console.log("Cannot delete if not logged in");
+      setActiveModal("login");
+      return;
+    }
+  };
+
   const handleSaveNewsClick = () => {
     if (!isLoggedIn) {
       console.log("Shouldn't be firing?");

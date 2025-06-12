@@ -10,6 +10,7 @@ function Main({
   isLoggedIn,
   handleSaveItem,
   setActiveModal,
+  handleDeleteArticle,
 }) {
   let content = null;
 
@@ -42,6 +43,7 @@ function Main({
               isLoggedIn={isLoggedIn}
               handleSaveItem={handleSaveItem}
               setActiveModal={setActiveModal}
+              handleDeleteArticle={handleDeleteArticle}
             />
           </div>
         ));

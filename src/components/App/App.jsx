@@ -13,7 +13,12 @@ import ConfirmationModal from "../ConfirmationModal/ConfirmationModal.jsx";
 import Main from "../Main/Main.jsx";
 import { APIkey } from "../../utils/newsApi.js";
 import { getNews } from "../../utils/newsApi.js";
-import { getArticles, getSavedNews, saveItem } from "../../utils/api.js";
+import {
+  deleteItem,
+  getArticles,
+  getSavedNews,
+  saveItem,
+} from "../../utils/api.js";
 import { checkToken, signIn, signUp } from "../../utils/auth.js";
 
 function App() {
@@ -294,6 +299,14 @@ function App() {
   //   });
   // }, [newsArticles]);
 
+  const handleDeleteArticle = (item) => {
+    console.log("Article about to get deleted", item);
+    const token = localStorage.getItem("token");
+    deleteItem(item, token).then((res) => {
+      console.log("Res from delete article handle", res);
+    });
+  };
+
   useEffect(() => {
     console.log("App mounted, checking token");
     console.log("Check current user", currentUser);
@@ -331,6 +344,7 @@ function App() {
                       noResults={noResults}
                       handleSaveItem={handleSaveItem}
                       setActiveModal={setActiveModal}
+                      handleDeleteArticle={handleDeleteArticle}
                     />
                     <About />
                   </>

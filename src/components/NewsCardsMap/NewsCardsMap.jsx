@@ -8,6 +8,7 @@ function NewsCardsMap({
   isLoggedIn,
   handleSaveItem,
   setActiveModal,
+  handleDeleteArticle,
 }) {
   const [cardsShown, setCardsShown] = useState(3);
   const showMore = (e) => {
@@ -43,6 +44,7 @@ function NewsCardsMap({
                     isLoggedIn={isLoggedIn}
                     handleSaveItem={handleSaveItem}
                     setActiveModal={setActiveModal}
+                    handleDeleteArticle={handleDeleteArticle}
                   />
                 );
               })}
