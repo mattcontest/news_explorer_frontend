@@ -239,12 +239,13 @@ function App() {
 
   const handleRetrieveSavedArticles = () => {
     const token = localStorage.getItem("token");
-
-    getSavedNews(token).then((res) => {
-      console.log("Here's the bag", res);
-      console.log("Articles that are saved", res.data);
-      setSavedNews([...res.data]);
-    });
+    if (token) {
+      getSavedNews(token).then((res) => {
+        console.log("Here's the bag", res);
+        console.log("Articles that are saved", res.data);
+        setSavedNews([...res.data]);
+      });
+    }
   };
 
   const handleSearchSubmit = (keyword) => {
