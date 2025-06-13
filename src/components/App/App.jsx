@@ -322,7 +322,9 @@ function App() {
   useEffect(() => {
     // if (isLoggedIn) {
     // handleCheckToken();
-    handleRetrieveSavedArticles();
+    if (isLoggedIn) {
+      handleRetrieveSavedArticles();
+    }
     // }
     // console.log("App mounted, checking token");
     // console.log("After checking token", currentUser);
