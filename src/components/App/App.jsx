@@ -40,11 +40,11 @@ function App() {
     console.log("password", password);
     try {
       const res = await signUp(email, name, password);
-      console.log(
-        "Then from here save the user in the db, this will be done at next stage upon approval"
-      );
+      // console.log(
+      //   "Then from here save the user in the db, this will be done at next stage upon approval"
+      // );
       if (res.token) {
-        console.log("-Sign Up 2. Get Token", res.token);
+        // console.log("-Sign Up 2. Get Token", res.token);
         localStorage.setItem("token", res.token);
         // handleCheckToken;
       }
@@ -76,13 +76,13 @@ function App() {
     console.log("We reached this stage", email, password);
     signIn({ email, password })
       .then((res) => {
-        console.log("SUCCESS: Got response from signIn", res);
-        console.log("Check token", res.token);
+        // console.log("SUCCESS: Got response from signIn", res);
+        // console.log("Check token", res.token);
 
         if (res.token) {
           setIsLoggedIn(true);
           localStorage.setItem("token", res.token);
-          console.log("Check inside of res", res);
+          // console.log("Check inside of res", res);
           setCurrentUser({ name: res.name, _id: res._id });
 
           closeActiveModal();
@@ -99,14 +99,14 @@ function App() {
   const handleCheckToken = async () => {
     const token = localStorage.getItem("token");
     if (!token) {
-      console.log("5. No Token found so no articles retrieved");
+      // console.log("5. No Token found so no articles retrieved");
       return;
     } else {
       // console.log("4. Token check response", );
     }
 
     try {
-      console.log("3. Checking token");
+      // console.log("3. Checking token");
       // if (!token) return;
 
       const res = await checkToken(token);
@@ -118,7 +118,7 @@ function App() {
         const { name, email, _id } = res;
         console.log("When checking the token, res -->", res);
         setCurrentUser({ name, email, _id });
-        console.log("5. About to retrieve articles");
+        // console.log("5. About to retrieve articles");
         //After checking the token the relative saved articles from the db should be returned
         // retrieveArticles();
       }
@@ -172,7 +172,7 @@ function App() {
     // item.keyword = keyword;
 
     const token = localStorage.getItem("token");
-    console.log("Opening item in App.jsx", item);
+    // console.log("Opening item in App.jsx", item);
 
     // checkItemInArray(item, savedNews)
     //   ? console.log("News already saved!")
@@ -216,7 +216,7 @@ function App() {
     );
 
     if (isAlreadySaved) {
-      console.log("News already saved");
+      // console.log("News already saved");
       return;
     }
 
@@ -227,10 +227,10 @@ function App() {
     saveItem(refinedArticle, token)
       .then((res) => {
         const savedArticle = res.data;
-        console.log("Saved Article", savedArticle);
-        console.log("Check res before", res);
+        // console.log("Saved Article", savedArticle);
+        // console.log("Check res before", res);
         setSavedNews([savedArticle, ...savedNews]);
-        console.log("Article we just saved:", savedArticle);
+        // console.log("Article we just saved:", savedArticle);
       })
       .catch((err) => {
         console.error("Error:", err);
@@ -241,8 +241,8 @@ function App() {
     const token = localStorage.getItem("token");
     if (token) {
       getSavedNews(token).then((res) => {
-        console.log("Here's the bag", res);
-        console.log("Articles that are saved", res.data);
+        // console.log("Here's the bag", res);
+        // console.log("Articles that are saved", res.data);
         setSavedNews([...res.data]);
       });
     }
@@ -314,9 +314,9 @@ function App() {
   };
 
   useEffect(() => {
-    console.log("App mounted, checking token");
+    // console.log("App mounted, checking token");
     handleCheckToken();
-    console.log("Check current user", currentUser);
+    // console.log("Check current user", currentUser);
   }, []);
 
   useEffect(() => {
@@ -326,7 +326,11 @@ function App() {
   }, [isLoggedIn]);
 
   useEffect(() => {
-    console.log("Insde CurrentUser state", currentUser);
+    // console.log("Check current user", currentUser.toString.length);
+    // console.log("Insde CurrentUser state", currentUser.name);
+    if (typeof currentUser.name === "string") {
+      console.log("Insde CurrentUser state", currentUser);
+    }
   }, [currentUser]);
 
   return (
