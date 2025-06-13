@@ -120,7 +120,7 @@ function App() {
         setCurrentUser({ name, email, _id });
         console.log("5. About to retrieve articles");
         //After checking the token the relative saved articles from the db should be returned
-        retrieveArticles();
+        // retrieveArticles();
       }
     } catch (error) {
       console.error("Unable to check token", error);
@@ -320,14 +320,9 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // if (isLoggedIn) {
-    // handleCheckToken();
     if (isLoggedIn) {
       handleRetrieveSavedArticles();
     }
-    // }
-    // console.log("App mounted, checking token");
-    // console.log("After checking token", currentUser);
   }, [isLoggedIn]);
 
   useEffect(() => {
