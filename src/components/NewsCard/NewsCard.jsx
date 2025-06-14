@@ -59,19 +59,8 @@ function NewsCard({
       <div className="card__info">
         <div className="card__info_wrapper">
           <p className="card__date">{date}</p>
-          <h2 className="card__name">
-            {/* {title && title.length > 50
-              ? `${title.slice(0, 40)}...`
-              : `${title}`} */}
-            {title}
-          </h2>
-          <p className="card__description">
-            {/* {description && description.length > 100
-              ? `${description.slice(0, 100)}...`
-              : description} */}
-
-            {description}
-          </p>
+          <h2 className="card__name">{title}</h2>
+          <p className="card__description">{description}</p>
           <p className="card__author">{author}</p>
         </div>
       </div>
