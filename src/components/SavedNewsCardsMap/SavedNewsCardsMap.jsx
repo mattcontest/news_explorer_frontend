@@ -17,7 +17,7 @@ function SavedNewsCardsMap({ articles, isLoggedIn, handleDeleteArticle }) {
           {/* {articlesPreset.slice(0, 3).map((article) => { */}
           {articles
             .filter((article) => article && article.title && article.date)
-            .slice(0, 6)
+            // .slice(0, 6)
             .map((article) => {
               // const uniqueKey = `${article.title}-${article.publishedAt}`;
               const uniqueKey = uuidv4();
