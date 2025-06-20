@@ -12,3 +12,4 @@ export const getNews = ({ q }) => {
     `https://nomoreparties.co/news/v2/everything?q=${q}&apiKey=${APIkey}&from=${fromDate.toISOString()}&pageSize=50`
   ).then(checkResponse);
 };
+export const APIkey = import.meta.env.VITE_API_KEY;
