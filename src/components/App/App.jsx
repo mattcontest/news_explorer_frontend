@@ -51,6 +51,8 @@ function App() {
       return res;
     } catch (error) {
       console.error("Signin Up Error", error);
+      //Throwing the error so it can be catched by the handleSubmit in RegisterModal.jsx
+      throw error;
     }
   };
 

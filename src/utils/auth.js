@@ -1,13 +1,26 @@
 import { BASE_URL } from "./constants";
 
 export const signUp = async (email, name, password) => {
-  return fetch(`${BASE_URL}/signup`, {
+  const res = await fetch(`${BASE_URL}/signup`, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, name, password }),
   });
+  const body = await res.json();
+  if (!res.ok) {
+    throw new Error(body.message || "Signup failed");
+  }
+  return body;
+
+  // return fetch(`${BASE_URL}/signup`, {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  //   body: JSON.stringify({ email, name, password }),
+  // });
+
+  // const body = await res.json();
 };
 
 export const signIn = async ({ email, password }) => {
