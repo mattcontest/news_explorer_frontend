@@ -11,26 +11,50 @@ function LoginModal({
   handleSignupClick,
   onSubmit,
 }) {
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!email || !password) {
       return;
     }
+    setServerError("");
+    if (!isValid) return;
 
-    onSubmit({ email, password });
+    try {
+      await onSubmit({ email, password });
+    } catch (err) {
+      console.log("Check err, from LoginModal", err.message);
+      setServerError(
+        // err.message || "Something went wrong while logging you in"
+        err.message
+      );
+    }
+
+    // onSubmit({ email, password });
     // handleCloseModal();
   };
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [serverError, setServerError] = useState("");
 
   const handleEmailChange = (e) => {
+    setServerError("");
     setEmail(e.target.value);
   };
 
   const handlePasswordChange = (e) => {
+    setServerError("");
     setPassword(e.target.value);
   };
+
+  const isValid =
+    email !== "" &&
+    password !== "" &&
+    emailError === "" &&
+    passwordError === "" &&
+    serverError === "";
 
   return (
     <ModalWithForm
@@ -51,6 +75,7 @@ function LoginModal({
           value={email}
           required
         />
+        {emailError && <span className="modal__error-text">{emailError}</span>}
       </label>
       <label
         htmlFor="login__password"
@@ -66,8 +91,14 @@ function LoginModal({
           value={password}
           required
         />
+        {passwordError && (
+          <span className="modal__error-text">{passwordError}</span>
+        )}
       </label>
       <div className="btn__container">
+        {serverError && (
+          <span className="modal__error-text-bg">{serverError}</span>
+        )}
         <button className="modal__login_btn">{buttonText}</button>
 
         <button className="modal__signup_btn " onClick={handleSignupClick}>

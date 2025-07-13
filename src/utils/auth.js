@@ -26,28 +26,39 @@ export const signUp = async (email, name, password) => {
 export const signIn = async ({ email, password }) => {
   console.log("STARTING signIn function with:", { email, password });
   console.log("BASE_URL is:", BASE_URL);
-
   console.log("About to make fetch request to:", `${BASE_URL}/signin`);
-  return fetch(`${BASE_URL}/signin`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ email, password }),
-  })
-    .then((res) => {
-      console.log("Inside of res.json", res.status);
-      console.log("Inside of res.json", res.ok);
-      if (res.ok) {
-        return res.json();
-      }
 
-      return Promise.reject(`Error ${res.status}`);
-    })
-    .catch((error) => {
-      console.error("Fetch Error:", error);
-      throw error;
-    });
+  const res = await fetch(`${BASE_URL}/signin`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, password }),
+  });
+  const body = await res.json();
+  if (!res.ok) {
+    throw new Error(body.message || `Error ${res.status}`);
+  }
+  return body;
+
+  // return fetch(`${BASE_URL}/signin`, {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  //   body: JSON.stringify({ email, password }),
+  // })
+  //   .then((res) => {
+  //     console.log("Inside of res.json", res.status);
+  //     console.log("Inside of res.json", res.ok);
+  //     if (res.ok) {
+  //       return res.json();
+  //     }
+  //     // throw new Error(res.message || "Signin failed");
+  //     return Promise.reject(`Error ${res.message}`);
+  //   })
+  //   .catch((error) => {
+  //     console.error("Fetch Error:", error);
+  //     throw error;
+  //   });
 };
 
 export const checkToken = async (token) => {

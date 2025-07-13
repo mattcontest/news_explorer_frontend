@@ -70,32 +70,39 @@ function App() {
   //   }
   // };
 
-  const handleSignIn = ({ email, password }) => {
+  const handleSignIn = async ({ email, password }) => {
     if (!email || !password) {
       return;
     }
 
     console.log("We reached this stage", email, password);
-    signIn({ email, password })
-      .then((res) => {
-        // console.log("SUCCESS: Got response from signIn", res);
-        // console.log("Check token", res.token);
+    const res = await signIn({ email, password });
+    if (!res.token) {
+      throw new Error("Login Failed from App.jsx");
+    }
+    setIsLoggedIn(true);
+    localStorage.setItem("token", res.token);
+    setCurrentUser({ name: res.name, _id: res._id });
+    closeActiveModal();
+    return res;
 
-        if (res.token) {
-          setIsLoggedIn(true);
-          localStorage.setItem("token", res.token);
-          // console.log("Check inside of res", res);
-          setCurrentUser({ name: res.name, _id: res._id });
+    // signIn({ email, password })
+    //   .then((res) => {
+    //     // console.log("SUCCESS: Got response from signIn", res);
+    //     // console.log("Check token", res.token);
 
-          closeActiveModal();
-        }
-      })
-      // .then(() => {
-      //   closeActiveModal();
-      // })
-      .catch((err) => {
-        console.error("Failed to log in", err);
-      });
+    //     if (res.token) {
+    //       setIsLoggedIn(true);
+    //       localStorage.setItem("token", res.token);
+    //       // console.log("Check inside of res", res);
+    //       setCurrentUser({ name: res.name, _id: res._id });
+
+    //       closeActiveModal();
+    //     }
+    //   })
+    //   .catch((err) => {
+    //     console.error("Failed to log in", err);
+    //   });
   };
 
   const handleCheckToken = async () => {
