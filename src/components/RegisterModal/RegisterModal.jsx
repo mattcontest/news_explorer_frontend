@@ -144,7 +144,7 @@ function RegisterModal({
       </label>
       <div className="btn__container">
         {serverError && (
-          <span className="modal__error-text">{serverError}</span>
+          <span className="modal__error-text-bg">{serverError}</span>
         )}
 
         <button className="modal__register_btn" disabled={!isValid}>
