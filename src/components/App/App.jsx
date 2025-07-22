@@ -141,7 +141,6 @@ function App() {
     setIsLoggedIn(false);
     setCurrentUser({});
     //Clearing up the saved articles after the logout,
-    //Even tough the /saved-news page won't be available to the user until it logs in
     setSavedNews([]);
 
     console.log("Logged out!");
@@ -178,10 +177,8 @@ function App() {
 
   const handleSaveItem = (item) => {
     item.isSaved = !item.isSaved;
-    // item.keyword = keyword;
 
     const token = localStorage.getItem("token");
-    // console.log("Opening item in App.jsx", item);
 
     // checkItemInArray(item, savedNews)
     //   ? console.log("News already saved!")
@@ -229,15 +226,10 @@ function App() {
       return;
     }
 
-    // if (item.isSaved && !savedNews.includes(item)) {
-    //   setSavedNews([item, ...savedNews]);
-    // }
-
     saveItem(refinedArticle, token)
       .then((res) => {
         const savedArticle = res.data;
         // console.log("Saved Article", savedArticle);
-        // console.log("Check res before", res);
         setSavedNews([savedArticle, ...savedNews]);
         // console.log("Article we just saved:", savedArticle);
       })
