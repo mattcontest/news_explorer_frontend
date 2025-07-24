@@ -8,12 +8,14 @@ function NewsCardsMap({
   isLoggedIn,
   handleSaveItem,
   setActiveModal,
+  savedNews,
 }) {
   const [cardsShown, setCardsShown] = useState(3);
   const showMore = (e) => {
     e.preventDefault();
     setCardsShown(cardsShown + 3);
   };
+
   return (
     <>
       <section className="news">
@@ -40,9 +42,11 @@ function NewsCardsMap({
                         year: "numeric",
                       }
                     )}
+                    url={article.url}
                     isLoggedIn={isLoggedIn}
                     handleSaveItem={handleSaveItem}
                     setActiveModal={setActiveModal}
+                    savedNews={savedNews}
                   />
                 );
               })}

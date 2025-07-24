@@ -15,6 +15,8 @@ function NewsCard({
   handleSaveItem,
   setActiveModal,
   keyId,
+  url,
+  savedNews,
 }) {
   const handleSaveNewsClick = () => {
     if (!isLoggedIn) {
@@ -41,6 +43,25 @@ function NewsCard({
     handleSaveItem(refinedArticle);
   };
 
+  const isSavedArticle = () => {
+    return savedNews?.some((saved) => {
+      return saved?.link === url;
+    });
+  };
+
+  // console.log("url", data.url);
+
+  // savedNews.forEach((news) => {
+  //   console.log(news);
+  // });
+
+  // const savedData = savedNews?.some((saved) => {
+  //   console.log("saved.url", saved?.link, "==", "data.url", data.url);
+  //   return saved?.link === data.url;
+  // });
+
+  console.log("Look for MATCH:", isSavedArticle());
+
   return (
     <li className="news__card_wrapper">
       {console.log("Visualize data:", keyId)}
@@ -48,7 +69,11 @@ function NewsCard({
       <div className="card__header">
         <img src={imageUrl} alt="" className="card__image" />
         <button className="save__btn" onClick={handleSaveNewsClick}>
-          <img src={bookmark__default} alt="" className="btn__image" />
+          <img
+            src={isSavedArticle() ? bookmark__saved : bookmark__default}
+            alt=""
+            className="btn__image"
+          />
         </button>
         <div
           className={`card__login-banner  ${isLoggedIn ? "card__login-banner-disabled" : ""}`}

@@ -359,6 +359,7 @@ function App() {
                       noResults={noResults}
                       handleSaveItem={handleSaveItem}
                       setActiveModal={setActiveModal}
+                      savedNews={savedNews}
                     />
                     <About />
                   </>
