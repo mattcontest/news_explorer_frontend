@@ -69,6 +69,7 @@ function NewsCard({
       <div className="card__header">
         <img src={imageUrl} alt="" className="card__image" />
         <button className="save__btn" onClick={handleSaveNewsClick}>
+          {/* Added logic for showing saved bookmark */}
           <img
             src={isSavedArticle() ? bookmark__saved : bookmark__default}
             alt=""
