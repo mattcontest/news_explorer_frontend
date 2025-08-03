@@ -13,7 +13,12 @@ import ConfirmationModal from "../ConfirmationModal/ConfirmationModal.jsx";
 import Main from "../Main/Main.jsx";
 import { APIkey } from "../../utils/newsApi.js";
 import { getNews } from "../../utils/newsApi.js";
-import { getArticles } from "../../utils/api.js";
+import {
+  deleteItem,
+  getArticles,
+  getSavedNews,
+  saveItem,
+} from "../../utils/api.js";
 import { checkToken, signIn, signUp } from "../../utils/auth.js";
 
 function App() {
@@ -28,63 +33,103 @@ function App() {
   const [savedNews, setSavedNews] = useState([]);
 
   // const handleSignUp = async (email, password) => {
-  const handleSignUp = async (email, username, password) => {
+  const handleSignUp = async (email, name, password) => {
     console.log("In future it will use email, username and password");
     console.log("email", email);
-    console.log("username", username);
+    console.log("username", name);
     console.log("password", password);
     try {
-      const res = await signUp(email, username, password);
-      console.log(
-        "Then from here save the user in the db, this will be done at next stage upon approval"
-      );
-      // return res;
-      // if (res.token) {
-      //   console.log("-Sign Up 2. Get Token", res.token);
-      //   localStorage.setItem("token", res.token);
-      //   // handleCheckToken;
-      // }
+      const res = await signUp(email, name, password);
+      // console.log(
+      //   "Then from here save the user in the db, this will be done at next stage upon approval"
+      // );
+      if (res.token) {
+        // console.log("-Sign Up 2. Get Token", res.token);
+        localStorage.setItem("token", res.token);
+        // handleCheckToken;
+      }
+      return res;
     } catch (error) {
       console.error("Signin Up Error", error);
+      //Throwing the error so it can be catched by the handleSubmit in RegisterModal.jsx
+      throw error;
     }
   };
 
-  const handleSignIn = async (email, password) => {
-    try {
-      console.log("1. Starting with sign in");
-      const res = await signIn();
-      if (res.token) {
-        console.log("2. Get token", res.token);
-        localStorage.setItem("token", res.token);
-        handleCheckToken();
-      }
-    } catch (err) {
-      console.error(err);
+  // const handleSignIn = async (email, password) => {
+  //   try {
+  //     console.log("1. Starting with sign in");
+  //     const res = await signIn();
+  //     if (res.token) {
+  //       console.log("2. Get token", res.token);
+  //       localStorage.setItem("token", res.token);
+  //       handleCheckToken();
+  //     }
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
+
+  const handleSignIn = async ({ email, password }) => {
+    if (!email || !password) {
+      return;
     }
+
+    console.log("We reached this stage", email, password);
+    const res = await signIn({ email, password });
+    if (!res.token) {
+      throw new Error("Login Failed from App.jsx");
+    }
+    setIsLoggedIn(true);
+    localStorage.setItem("token", res.token);
+    setCurrentUser({ name: res.name, _id: res._id });
+    closeActiveModal();
+    return res;
+
+    // signIn({ email, password })
+    //   .then((res) => {
+    //     // console.log("SUCCESS: Got response from signIn", res);
+    //     // console.log("Check token", res.token);
+
+    //     if (res.token) {
+    //       setIsLoggedIn(true);
+    //       localStorage.setItem("token", res.token);
+    //       // console.log("Check inside of res", res);
+    //       setCurrentUser({ name: res.name, _id: res._id });
+
+    //       closeActiveModal();
+    //     }
+    //   })
+    //   .catch((err) => {
+    //     console.error("Failed to log in", err);
+    //   });
   };
 
   const handleCheckToken = async () => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      // console.log("5. No Token found so no articles retrieved");
+      return;
+    } else {
+      // console.log("4. Token check response", );
+    }
+
     try {
-      console.log("3. Checking token");
-      const token = localStorage.getItem("token");
+      // console.log("3. Checking token");
       // if (!token) return;
 
       const res = await checkToken(token);
 
-      if (!token) {
-        console.log("5. No Token found so no articles retrieved");
-        return;
-      } else {
-        console.log("4. Token check repsosne", res);
-      }
+      console.log("HandleCheckToken", res);
 
-      if (res.data) {
+      if (res) {
         setIsLoggedIn(true);
-        const { name, email, _id } = res.data;
+        const { name, email, _id } = res;
+        console.log("When checking the token, res -->", res);
         setCurrentUser({ name, email, _id });
-        console.log("5. About to retrieve articles");
+        // console.log("5. About to retrieve articles");
         //After checking the token the relative saved articles from the db should be returned
-        retrieveArticles();
+        // retrieveArticles();
       }
     } catch (error) {
       console.error("Unable to check token", error);
@@ -96,7 +141,6 @@ function App() {
     setIsLoggedIn(false);
     setCurrentUser({});
     //Clearing up the saved articles after the logout,
-    //Even tough the /saved-news page won't be available to the user until it logs in
     setSavedNews([]);
 
     console.log("Logged out!");
@@ -127,6 +171,84 @@ function App() {
     setActiveModal("");
   };
 
+  function checkItemInArray(item, array) {
+    return array.some((arrayItem = item.url === arrayItem.url));
+  }
+
+  const handleSaveItem = (item) => {
+    item.isSaved = !item.isSaved;
+
+    const token = localStorage.getItem("token");
+
+    // checkItemInArray(item, savedNews)
+    //   ? console.log("News already saved!")
+    //   : saveItem(item, token)
+    //       .then((article) => {
+    //         item._id = article.data._id;
+    //         setSavedNews([article.data, ...savedNews]);
+    //         console.log("Article saved");
+    //       })
+    //       .catch((err) => {
+    //         console.error("Failed to save article", err);
+    //       });
+
+    console.log("Check keyword", keyword);
+    console.log("Check entire Item", item);
+    const refinedArticle = {
+      keyword: keyword,
+      title: item.title,
+      date: item.date,
+      source: item.source || "Unknown",
+      link: item.link,
+      image: item.image,
+      text: item.text,
+    };
+
+    console.log("This refinedArticle from App.jsx", refinedArticle);
+
+    if (
+      !refinedArticle.title ||
+      !refinedArticle.date ||
+      !refinedArticle.link ||
+      !refinedArticle.image ||
+      !refinedArticle.text
+    ) {
+      console.warn("Skipping invalid article:", refinedArticle);
+      return;
+    }
+
+    const isAlreadySaved = savedNews.some(
+      (saved) => saved && saved.link === refinedArticle.link
+    );
+
+    if (isAlreadySaved) {
+      // console.log("News already saved");
+      return;
+    }
+
+    saveItem(refinedArticle, token)
+      .then((res) => {
+        const savedArticle = res.data;
+        // console.log("Saved Article", savedArticle);
+        setSavedNews([savedArticle, ...savedNews]);
+        // console.log("Article we just saved:", savedArticle);
+      })
+      .catch((err) => {
+        console.error("Error:", err);
+      });
+  };
+
+  const handleRetrieveSavedArticles = () => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      getSavedNews(token).then((res) => {
+        // console.log("Here's the bag", res);
+        // console.log("Articles that are saved", res.data);
+        setSavedNews([...res.data]);
+      });
+    }
+  };
+
   const handleSearchSubmit = (keyword) => {
     setIsLoading(true);
 
@@ -141,6 +263,7 @@ function App() {
         } else {
           setNewsArticles(
             articles.map((article) => {
+              console.log("Individual article", article._id);
               return {
                 ...article,
                 // keyword: keyword,
@@ -148,7 +271,7 @@ function App() {
             })
           );
 
-          console.log("Content of articles after search submit", newsArticles);
+          // console.log("Content of articles after search submit", );
         }
       })
       .catch((err) => {
@@ -178,11 +301,38 @@ function App() {
   //   });
   // }, [newsArticles]);
 
+  const handleDeleteArticle = (item) => {
+    console.log("Article id about to get deleted", item);
+    const token = localStorage.getItem("token");
+    deleteItem(item, token).then((res) => {
+      console.log("Res from delete article handle", res);
+      console.log("Check this item", item);
+
+      setSavedNews((prevArticles) => {
+        return prevArticles.filter((thing) => thing._id !== item);
+      });
+    });
+  };
+
   useEffect(() => {
-    console.log("App mounted, checking token");
-    console.log("Check current user", currentUser);
+    // console.log("App mounted, checking token");
     handleCheckToken();
+    // console.log("Check current user", currentUser);
   }, []);
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      handleRetrieveSavedArticles();
+    }
+  }, [isLoggedIn]);
+
+  useEffect(() => {
+    // console.log("Check current user", currentUser.toString.length);
+    // console.log("Insde CurrentUser state", currentUser.name);
+    if (typeof currentUser.name === "string") {
+      console.log("Insde CurrentUser state", currentUser);
+    }
+  }, [currentUser]);
 
   return (
     <CurrentUserContext.Provider value={{ currentUser, isLoggedIn }}>
@@ -207,6 +357,9 @@ function App() {
                       isLoading={isLoading}
                       articles={newsArticles}
                       noResults={noResults}
+                      handleSaveItem={handleSaveItem}
+                      setActiveModal={setActiveModal}
+                      savedNews={savedNews}
                     />
                     <About />
                   </>
@@ -222,8 +375,13 @@ function App() {
                       handleLoginClick={handleLoginClick}
                       isLoggedIn={isLoggedIn}
                       handleLogout={handleLogout}
+                      articles={savedNews}
                     />
-                    <SavedNews articles={savedNews} isLoggedIn={isLoggedIn} />
+                    <SavedNews
+                      articles={savedNews}
+                      isLoggedIn={isLoggedIn}
+                      handleDeleteArticle={handleDeleteArticle}
+                    />
                   </>
                 }
               />
