@@ -48,6 +48,16 @@ function RegisterModal({
     }
   };
 
+  const resetForm = useCallback(
+    (newEmail = "", newName = "", newPassword = "") => {
+      setEmail(newEmail);
+      setName(newName);
+      setPassword(newPassword);
+      console.log("Reset forms!");
+    },
+    [setEmail, setName, setPassword]
+  );
+
   const isValid =
     email !== "" &&
     name !== "" &&
@@ -69,6 +79,7 @@ function RegisterModal({
       // resetForm();
       handleCloseModal();
       handleRegistrationSuccess();
+      resetForm();
     } catch (err) {
       console.log("Check err", err);
       setServerError(err.message || "Something went wrong");
