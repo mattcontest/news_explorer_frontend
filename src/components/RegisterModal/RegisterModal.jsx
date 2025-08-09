@@ -55,7 +55,7 @@ function RegisterModal({
       setPassword(newPassword);
       console.log("Reset forms!");
     },
-    [setEmail, setName, setPassword]
+    []
   );
 
   const isValid =
