@@ -53,7 +53,10 @@ function RegisterModal({
       setEmail(newEmail);
       setName(newName);
       setPassword(newPassword);
-      console.log("Reset forms!");
+      setEmailError("");
+      setPasswordError("");
+      setNameError("");
+      console.log("Resezt forms!");
     },
     []
   );
