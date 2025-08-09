@@ -20,6 +20,7 @@ import {
   saveItem,
 } from "../../utils/api.js";
 import { checkToken, signIn, signUp } from "../../utils/auth.js";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.jsx";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -369,20 +370,25 @@ function App() {
               <Route
                 path="/saved-news"
                 element={
-                  <>
-                    {/* <Header handleLoginClick={handleLoginClick} /> */}
-                    <SavedNewsHeader
-                      handleLoginClick={handleLoginClick}
-                      isLoggedIn={isLoggedIn}
-                      handleLogout={handleLogout}
-                      articles={savedNews}
-                    />
-                    <SavedNews
-                      articles={savedNews}
-                      isLoggedIn={isLoggedIn}
-                      handleDeleteArticle={handleDeleteArticle}
-                    />
-                  </>
+                  <ProtectedRoute
+                    isLoggedIn={isLoggedIn}
+                    onRequiredAuth={() => setActiveModal("login")}
+                  >
+                    <>
+                      {/* <Header handleLoginClick={handleLoginClick} /> */}
+                      <SavedNewsHeader
+                        handleLoginClick={handleLoginClick}
+                        isLoggedIn={isLoggedIn}
+                        handleLogout={handleLogout}
+                        articles={savedNews}
+                      />
+                      <SavedNews
+                        articles={savedNews}
+                        isLoggedIn={isLoggedIn}
+                        handleDeleteArticle={handleDeleteArticle}
+                      />
+                    </>
+                  </ProtectedRoute>
                 }
               />
               {/* <Main isLoading={true} /> */}
