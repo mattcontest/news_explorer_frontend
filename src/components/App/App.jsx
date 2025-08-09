@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import "./App.css";
 import Header from "../Header/Header.jsx";
@@ -315,6 +315,10 @@ function App() {
     });
   };
 
+  const openLogin = useCallback(() => {
+    setActiveModal((m) => (m === "login" ? m : "login"));
+  }, []);
+
   useEffect(() => {
     // console.log("App mounted, checking token");
     handleCheckToken();
@@ -372,7 +376,7 @@ function App() {
                 element={
                   <ProtectedRoute
                     isLoggedIn={isLoggedIn}
-                    onRequiredAuth={() => setActiveModal("login")}
+                    onRequiredAuth={openLogin}
                   >
                     <>
                       {/* <Header handleLoginClick={handleLoginClick} /> */}

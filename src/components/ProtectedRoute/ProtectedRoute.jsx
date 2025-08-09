@@ -3,9 +3,12 @@ import { Navigate, useLocation } from "react-router-dom";
 
 function ProtectedRoute({ isLoggedIn, onRequiredAuth, children }) {
   const location = useLocation();
+  //   const requestedRef = useRef(false);
 
   useEffect(() => {
+    // if (!isLoggedIn && !requestedRef.current) {
     if (!isLoggedIn) {
+      //   requestedRef.current = true;
       if (onRequiredAuth) {
         onRequiredAuth();
       }
