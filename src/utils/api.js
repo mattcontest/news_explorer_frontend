@@ -93,7 +93,8 @@ function saveItem({ keyword, title, date, source, link, image, text }, token) {
       text: text,
     }),
   }).then((data) => {
-    return data.json();
+    // return data.json();
+    return checkResponse(data);
   });
 }
 
