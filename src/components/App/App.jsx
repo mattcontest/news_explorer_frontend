@@ -32,6 +32,7 @@ function App() {
   const [noResults, setNoResults] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [savedNews, setSavedNews] = useState([]);
+  const [authLoading, setAuthLoading] = useState(true);
 
   // const handleSignUp = async (email, password) => {
   const handleSignUp = async (email, name, password) => {
@@ -107,9 +108,12 @@ function App() {
   };
 
   const handleCheckToken = async () => {
+    setAuthLoading(true);
     const token = localStorage.getItem("token");
     if (!token) {
       // console.log("5. No Token found so no articles retrieved");
+      setIsLoggedIn(false);
+      setAuthLoading(false);
       return;
     } else {
       // console.log("4. Token check response", );
@@ -134,6 +138,8 @@ function App() {
       }
     } catch (error) {
       console.error("Unable to check token", error);
+    } finally {
+      setAuthLoading(false);
     }
   };
 
@@ -333,6 +339,7 @@ function App() {
     if (isLoggedIn) {
       handleRetrieveSavedArticles();
     }
+    // }, [isLoggedIn, authLoading]);
   }, [isLoggedIn]);
 
   useEffect(() => {
@@ -381,6 +388,7 @@ function App() {
                   <ProtectedRoute
                     isLoggedIn={isLoggedIn}
                     onRequiredAuth={openLogin}
+                    authLoading={authLoading}
                   >
                     <>
                       {/* <Header handleLoginClick={handleLoginClick} /> */}

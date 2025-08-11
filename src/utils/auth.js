@@ -23,6 +23,19 @@ export const signUp = async (email, name, password) => {
   // const body = await res.json();
 };
 
+export const parseBody = async (res) => {
+  console.log("Check before parsing", res);
+  const text = await res.text();
+  if (!text) {
+    return null;
+  }
+  try {
+    return JSON.parse(text);
+  } catch {
+    return text;
+  }
+};
+
 export const signIn = async ({ email, password }) => {
   console.log("STARTING signIn function with:", { email, password });
   console.log("BASE_URL is:", BASE_URL);
@@ -33,7 +46,8 @@ export const signIn = async ({ email, password }) => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, password }),
   });
-  const body = await res.json();
+  // const body = await res.json();
+  const body = await parseBody(res);
   if (!res.ok) {
     throw new Error(body.message || `Error ${res.status}`);
   }
