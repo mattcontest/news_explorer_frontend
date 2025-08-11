@@ -106,7 +106,8 @@ function deleteItem(item, token) {
       authorization: `Bearer ${token}`,
     },
   }).then((data) => {
-    return data.json();
+    // return data.json();
+    return checkResponse(data);
   });
 }
 
@@ -118,7 +119,7 @@ function getSavedNews(token) {
       authorization: `Bearer ${token}`,
     },
   }).then((data) => {
-    return data.json();
+    return checkResponse(data);
   });
 }
 
