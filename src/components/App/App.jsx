@@ -108,15 +108,12 @@ function App() {
   };
 
   const handleCheckToken = async () => {
-    setAuthLoading(true);
     const token = localStorage.getItem("token");
     if (!token) {
       // console.log("5. No Token found so no articles retrieved");
       setIsLoggedIn(false);
       setAuthLoading(false);
       return;
-    } else {
-      // console.log("4. Token check response", );
     }
 
     try {
@@ -326,7 +323,11 @@ function App() {
   };
 
   const openLogin = useCallback(() => {
-    setActiveModal((m) => (m === "login" ? m : "login"));
+    // if (!isLoggedIn) {
+    //   setActiveModal((m) => (m === "login" ? m : "login"));
+    // }
+
+    setActiveModal("login");
   }, []);
 
   useEffect(() => {

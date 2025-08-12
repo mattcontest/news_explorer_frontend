@@ -7,7 +7,7 @@ function ProtectedRoute({ isLoggedIn, onRequiredAuth, authLoading, children }) {
 
   useEffect(() => {
     // if (!isLoggedIn && !requestedRef.current) {
-    if (!isLoggedIn) {
+    if (!isLoggedIn && !authLoading) {
       //   requestedRef.current = true;
       // if (onRequiredAuth && !authLoading) {
       if (onRequiredAuth) {
@@ -23,7 +23,6 @@ function ProtectedRoute({ isLoggedIn, onRequiredAuth, authLoading, children }) {
     alert("Unauthorized, you are being redirected to the Home");
     return <Navigate to="/" replace={{ from: location }} />;
   }
-
   return children;
 }
 
