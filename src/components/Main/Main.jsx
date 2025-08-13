@@ -11,6 +11,7 @@ function Main({
   handleSaveItem,
   setActiveModal,
   savedNews,
+  handleDeleteItem,
 }) {
   let content = null;
 
@@ -44,6 +45,7 @@ function Main({
               handleSaveItem={handleSaveItem}
               setActiveModal={setActiveModal}
               savedNews={savedNews}
+              handleDeleteItem={handleDeleteItem}
             />
           </div>
         ));

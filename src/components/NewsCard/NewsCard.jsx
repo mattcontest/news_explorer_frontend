@@ -17,6 +17,7 @@ function NewsCard({
   keyId,
   url,
   savedNews,
+  handleDeleteItem,
 }) {
   const handleSaveNewsClick = () => {
     if (!isLoggedIn) {
@@ -49,6 +50,14 @@ function NewsCard({
     });
   };
 
+  const handleDeleteArticle = () => {
+    console.log("that's keyId", keyId);
+    console.log("that's saveUrl", savedNews);
+    const article = savedNews.find((word) => word.title === title);
+    console.log("article", article._id);
+    handleDeleteItem(article._id);
+  };
+
   // console.log("url", data.url);
 
   // savedNews.forEach((news) => {
@@ -68,7 +77,11 @@ function NewsCard({
       {console.log(isLoggedIn)}
       <div className="card__header">
         <img src={imageUrl} alt="" className="card__image" />
-        <button className="save__btn" onClick={handleSaveNewsClick}>
+        {/* <button className="save__btn" onClick={handleSaveNewsClick}> */}
+        <button
+          className="save__btn"
+          onClick={isSavedArticle() ? handleDeleteArticle : handleSaveNewsClick}
+        >
           {/* Added logic for showing saved bookmark */}
           <img
             src={isSavedArticle() ? bookmark__saved : bookmark__default}

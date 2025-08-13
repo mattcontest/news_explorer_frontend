@@ -9,6 +9,7 @@ function NewsCardsMap({
   handleSaveItem,
   setActiveModal,
   savedNews,
+  handleDeleteItem,
 }) {
   const [cardsShown, setCardsShown] = useState(3);
   const showMore = (e) => {
@@ -47,6 +48,7 @@ function NewsCardsMap({
                     handleSaveItem={handleSaveItem}
                     setActiveModal={setActiveModal}
                     savedNews={savedNews}
+                    handleDeleteItem={handleDeleteItem}
                   />
                 );
               })}

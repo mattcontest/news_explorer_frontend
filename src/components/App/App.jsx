@@ -377,6 +377,7 @@ function App() {
                       handleSaveItem={handleSaveItem}
                       setActiveModal={setActiveModal}
                       savedNews={savedNews}
+                      handleDeleteItem={handleDeleteArticle}
                     />
                     <About />
                   </>
