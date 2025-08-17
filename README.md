@@ -23,4 +23,3 @@ This is the frontend component of the NewsExplorer application, a web service th
 - Mongoose manages the data
 - Google Cloud hosts the backend
 - News API provides the news
-

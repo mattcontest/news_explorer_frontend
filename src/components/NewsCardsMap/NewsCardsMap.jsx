@@ -1,13 +1,22 @@
 import "./NewsCardsMap.css";
 import NewsCard from "../NewsCard/NewsCard";
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
-function NewsCardsMap({ articles, isLoggedIn }) {
+function NewsCardsMap({
+  articles,
+  isLoggedIn,
+  handleSaveItem,
+  setActiveModal,
+  savedNews,
+  handleDeleteItem,
+}) {
   const [cardsShown, setCardsShown] = useState(3);
   const showMore = (e) => {
     e.preventDefault();
     setCardsShown(cardsShown + 3);
   };
+
   return (
     <>
       <section className="news">
@@ -16,11 +25,12 @@ function NewsCardsMap({ articles, isLoggedIn }) {
             <h2 className="news__cards-title">Search Results</h2>
             <ul className="news__cards-list ">
               {articles.slice(0, cardsShown).map((article) => {
-                const uniqueKey = `${article.title}-${article.publishedAt}`;
+                const uniqueKey = uuidv4();
                 return (
                   <NewsCard
-                    // key={article._id}
                     key={uniqueKey}
+                    data={article}
+                    keyId={uniqueKey}
                     imageUrl={article.urlToImage}
                     title={article.title}
                     description={article.description}
@@ -33,7 +43,12 @@ function NewsCardsMap({ articles, isLoggedIn }) {
                         year: "numeric",
                       }
                     )}
+                    url={article.url}
                     isLoggedIn={isLoggedIn}
+                    handleSaveItem={handleSaveItem}
+                    setActiveModal={setActiveModal}
+                    savedNews={savedNews}
+                    handleDeleteItem={handleDeleteItem}
                   />
                 );
               })}

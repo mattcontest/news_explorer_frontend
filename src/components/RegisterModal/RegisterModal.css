@@ -61,6 +61,24 @@
   height: 20px;
 }
 
+.modal__error-text {
+  margin-bottom: 31px;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  color: rgb(219, 60, 60);
+}
+.modal__error-text-bg {
+  margin: auto;
+  margin-bottom: 5px;
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 100%;
+  color: rgb(219, 60, 60);
+}
+
 @media screen and (max-width: 320px) {
   .modal__content_signup {
     margin-top: 54px;

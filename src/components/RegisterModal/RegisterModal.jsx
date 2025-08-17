@@ -1,6 +1,6 @@
 import "./RegisterModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 function RegisterModal({
   title,
@@ -13,30 +13,87 @@ function RegisterModal({
   handleRegistrationSuccess,
 }) {
   const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+
+  const [emailError, setEmailError] = useState("");
+  const [nameError, setNameError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [serverError, setServerError] = useState("");
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
+    if (!e.target.validity.valid) {
+      setEmailError(e.target.validationMessage);
+    } else {
+      setEmailError("");
+    }
   };
 
   const handleUsernameChange = (e) => {
-    setUsername(e.target.value);
+    setName(e.target.value);
+    if (!e.target.validity.valid) {
+      setNameError(e.target.validationMessage);
+    } else {
+      setNameError("");
+    }
   };
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
+    if (!e.target.validity.valid) {
+      setPasswordError(e.target.validationMessage);
+    } else {
+      setPasswordError("");
+    }
   };
 
-  const handleSubmit = (e) => {
+  const resetForm = useCallback(
+    (newEmail = "", newName = "", newPassword = "") => {
+      setEmail(newEmail);
+      setName(newName);
+      setPassword(newPassword);
+      setEmailError("");
+      setPasswordError("");
+      setNameError("");
+      console.log("Resezt forms!");
+    },
+    []
+  );
+
+  const isValid =
+    email !== "" &&
+    name !== "" &&
+    password !== "" &&
+    emailError === "" &&
+    nameError === "" &&
+    passwordError === "";
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!email || !password || !username) {
+    if (!email || !password || !name) {
       return;
     }
-    handleSignUp(email, username, password);
-    handleCloseModal();
-    handleRegistrationSuccess();
+    if (!isValid) return;
+
+    try {
+      await handleSignUp(email, name, password);
+
+      // resetForm();
+      handleCloseModal();
+      handleRegistrationSuccess();
+      resetForm();
+    } catch (err) {
+      console.log("Check err", err);
+      setServerError(err.message || "Something went wrong");
+    }
+    // handleSignUp(email, name, password);
+    // handleCloseModal();
+    // handleRegistrationSuccess();
   };
+
+  // const resetForm = useCallback(newValues = )
+
   return (
     <ModalWithForm
       title={title}
@@ -61,6 +118,7 @@ function RegisterModal({
           value={email}
           required
         />
+        {emailError && <span className="modal__error-text">{emailError}</span>}
       </label>
       <label
         htmlFor="signin__password"
@@ -74,8 +132,12 @@ function RegisterModal({
           placeholder="Enter password"
           onChange={handlePasswordChange}
           value={password}
+          minLength={4}
           required
         />
+        {passwordError && (
+          <span className="modal__error-text">{passwordError}</span>
+        )}
       </label>
       <label
         htmlFor="signin__username"
@@ -87,12 +149,21 @@ function RegisterModal({
           className="modal__input"
           id="signin__username"
           placeholder="Enter your username"
-          value={username}
+          value={name}
           onChange={handleUsernameChange}
+          required
+          minLength={4}
         />
+        {nameError && <span className="modal__error-text">{nameError}</span>}
       </label>
       <div className="btn__container">
-        <button className="modal__register_btn">{buttonText}</button>
+        {serverError && (
+          <span className="modal__error-text-bg">{serverError}</span>
+        )}
+
+        <button className="modal__register_btn" disabled={!isValid}>
+          {buttonText}
+        </button>
 
         <button
           className="modal__login_instead_btn "
