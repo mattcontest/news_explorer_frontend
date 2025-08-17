@@ -2,7 +2,6 @@
 
 This is the frontend component of the NewsExplorer application, a web service that allows users to search for news articles and save them to their profile.
 
-
 ### Try NewsExplorer!
 
 [News Explorer](https://www.atlaba.com/)
