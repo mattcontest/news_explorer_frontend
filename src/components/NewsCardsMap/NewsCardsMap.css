@@ -48,9 +48,9 @@
   background: white;
 }
 
-.show__more-btn :hover {
+.show__more-btn:hover {
   /* opacity: 50%; */
-  background: rgba(232, 232, 232, 1);
+  background: rgb(229, 170, 69);
   cursor: pointer;
 }
 
