@@ -22,14 +22,14 @@ function Footer() {
           </div>
 
           <div className="footer__links-second">
-            <a
+            {/* <a
               href="https://tripleten.com/"
               className="tripleten footer__link"
               target="_blank"
               rel="noopener noreferrer"
             >
               TripleTen
-            </a>
+            </a> */}
           </div>
 
           {/* <div className="footer__socials">
@@ -55,9 +55,9 @@ function Footer() {
             <a href="" className=" footer__link">
               Home
             </a>
-            <a href="" className=" footer__link">
+            {/* <a href="" className=" footer__link">
               TripleTen
-            </a>
+            </a> */}
 
             <a
               href="https://github.com/mattcontest"
@@ -71,7 +71,7 @@ function Footer() {
         </div>
       </div>
 
-      <p className="footer_text">© 2025 Supersite, Powered by News API</p>
+      <p className="footer_text">© 2025 AtlaNews by MattCo</p>
     </footer>
   );
 }
