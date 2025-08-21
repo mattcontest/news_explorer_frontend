@@ -109,6 +109,7 @@ function App() {
 
   const handleCheckToken = async () => {
     const token = localStorage.getItem("token");
+
     if (!token) {
       // console.log("5. No Token found so no articles retrieved");
       setIsLoggedIn(false);
