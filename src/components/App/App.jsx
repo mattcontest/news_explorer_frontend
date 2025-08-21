@@ -110,7 +110,12 @@ function App() {
   const handleCheckToken = async () => {
     const token = localStorage.getItem("token");
 
-    if (!token) {
+    if (
+      !token ||
+      token === "undefined" ||
+      token === null ||
+      token.trim() === ""
+    ) {
       // console.log("5. No Token found so no articles retrieved");
       setIsLoggedIn(false);
       setAuthLoading(false);
@@ -136,6 +141,9 @@ function App() {
       }
     } catch (error) {
       console.error("Unable to check token", error);
+      //Removing immediately the bad token
+      localStorage.removeItem("token");
+      setIsLoggedIn(false);
     } finally {
       setAuthLoading(false);
     }
