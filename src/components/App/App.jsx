@@ -123,9 +123,6 @@ function App() {
     }
 
     try {
-      // console.log("3. Checking token");
-      // if (!token) return;
-
       const res = await checkToken(token);
 
       console.log("HandleCheckToken", res);
@@ -193,18 +190,6 @@ function App() {
 
     const token = localStorage.getItem("token");
 
-    // checkItemInArray(item, savedNews)
-    //   ? console.log("News already saved!")
-    //   : saveItem(item, token)
-    //       .then((article) => {
-    //         item._id = article.data._id;
-    //         setSavedNews([article.data, ...savedNews]);
-    //         console.log("Article saved");
-    //       })
-    //       .catch((err) => {
-    //         console.error("Failed to save article", err);
-    //       });
-
     console.log("Check keyword", keyword);
     console.log("Check entire Item", item);
     const refinedArticle = {
@@ -242,9 +227,7 @@ function App() {
     saveItem(refinedArticle, token)
       .then((res) => {
         const savedArticle = res.data;
-        // console.log("Saved Article", savedArticle);
         setSavedNews([savedArticle, ...savedNews]);
-        // console.log("Article we just saved:", savedArticle);
       })
       .catch((err) => {
         console.error("Error:", err);
@@ -256,8 +239,6 @@ function App() {
     if (token) {
       getSavedNews(token)
         .then((res) => {
-          // console.log("Here's the bag", res);
-          // console.log("Articles that are saved", res.data);
           setSavedNews([...res.data]);
         })
         .catch((err) => {
@@ -332,10 +313,6 @@ function App() {
   };
 
   const openLogin = useCallback(() => {
-    // if (!isLoggedIn) {
-    //   setActiveModal((m) => (m === "login" ? m : "login"));
-    // }
-
     setActiveModal("login");
   }, []);
 
