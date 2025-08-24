@@ -31,21 +31,6 @@ function Footer() {
               TripleTen
             </a> */}
           </div>
-
-          {/* <div className="footer__socials">
-          <a
-            href="https://github.com/mattcontest"
-            className="github footer__link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-
-            <img src={github} alt="" className="github__logo" />
-          </a>
-
-
-
-        </div> */}
         </div>
       </div>
 
