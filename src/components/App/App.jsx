@@ -379,7 +379,6 @@ function App() {
                     authLoading={authLoading}
                   >
                     <>
-                      {/* <Header handleLoginClick={handleLoginClick} /> */}
                       <SavedNewsHeader
                         handleLoginClick={handleLoginClick}
                         isLoggedIn={isLoggedIn}
