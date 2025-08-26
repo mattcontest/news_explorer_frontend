@@ -3,7 +3,6 @@ import Navigation from "../Navigation/Navigation";
 import SearchForm from "../SearchForm/SearchForm";
 import { useContext } from "react";
 import CurrentUserContext from "../context/CurrentUserContext";
-// import { Routes, Route, Link, useLocation, NavLink } from "react-router-dom";
 
 function Header({
   handleLoginClick,
@@ -13,7 +12,6 @@ function Header({
   isLoggedIn,
   handleLogout,
 }) {
-  // const { pathname } = useLocation();
   const currentUser = useContext(CurrentUserContext);
   return (
     <header className="header">
