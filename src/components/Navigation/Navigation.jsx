@@ -153,12 +153,7 @@ function Navigation({ handleLoginClick, isLoggedIn, handleLogout }) {
         {pathname === "/saved-news" ? (
           <div className="nav__links">
             <NavLink to="/saved-news">
-              <button
-                // className={`saved__articles_btn ${pathname === "/saved-news" && "home_btn__saved_news"}`}
-                className={`saved__articles_btn `}
-              >
-                Saved articles
-              </button>
+              <button className={`saved__articles_btn `}>Saved articles</button>
             </NavLink>
 
             <NavLink to="/">
