@@ -29,9 +29,7 @@ function Main({
   } else if (noResults) {
     content = (
       <div className="main">
-        {/* <div className="main__no-result"> */}
         <NoResult />
-        {/* </div> */}
       </div>
     );
   } else if (!noResults) {
