@@ -87,12 +87,11 @@ function RegisterModal({
       console.log("Check err", err);
       setServerError(err.message || "Something went wrong");
     }
+    //Automatically signing up new user to NewsExplorer
     // handleSignUp(email, name, password);
     // handleCloseModal();
     // handleRegistrationSuccess();
   };
-
-  // const resetForm = useCallback(newValues = )
 
   return (
     <ModalWithForm
