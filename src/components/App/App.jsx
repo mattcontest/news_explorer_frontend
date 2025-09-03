@@ -42,9 +42,7 @@ function App() {
     console.log("password", password);
     try {
       const res = await signUp(email, name, password);
-      // console.log(
-      //   "Then from here save the user in the db, this will be done at next stage upon approval"
-      // );
+
       if (res.token) {
         // console.log("-Sign Up 2. Get Token", res.token);
         localStorage.setItem("token", res.token);
