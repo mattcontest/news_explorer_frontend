@@ -262,7 +262,6 @@ function App() {
               console.log("Individual article", article._id);
               return {
                 ...article,
-                // keyword: keyword,
               };
             })
           );
