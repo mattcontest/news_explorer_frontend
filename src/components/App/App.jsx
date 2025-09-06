@@ -265,8 +265,6 @@ function App() {
               };
             })
           );
-
-          // console.log("Content of articles after search submit", );
         }
       })
       .catch((err) => {
