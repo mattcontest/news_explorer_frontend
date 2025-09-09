@@ -3,7 +3,6 @@ import { Navigate, useLocation } from "react-router-dom";
 
 function ProtectedRoute({ isLoggedIn, onRequiredAuth, authLoading, children }) {
   const location = useLocation();
-  //   const requestedRef = useRef(false);
 
   useEffect(() => {
     // if (!isLoggedIn && !requestedRef.current) {
