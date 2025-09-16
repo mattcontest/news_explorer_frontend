@@ -56,10 +56,6 @@ function NewsCard({
     handleDeleteItem(article._id);
   };
 
-  // savedNews.forEach((news) => {
-  //   console.log(news);
-  // });
-
   // const savedData = savedNews?.some((saved) => {
   //   console.log("saved.url", saved?.link, "==", "data.url", data.url);
   //   return saved?.link === data.url;
