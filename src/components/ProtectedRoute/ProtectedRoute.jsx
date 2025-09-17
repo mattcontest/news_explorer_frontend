@@ -5,10 +5,7 @@ function ProtectedRoute({ isLoggedIn, onRequiredAuth, authLoading, children }) {
   const location = useLocation();
 
   useEffect(() => {
-    // if (!isLoggedIn && !requestedRef.current) {
     if (!isLoggedIn && !authLoading) {
-      //   requestedRef.current = true;
-      // if (onRequiredAuth && !authLoading) {
       if (onRequiredAuth) {
         onRequiredAuth();
       }
